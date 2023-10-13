@@ -7,6 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  ADMIN
+  USER
+}
+
 model User {
   id                String              @id @unique @default(uuid())
   isActive          Boolean             @default(false)
@@ -17,4 +22,5 @@ model User {
   hashedPassword    String
   dateOfBirth       String
   gender            String?             @default("unknown")
+  role              Role                @default(USER)
 }
