@@ -15,6 +15,10 @@ export async function Signup (
     throw new BadRequestException("User already exists");
   }
 
+  if (password !== confirmPassword) {
+    throw new BadRequestException("Passwords do not match");
+  }
+
   const user = usersRepository.create({
     email,
     fullName,
