@@ -1,10 +1,23 @@
+import { Role } from "@prisma/client";
 import { signup_dto } from "src/user/dto/signup.dto";
+import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 
 export async function Signup (
   dto: signup_dto,
 ) {
+
+  const usersRepository = new PrismaUsersRepository();
   
   const { email, password, fullName, confirmPassword, dateOfBirth, country, gender } = dto;
 
-  return {message: "User created successfully"} 
+  const user = usersRepository.create({
+    email,
+    fullName,
+    dateOfBirth,
+    country,
+    hashedPassword: password,
+    gender,
+  })
+
+  return {user,  message: "User created successfully"} 
 }
