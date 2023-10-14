@@ -1,6 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
-import { signup_dto } from "src/user/dto/signup.dto";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
+import { signup_dto } from "src/user/dto/signup.dto";
+import { hashPassword } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -19,12 +20,14 @@ export async function Signup (
     throw new BadRequestException("Passwords do not match");
   }
 
+  const hashedPassword = await hashPassword(password);
+
   const user = usersRepository.create({
     email,
     fullName,
     dateOfBirth,
     country,
-    hashedPassword: password,
+    hashedPassword: hashedPassword,
     gender,
   })
 
