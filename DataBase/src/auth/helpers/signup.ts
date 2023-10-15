@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword } from "src/utils/all.utilis";
+import { hashPassword, isValidEmail } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -10,6 +10,10 @@ export async function Signup (
   const usersRepository = new PrismaUsersRepository();
   
   const { email, password, fullName, confirmPassword, dateOfBirth, country, gender } = dto;
+
+  if (!isValidEmail(email)) {
+    throw new BadRequestException("Invalid email");
+  }
 
   const foundUser = await usersRepository.findByEmail(email);
   if (foundUser) {
@@ -28,7 +32,7 @@ export async function Signup (
   .join(' ');
 
   const user = usersRepository.create({
-    email,
+    email: email,
     fullName: capitalizedFullName,
     dateOfBirth,
     country,
