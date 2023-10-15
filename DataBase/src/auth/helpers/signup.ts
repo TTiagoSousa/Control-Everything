@@ -22,9 +22,14 @@ export async function Signup (
 
   const hashedPassword = await hashPassword(password);
 
+  const capitalizedFullName = fullName
+  .split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   const user = usersRepository.create({
     email,
-    fullName,
+    fullName: capitalizedFullName,
     dateOfBirth,
     country,
     hashedPassword: hashedPassword,
