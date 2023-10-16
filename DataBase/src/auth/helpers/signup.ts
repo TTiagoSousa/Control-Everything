@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword, isValidEmail } from "src/utils/all.utilis";
+import { hashPassword, isValidEmail, isDisposableEmail } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -18,6 +18,10 @@ export async function Signup (
 
   if (!isValidEmail(email)) {
     throw new BadRequestException("Invalid email");
+  }
+
+  if (isDisposableEmail(email)) {
+    throw new BadRequestException("Email is not allowed");
   }
 
   if (password !== confirmPassword) {
