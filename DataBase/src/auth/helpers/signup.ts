@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword, isValidEmail, isDisposableEmail } from "src/utils/all.utilis";
+import { hashPassword, isValidEmail, isDisposableEmail, containsOnlyLetters } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -34,6 +34,10 @@ export async function Signup (
   .split(' ')
   .map(word => word.charAt(0).toUpperCase() + word.slice(1))
   .join(' ');
+
+  if(!containsOnlyLetters(capitalizedFullName)) {
+    throw new BadRequestException("Invalid name");
+  }
 
   const user = usersRepository.create({
     email: email,

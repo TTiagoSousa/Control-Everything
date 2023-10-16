@@ -6,5 +6,4 @@ export function containsOnlyLetters(str: string): boolean {
   .refine((str) => /^[a-zA-Z\s]+$/.test(str));
     
   return stringSchema.safeParse(str).success;
-
 }
