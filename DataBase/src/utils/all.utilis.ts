@@ -5,3 +5,7 @@
 // Password
   export { hashPassword } from './password/hashPassword';
 // Password
+
+// Text
+  export { containsOnlyLetters } from './Text/contains.only.letters';
+// Text

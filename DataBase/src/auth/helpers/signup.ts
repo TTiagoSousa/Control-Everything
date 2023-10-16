@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword, isValidEmail } from "src/utils/all.utilis";
+import { hashPassword, isValidEmail, containsOnlyLetters } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -11,13 +11,13 @@ export async function Signup (
   
   const { email, password, fullName, confirmPassword, dateOfBirth, country, gender } = dto;
 
-  if (!isValidEmail(email)) {
-    throw new BadRequestException("Invalid email");
-  }
-
   const foundUser = await usersRepository.findByEmail(email);
   if (foundUser) {
     throw new BadRequestException("User already exists");
+  }
+
+  if (!isValidEmail(email)) {
+    throw new BadRequestException("Invalid email");
   }
 
   if (password !== confirmPassword) {
