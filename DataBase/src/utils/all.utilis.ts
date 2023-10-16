@@ -1,5 +1,6 @@
 // Email
   export { isValidEmail} from './email/is.valide.email'
+  export { isDisposableEmail } from './email/disposable.emails'
 // Email
 
 // Password
