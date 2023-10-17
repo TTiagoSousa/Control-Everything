@@ -1,7 +1,14 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword, isValidEmail, isDisposableEmail, containsOnlyLetters, calculateUserAge } from "src/utils/all.utilis";
+import { 
+  hashPassword, 
+  isValidEmail, 
+  isDisposableEmail, 
+  containsOnlyLetters, 
+  calculateUserAge, 
+  isStrongPassword 
+} from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -26,6 +33,10 @@ export async function Signup (
 
   if (password !== confirmPassword) {
     throw new BadRequestException("Passwords do not match");
+  }
+
+  if (!isStrongPassword(password)) {
+    throw new BadRequestException("Password is not strong enough");
   }
 
   const userAge = calculateUserAge(new Date(dateOfBirth));
