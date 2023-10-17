@@ -24,3 +24,9 @@ model User {
   gender            String?             @default("unknown")
   role              Role                @default(USER)
 }
+
+model Country {
+  id                   Int       @id @default(autoincrement())
+  countryName         String     @unique   
+  CoutryFlag          String
+}
