@@ -11,4 +11,29 @@ export class PrismaCountryRepository implements CoutriesRepository{
   
     return countries
   }
+
+  async findByName(countryName: string) {
+    const country = await prisma.country.findUnique({
+      where: {
+        countryName: countryName,
+      },
+    });
+  
+    return country;
+  }
+
+  async updateCountries(countryName: string, countryFlag: string) {
+    const country = await prisma.country.update({
+      where: {
+        countryName,
+      },
+      data: {
+        CoutryFlag: countryFlag,
+        countryName,
+      },
+    });
+  
+    return country;
+  }
+
 }
