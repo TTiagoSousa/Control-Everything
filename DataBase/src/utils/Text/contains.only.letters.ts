@@ -1,8 +1,5 @@
 import { z } from "zod";
 
-// Remove the duplicate import statement for z
-// import { z } from "zod";
-
 export function containsOnlyLetters(str: string): boolean {
   const stringSchema = z.string();
 
