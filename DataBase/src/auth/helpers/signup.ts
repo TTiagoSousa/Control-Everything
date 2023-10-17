@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { hashPassword, isValidEmail, isDisposableEmail, containsOnlyLetters } from "src/utils/all.utilis";
+import { hashPassword, isValidEmail, isDisposableEmail, containsOnlyLetters, calculateUserAge } from "src/utils/all.utilis";
 
 export async function Signup (
   dto: signup_dto,
@@ -26,6 +26,12 @@ export async function Signup (
 
   if (password !== confirmPassword) {
     throw new BadRequestException("Passwords do not match");
+  }
+
+  const userAge = calculateUserAge(new Date(dateOfBirth));
+  const minimumAge = 16;
+  if (userAge < minimumAge) {
+    throw new BadRequestException(`You must be at least ${minimumAge} years old`);
   }
 
   const hashedPassword = await hashPassword(password);
