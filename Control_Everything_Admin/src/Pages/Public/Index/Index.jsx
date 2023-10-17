@@ -1,11 +1,16 @@
 // React and scss
   import React from 'react';
+  import { Link } from 'react-router-dom';
 // React and scss
 
 const Index = () => {
   return (
     <>
-      Teste
+      <Link
+        to="Login"
+      >
+        <button>Login</button>
+      </Link>
     </>
   )
 };
