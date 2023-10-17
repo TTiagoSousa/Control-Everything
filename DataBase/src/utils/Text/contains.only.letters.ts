@@ -1,9 +1,18 @@
 import { z } from "zod";
 
+// Remove the duplicate import statement for z
+// import { z } from "zod";
+
 export function containsOnlyLetters(str: string): boolean {
-  const stringSchema = z
-  .string()
-  .refine((str) => /^[a-zA-Z\s]+$/.test(str));
-    
-  return stringSchema.safeParse(str).success;
+  const stringSchema = z.string();
+
+  const zodResult = stringSchema.safeParse(str);
+
+  if (!zodResult.success) {
+    return false;
+  }
+
+  const regex = /^[a-zA-Z\s]+$/;
+
+  return regex.test(str);
 }
