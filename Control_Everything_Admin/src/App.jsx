@@ -1,5 +1,6 @@
 // React and Scss
   import React from 'react';
+  import './Styles/Global.scss'
   import { Route, Routes, useLocation } from 'react-router-dom';
 // React and Scss
 
