@@ -9,6 +9,7 @@
 
 // Password
   export { hashPassword } from './password/hashPassword';
+  export { isStrongPassword } from './password/is.password.strong';
 // Password
 
 // Text
