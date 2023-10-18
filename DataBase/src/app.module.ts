@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { CoutriesModule } from './coutries/coutries.module';
+import { EmailModule } from './email/email.module';
 
 @Module({
-  imports: [AuthModule, UserModule, CoutriesModule],
+  imports: [AuthModule, UserModule, CoutriesModule, EmailModule],
   controllers: [AppController],
   providers: [AppService],
 })
