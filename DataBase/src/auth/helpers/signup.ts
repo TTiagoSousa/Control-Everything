@@ -3,6 +3,8 @@ import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-
 import { signup_dto } from "src/user/dto/signup.dto";
 import { getCountriesFromDatabaseOrJson } from "src/coutries/helpers/get.countries.from.data";
 import * as Signup_Error from '../../user/errors/Signup.function.errors';
+import { JwtService } from '@nestjs/jwt';
+import { EmailService } from 'src/email/email.service';
 
 import { 
   hashPassword, 
@@ -12,14 +14,24 @@ import {
   calculateUserAge, 
   isStrongPassword 
 } from "src/utils/all.utilis";
+import { sendActivationEmail } from "./send.activation.email";
 
 export async function Signup (
   dto: signup_dto,
+  jwt: JwtService,
+  emailService: EmailService
 ) {
 
   const usersRepository = new PrismaUsersRepository();
   
   const { email, password, fullName, confirmPassword, dateOfBirth, country, gender } = dto;
+
+  const activationToken = jwt.sign({ email }, { expiresIn: '1d' });
+
+  await sendActivationEmail(email, activationToken, fullName, emailService);
+
+
+  console.log(activationToken)
 
   const foundUser = await usersRepository.findByEmail(email);
   if (foundUser) {

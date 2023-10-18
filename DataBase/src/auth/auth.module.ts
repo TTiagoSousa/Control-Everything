@@ -6,6 +6,7 @@ import { CoutriesService } from 'src/coutries/coutries.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtSecret } from 'src/utils/constants';
+import { EmailService } from 'src/email/email.service';
 
 @Module({
   imports: [
@@ -17,6 +18,6 @@ import { jwtSecret } from 'src/utils/constants';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, CoutriesService],
+  providers: [AuthService, CoutriesService, EmailService],
 })
 export class AuthModule {}
