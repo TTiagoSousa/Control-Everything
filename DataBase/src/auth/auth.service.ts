@@ -4,6 +4,7 @@ import { Signup } from './helpers/signup';
 import { EmailService } from 'src/email/email.service';
 import { JwtService } from '@nestjs/jwt'
 import { sendActivationEmail } from './helpers/send.activation.email';
+import { activateAccount } from './helpers/activate.account';
 
 @Injectable()
 export class AuthService {
@@ -22,4 +23,8 @@ export class AuthService {
     return result;
   }
   
+  async activateAccount(token: string) {
+    const result = await activateAccount(this.jwt, token);
+    return result;
+  }
 }

@@ -1,4 +1,4 @@
-import { ForbiddenException } from '@nestjs/common';
+import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { Request } from 'express';
 import { PrismaUsersRepository } from '../repositories/prisma/prisma-user-repisitory';
 
@@ -6,10 +6,10 @@ export async function getMyUser(id: string, req: Request) {
   
   const usersRepository = new PrismaUsersRepository();
 
-  const user = await usersRepository.findUserById(id);
+  const user = await usersRepository.findUserById(id)
 
   if (!user) {
-    throw new Error('User not found');
+    throw new NotFoundException();
   }
 
   const foundUser = req.user as {id: string};
