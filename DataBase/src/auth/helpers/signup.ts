@@ -2,6 +2,7 @@ import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
 import { getCountriesFromDatabaseOrJson } from "src/coutries/helpers/get.countries.from.data";
+import * as Signup_Error from '../../user/errors/Signup.function.errors';
 
 import { 
   hashPassword, 
@@ -22,29 +23,29 @@ export async function Signup (
 
   const foundUser = await usersRepository.findByEmail(email);
   if (foundUser) {
-    throw new BadRequestException("User already exists");
+    throw new Signup_Error.Email_Already_Exists();
   }
 
   if (!isValidEmail(email)) {
-    throw new BadRequestException("Invalid email");
+    throw new Signup_Error.Email_is_Not_Valid();
   }
 
   if (isDisposableEmail(email)) {
-    throw new BadRequestException("Email is not allowed");
+    throw new Signup_Error.Disposable_Emails();
   }
 
   if (password !== confirmPassword) {
-    throw new BadRequestException("Passwords do not match");
+    throw new Signup_Error.Passwords_Do_Not_Match();
   }
 
   if (!isStrongPassword(password)) {
-    throw new BadRequestException("Password is not strong enough");
+    throw new Signup_Error.Weak_Passowrd();
   }
 
   const userAge = calculateUserAge(new Date(dateOfBirth));
   const minimumAge = 16;
   if (userAge < minimumAge) {
-    throw new BadRequestException(`You must be at least ${minimumAge} years old`);
+    throw new Signup_Error.Minimum_Age();
   }
 
   const hashedPassword = await hashPassword(password);
@@ -55,14 +56,14 @@ export async function Signup (
   .join(' ');
 
   if(!containsOnlyLetters(capitalizedFullName)) {
-    throw new BadRequestException("Invalid name");
+    throw new Signup_Error.Invalid_Full_Name();
   }
 
   const coutries = await getCountriesFromDatabaseOrJson();
   const requestedCountry = coutries.find(c => c.countryName === dto.country);
 
   if (!requestedCountry) {
-    throw new BadRequestException(`Invalid country: ${dto.country}`);
+    throw new Signup_Error.Invalid_Country();
   }
 
   const user = usersRepository.create({
