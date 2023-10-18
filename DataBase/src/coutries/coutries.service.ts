@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { GetCoutries } from './helpers/get.countries';
+import { getCountriesFromDatabaseOrJson } from './helpers/get.countries.from.data';
 
 @Injectable()
 export class CoutriesService {
@@ -9,4 +10,8 @@ export class CoutriesService {
     return result;
   }
 
+  async GetCoutriesFromDatabaseOrJson() {
+    const result = await getCountriesFromDatabaseOrJson();
+    return result;
+  }
 }

@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Get } from '@nestjs/common';
 import { CoutriesService } from './coutries.service';
 
 @Controller('coutries')
@@ -11,4 +11,9 @@ export class CoutriesController {
     return { message: 'Moeda inserida com sucesso' };
   }
 
+  @Get('all')
+  async getCountriesData() {
+    const countries = await this.coutriesService.GetCoutriesFromDatabaseOrJson();
+    return countries;
+  }
 }
