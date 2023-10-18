@@ -1,6 +1,8 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
+import { getCountriesFromDatabaseOrJson } from "src/coutries/helpers/get.countries.from.data";
+
 import { 
   hashPassword, 
   isValidEmail, 
@@ -56,11 +58,18 @@ export async function Signup (
     throw new BadRequestException("Invalid name");
   }
 
+  const coutries = await getCountriesFromDatabaseOrJson();
+  const requestedCountry = coutries.find(c => c.countryName === dto.country);
+
+  if (!requestedCountry) {
+    throw new BadRequestException(`Invalid country: ${dto.country}`);
+  }
+
   const user = usersRepository.create({
     email: email,
     fullName: capitalizedFullName,
     dateOfBirth,
-    country,
+    country: requestedCountry.countryName,
     hashedPassword: hashedPassword,
     gender,
   })

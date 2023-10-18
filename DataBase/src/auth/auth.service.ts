@@ -4,6 +4,7 @@ import { Signup } from './helpers/signup';
 
 @Injectable()
 export class AuthService {
+  constructor() {}
 
   async signup(dto: signup_dto) {
     const result = await Signup(dto);
