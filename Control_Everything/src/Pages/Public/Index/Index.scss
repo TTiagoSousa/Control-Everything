@@ -3,6 +3,7 @@
 .Index {
   @include father_default;
 
+  // Section N1
   .Section_N1 {
     position: relative;
     width: 100%;
@@ -35,5 +36,117 @@
         letter-spacing: 3px;
       }
     }
+  }
+  // Section N1
+
+  // Section N2
+
+  // Section N2
+}
+
+@media (max-width: 1200px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+
+        h1{
+          font-size: 60px;
+        }
+      }
+    }
+    // Section N1
+  }
+}
+
+@media (max-width: 1000px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+        h1{
+          font-size: 60px;
+        }
+      }
+    }
+    // Section N1
+  }
+}
+
+@media (max-width: 800px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+        
+        h1{
+          font-size: 55px;
+        }
+      }
+    }
+    // Section N1
+  }
+}
+
+@media (max-width: 650px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+        
+        h1{
+          font-size: 50px;
+        }
+      }
+    }
+    // Section N1
+  }
+}
+
+@media (max-width: 600px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+        
+        h1{
+          font-size: 45px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    // Section N1
+  }
+}
+
+@media (max-width: 500px) {
+  .Index {
+
+    // Section N1
+    .Section_N1 {
+
+      .Title{
+        
+        h1{
+          font-size: 37px;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    // Section N1
   }
 }
