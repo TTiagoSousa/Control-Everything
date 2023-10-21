@@ -8,6 +8,7 @@
   background-color: $primary_color_dark;
   display: flex;
   justify-content: space-between;
+  z-index: 3;
 
   .Left_Side{
     height: 100%;
@@ -28,6 +29,22 @@
         font-size: 22px;
         letter-spacing: 2px;
       }
+    }
+  }
+
+  .Right_Side{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+
+    a{
+      text-decoration: none;
+      color: $white;
+      font-family: $font_family_poppins;
+      cursor: pointer;
+      letter-spacing: 2px;
     }
   }
 }

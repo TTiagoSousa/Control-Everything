@@ -1,6 +1,7 @@
 // React and Scss
   import React from 'react';
   import './Header_Home.scss';
+  import { Link } from 'react-router-dom';
 // React and Scss
 
 const Header_Home = () => {
@@ -12,7 +13,9 @@ const Header_Home = () => {
           <h1>Control Everything</h1>
         </div>
       </div>
-      <div className="Right_Side"></div>
+      <div className="Right_Side">
+        <Link>Login or Register</Link>
+      </div>
     </header>
 
   )
