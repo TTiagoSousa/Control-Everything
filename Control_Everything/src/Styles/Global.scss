@@ -10,6 +10,19 @@
   text-decoration: none;
 }
 
+@mixin father_default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin Pages_Configs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 0px 10px;
+}
+
 // Background Colors
   $primary_color_dark: #0b1727;
   $primary_color_light: #edf2f9;
@@ -17,6 +30,23 @@
   $secundery_color_dark: #162231;
   $secundery_color_light: #ffffff;
 // Background Colors
+
+// colors
+  $blue: #4695ff;
+  $blue_darker: #2c7be5;
+
+  $gray : #9da9bb;
+  $gray_dark : #5d6064;
+
+  $whitte: #ffff;
+
+  $green: #00d27a;
+// colors
+
+// Fonts
+  $font_family_poppins: 'Poppins', sans-serif;
+  $font_family_open_sans: 'Open Sans', sans-serif;
+// Fonts
 
 .Dark_Mode main{
   background-color: $primary_color_dark;
