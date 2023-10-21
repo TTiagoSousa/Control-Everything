@@ -11,12 +11,12 @@
 function App() {
 
   return (
-    <>
+    <main>
       <Routes>
         <Route index element={ <Public_Page.Index /> } />
         <Route path='Login' element={ <Public_Page.Index /> } />
       </Routes>
-    </>
+    </main>
   )
 }
 
