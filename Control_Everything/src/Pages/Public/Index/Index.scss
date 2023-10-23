@@ -3,150 +3,125 @@
 .Index {
   @include father_default;
 
-  // Section N1
   .Section_N1 {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 
     .Title{
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+      position: relative;
+      width: 80%;
       gap: 20px;
+      text-align: center;
 
       h1{
         font-family: $font_family_poppins;
         color: $blue;
         font-size: 80px;
         letter-spacing: 5px;
-        margin-left: 20px;
       }
 
-      a{
-        margin-left: 20px;
-        font-family: $font_family_poppins;
-        color: $white;
-        text-decoration: none;
-        font-size: 25px;
-        letter-spacing: 3px;
-      }
-    }
-  }
-  // Section N1
+      span{
+        font-size: 18px;
+        transform: translateY(100%);
+        opacity: 0;
+        font-family: 'Open Sans', sans-serif;
 
-  // Section N2
-
-  // Section N2
-}
-
-@media (max-width: 1200px) {
-  .Index {
-
-    // Section N1
-    .Section_N1 {
-
-      .Title{
-
-        h1{
-          font-size: 60px;
+        &.fadeInUp {
+          animation: fadeInUp 1s ease-in-out forwards;
         }
       }
     }
-    // Section N1
   }
 }
 
-@media (max-width: 1000px) {
-  .Index {
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-    // Section N1
-    .Section_N1 {
+@media (max-width: 1300px){
+  .Index{
+
+    .Section_N1{
 
       .Title{
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        width: 85%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px){
+  .Index{
+
+    .Section_N1{
+
+      .Title{
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .Index{
+
+    .Section_N1{
+
+      .Title{
+        
+        h1{
+          font-size: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px){
+  .Index{
+
+    .Section_N1{
+
+      .Title{
         
         h1{
           font-size: 60px;
         }
       }
     }
-    // Section N1
   }
 }
 
-@media (max-width: 800px) {
-  .Index {
+@media (max-width: 700px){
+  .Index{
 
-    // Section N1
-    .Section_N1 {
-
-      .Title{
-        
-        h1{
-          font-size: 55px;
-        }
-      }
-    }
-    // Section N1
-  }
-}
-
-@media (max-width: 650px) {
-  .Index {
-
-    // Section N1
-    .Section_N1 {
+    .Section_N1{
 
       .Title{
         
         h1{
           font-size: 50px;
+          letter-spacing: 3px;
         }
       }
     }
-    // Section N1
   }
 }
 
-@media (max-width: 600px) {
-  .Index {
-
-    // Section N1
-    .Section_N1 {
-
-      .Title{
-        
-        h1{
-          font-size: 45px;
-          letter-spacing: 2px;
-        }
-      }
-    }
-    // Section N1
+// Colors
+  .Dark_Mode .Section_N1 .Title span{
+    color: white;
   }
-}
 
-@media (max-width: 500px) {
-  .Index {
-
-    // Section N1
-    .Section_N1 {
-
-      .Title{
-        
-        h1{
-          font-size: 37px;
-          letter-spacing: 1px;
-        }
-      }
-    }
-    // Section N1
+  .Light_Mode .Section_N1 .Title span{
+    color: $gray;
   }
-}
+// Colors
