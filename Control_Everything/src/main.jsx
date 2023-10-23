@@ -7,12 +7,15 @@
 
 // Contexts
   import ThemeContext from './Contexts/Theme_Context.jsx';
+  import NavsContext from './Contexts/Navs_Context.jsx';
 // Contexts
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>  
     <ThemeContext>
-      <App />
+      <NavsContext>
+        <App />
+      </NavsContext>
     </ThemeContext>
   </BrowserRouter>,
 )

@@ -21,6 +21,9 @@ const Header_Index = () => {
         <div className='Theme_Button'>
           <Component.Change_Theme />
         </div>
+        <div className='Sidebar_Button'>
+          <Component.Custumize_Sidebar_Button />
+        </div>
         <Link>
           <span>Login or Register</span>
         </Link>
