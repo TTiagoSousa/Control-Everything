@@ -1,11 +1,10 @@
 @import '../../../Styles/Global.scss';
 
-.Header_Home{
+.Header_Index{
   position: fixed;
   top: 0;
   width: 100%;
   height: 5vh;
-  background-color: $primary_color_dark;
   display: flex;
   justify-content: space-between;
   z-index: 3;
@@ -26,7 +25,7 @@
       h1 {
         color: $blue;
         font-family: $font_family_poppins;
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 2px;
       }
     }
@@ -38,13 +37,40 @@
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+    gap: 10px;
 
     a{
-      text-decoration: none;
-      color: $white;
-      font-family: $font_family_poppins;
-      cursor: pointer;
-      letter-spacing: 2px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0px 10px 0px 10px;
+
+      span{
+        font-size: 80%;
+        font-family: $font_family_poppins;
+        color: $blue;
+        letter-spacing: 3px;
+      }
+    }
+
+    .Theme_Button{
+      position: relative;
+      height: 20px;
+      width: 20px;
     }
   }
 }
+
+// Colors
+  .Dark_Mode .Header_Index{
+    background-color: $primary_color_dark;
+  }
+
+  .Ligth_Mode .Header_Index{
+    background-color: $primary_color_light;
+  }
+// Colors

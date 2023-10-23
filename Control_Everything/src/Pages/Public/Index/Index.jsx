@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className='Index'>
 
-      <Container.Header_Home />
+      <Container.Header_Index />
       
       <section className='Section_N1'>
         <div className="Title">

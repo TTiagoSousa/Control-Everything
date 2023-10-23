@@ -48,6 +48,11 @@
   $font_family_open_sans: 'Open Sans', sans-serif;
 // Fonts
 
+// Cards Styles
+  $box_shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  $border_radius: 10px;
+// Cards Styles
+
 .Dark_Mode main{
   background-color: $primary_color_dark;
 }
