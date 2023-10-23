@@ -15,8 +15,9 @@
     .Title{
       position: relative;
       width: 80%;
-      gap: 20px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
 
       h1{
         font-family: $font_family_poppins;
@@ -30,6 +31,7 @@
         transform: translateY(100%);
         opacity: 0;
         font-family: 'Open Sans', sans-serif;
+        margin-top: 20px;
 
         &.fadeInUp {
           animation: fadeInUp 1s ease-in-out forwards;
