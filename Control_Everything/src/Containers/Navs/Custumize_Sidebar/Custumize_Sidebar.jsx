@@ -19,6 +19,11 @@ const Custumize_Sidebar = () => {
   const { handleDarkMode, handleLightMode, handleAutoMode, mode } = ThemeState();
   const { customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar } = NavsState();
 
+  // Reset Options
+  const resetToLightMode = () => {
+    handleAutoMode(); 
+  };
+
   return (
     <>
       <Component.Dark_Div 
@@ -39,7 +44,7 @@ const Custumize_Sidebar = () => {
                   />
                 </div>
                 <h1>Settings</h1>
-                <button>
+                <button onClick={resetToLightMode}>
                   <div>
                     <Icon.Back_Square 
                       GlobalColor={Color.whitte}

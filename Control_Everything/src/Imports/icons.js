@@ -10,6 +10,11 @@
   export { default as Simple_Check } from '../Assets/Icons/Check/Simple_Check';
 // Check
 
+// Eyes
+export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
+export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
+// Eyes
+
 // Moon
   export { default as Moon_N1 } from '../Assets/Icons/Moon/Moon_N1';
 // Moon

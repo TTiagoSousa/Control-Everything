@@ -18,8 +18,7 @@ const Header_Index = () => {
         </div>
       </div>
       <div className="Right_Side">
-
-        <Link>
+        <Link to="Auth">
           <span>Login or Register</span>
         </Link>
         <div className='Theme_Button'>
