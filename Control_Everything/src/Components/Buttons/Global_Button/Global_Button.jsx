@@ -1,7 +1,7 @@
 // React More CSS
   import React from 'react';
   import { Link } from 'react-router-dom';
-  import './Global_Button.css';
+  import './Global_Button.scss';
 // React More CSS
 
 const Global_Button = ({ Text, to, id, style, onClick }) => {
