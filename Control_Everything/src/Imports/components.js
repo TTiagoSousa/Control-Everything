@@ -1,3 +1,7 @@
+// Alerts
+  export { default as Mui_Alert } from '../Components/Alerts/Mui_Alert/Mui_Alerts'; 
+// Alerts
+
 // Buttons
   export { default as Change_Theme } from '../Components/Buttons/Change_Theme/Change_Theme';
   export { default as Custumize_Sidebar_Button } from '../Components/Buttons/Custumize_Sidebar_Button/Custumize_Sidebar_Button';
