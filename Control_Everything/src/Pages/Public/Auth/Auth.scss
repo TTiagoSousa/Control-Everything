@@ -321,6 +321,57 @@
   }
 }
 
+@media (max-width: 570px) {
+  .Auth{
+    padding: 1.5rem;
+
+    .Forms_Container{
+
+      .Signin_Signup{
+
+        form{
+          padding: 0 1.5rem;
+        }
+      }
+    }
+
+    .Panels_Container{
+
+      .Panel{
+
+        .Content{
+
+          padding: 0.2rem 1rem;
+        }
+      }
+
+      .Left_Panel{
+
+        .image{
+          display: none;
+        }
+      }
+
+      .Right_Panel{
+
+        .image{
+          display: none;
+        }
+      }
+    }
+
+    &::before{
+      bottom: 72%;
+      left: 50%;
+    }
+
+    &.sign-up-mode::before{
+      bottom: 28%;
+      left: 50%;
+    }
+  }
+}
+
 // Colors
   .Dark_Mode .Auth{
     background-color: $secundery_color_dark;
