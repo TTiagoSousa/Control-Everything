@@ -8,7 +8,7 @@
 // Contexts
   import ThemeContext from './Contexts/Theme_Context.jsx';
   import NavsContext from './Contexts/Navs_Context.jsx';
-  import DataBaseContext from './Contexts/DataBase/DataBase_Context.jsx';
+  import DataBaseContext from './Contexts/DataBase_Context.jsx';
 // Contexts
 
 ReactDOM.createRoot(document.getElementById('root')).render(
