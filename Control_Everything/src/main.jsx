@@ -8,14 +8,17 @@
 // Contexts
   import ThemeContext from './Contexts/Theme_Context.jsx';
   import NavsContext from './Contexts/Navs_Context.jsx';
+import DataBaseContext from './Contexts/DataBase_Context.jsx';
 // Contexts
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>  
     <ThemeContext>
-      <NavsContext>
-        <App />
-      </NavsContext>
+      <DataBaseContext>
+        <NavsContext>
+          <App />
+        </NavsContext>
+      </DataBaseContext>
     </ThemeContext>
   </BrowserRouter>,
 )

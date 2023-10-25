@@ -87,6 +87,9 @@ const Auth = () => {
           <img src={Image.Web3} className="image" alt="" />
         </div>
       </div>
+      <div className='Alert'>
+        <Component.Mui_Alert />
+      </div>
     </div>
   );
 };

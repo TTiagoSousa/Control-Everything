@@ -11,10 +11,19 @@ const NavsContext = ({ children }) => {
     const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
   // Customize Sidebar
 
+  // Alert  
+    const [ alert, setAlert ] = useState({
+      open: false, // Alert Close
+      message: "", // Alert message
+      type: "", // type of alert
+    })
+  // Alert
+
   return (
     <Navs.Provider 
       value={{ 
         customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
+        alert, setAlert
       }}
     >
       {children}
