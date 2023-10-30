@@ -1,16 +1,11 @@
-// Internal Imports
-  import * as Api from '../../Imports/apis';
-// Internal Imports
-
+import * as Api from '../../Imports/apis';
 import axios from 'axios';
 
 export const valideCoutry = async (country) => {
 
   try {
-    const response = await axios.get('http://localhost:3000/coutries/all');
+    const response = await axios.get(Api.Countries);
     const countriesData = response.data; 
-
-    console.log('Dados da API:', countriesData); 
 
     const requestedCountry = countriesData.find(c => c.countryName === country);
 

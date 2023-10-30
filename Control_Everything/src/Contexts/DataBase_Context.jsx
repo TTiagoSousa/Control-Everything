@@ -1,15 +1,8 @@
-// React More CSS
-  import React, { createContext, useContext, useState } from 'react';
-  import { useNavigate } from 'react-router-dom';
-// React More CSS
-
-// Internal Imports
-  import * as Utili from '../Imports/utilis';
-// Internal Imports
-
-// Context
-  import { NavsState } from './Navs_Context';
-// Context
+import React, { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import * as Utili from '../Imports/utilis';
+import { NavsState } from './Navs_Context';
+import axios from 'axios';
 
 const DataBase = createContext({});
 
@@ -28,16 +21,6 @@ const DataBaseContext = ({ children }) => {
 
   const signup  = async (e) => {  
     e.preventDefault();
-
-    const isCountryValid = await Utili.valideCoutry(country);
-    if (!isCountryValid) {
-      setAlert({
-        open: true,
-        message: "Invalid country",
-        type: 'error'
-      });
-      return;
-    }
 
     if (!email || !password || !fullName || !gender || !dateOfBirth || !country || !confirmPassword) {
       setAlert({
@@ -99,6 +82,48 @@ const DataBaseContext = ({ children }) => {
       return;
     }
 
+    const isCountryValid = await Utili.valideCoutry(country);
+    if (!isCountryValid) {
+      setAlert({
+        open: true,
+        message: "Invalid country",
+        type: 'error'
+      });
+      return;
+    }
+
+    try{
+
+      console.log('Entrou no try')
+
+      const response = await axios.post('http://localhost:3000/auth/signup', {
+        email,
+        password,
+        fullName,
+        confirmPassword,
+        dateOfBirth,
+        country,
+        gender
+      });
+
+      setAlert({
+        open: true,
+        message: "Email to activate account sent",
+        type: 'success'
+      });
+    }catch (error) {
+      console.log('Entrou nos erros')
+      if (error.response && error.response.status === 400) {
+        const errorMessage = error.response.data.message;
+        console.log("Error message from server:", errorMessage);
+    
+        setAlert({
+          open: true,
+          message: errorMessage,
+          type: 'error'
+        });
+      }
+    }
   }
 
   return (
