@@ -1,4 +1,3 @@
-import * as Api from '../../Imports/apis';
 import { BASE_URL } from '../../config/urls';
 import axios from 'axios';
 

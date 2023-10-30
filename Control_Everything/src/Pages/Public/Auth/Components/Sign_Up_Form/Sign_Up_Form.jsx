@@ -53,11 +53,9 @@ const Sign_Up_Form = () => {
           />
         </div>
         <div className="Input_Field">
-          <Component.Global_Input 
-            Text="Country"
-            Type="text"
-            Value={country}
-            onChange={(e) => setCountry(e.target.value)}
+          <Component.Country_Selector 
+            country={country}
+            setCountry={setCountry}
           />
         </div>
         <div className="Input_Field">
