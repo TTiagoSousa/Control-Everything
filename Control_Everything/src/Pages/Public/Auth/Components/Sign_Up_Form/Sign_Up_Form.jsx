@@ -21,7 +21,7 @@ const Sign_Up_Form = () => {
     country, setCountry,
     confirmPassword, setConfirmPassword,
     gender, setGender,
-    handleSignup
+    signup
    } = DataBaseState();
 
   return (
@@ -87,7 +87,7 @@ const Sign_Up_Form = () => {
         <div className="Input_Field">
           <Component.Global_Button 
             Text="Register"
-            onClick={handleSignup}
+            onClick={signup}
           />
         </div>
       </form>   

@@ -23,7 +23,7 @@ const NavsContext = ({ children }) => {
     <Navs.Provider 
       value={{ 
         customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
-        alert, setAlert
+        alert, setAlert,
       }}
     >
       {children}

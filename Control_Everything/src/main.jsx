@@ -14,11 +14,11 @@
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>  
     <ThemeContext>
-      <DataBaseContext>
-        <NavsContext>
+      <NavsContext>
+        <DataBaseContext>
           <App />
-        </NavsContext>
-      </DataBaseContext>
+        </DataBaseContext>
+      </NavsContext>
     </ThemeContext>
   </BrowserRouter>,
 )
