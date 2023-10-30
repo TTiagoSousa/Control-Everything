@@ -19,4 +19,12 @@ export class AuthController {
 
     return { message: 'Account activated successfully' };
   }
+
+  @Post('reset-password')
+  async sendPasswordResetEmail(@Body('email') email: string) {
+
+   await this.authService.sendResetPasswordEmail(email)
+
+    return { message: 'Email to reset password send' };
+  }
 }

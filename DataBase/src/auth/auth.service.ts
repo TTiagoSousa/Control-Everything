@@ -5,6 +5,7 @@ import { EmailService } from 'src/email/email.service';
 import { JwtService } from '@nestjs/jwt'
 import { sendActivationEmail } from './helpers/send.activation.email';
 import { activateAccount } from './helpers/activate.account';
+import { sendResetPasswordEmail } from './helpers/send.reset.password';
 
 @Injectable()
 export class AuthService {
@@ -25,6 +26,11 @@ export class AuthService {
   
   async activateAccount(token: string) {
     const result = await activateAccount(this.jwt, token);
+    return result;
+  }
+
+  async sendResetPasswordEmail(email: string) {
+    const result  = await sendResetPasswordEmail(email, this.emailService, this.jwt);
     return result;
   }
 }
