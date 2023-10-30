@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Utili from '../Imports/utilis';
 import { NavsState } from './Navs_Context';
+import { BASE_URL } from '../config/urls';
 import axios from 'axios';
 
 const DataBase = createContext({});
@@ -72,16 +73,6 @@ const DataBaseContext = ({ children }) => {
       return;
     }
 
-    if (password !== confirmPassword) {
-      setAlert({
-        open: true,
-        message: "Passwords do not match",
-        type: 'error'
-      });
-
-      return;
-    }
-
     const isCountryValid = await Utili.valideCountry(country);
     if (!isCountryValid) {
       setAlert({
@@ -92,9 +83,19 @@ const DataBaseContext = ({ children }) => {
       return;
     }
 
+    if (password !== confirmPassword) {
+      setAlert({
+        open: true,
+        message: "Passwords do not match",
+        type: 'error'
+      });
+
+      return;
+    }
+
     try{
 
-      const response = await axios.post('http://192.168.1.18:3000/auth/signup', {
+      const response = await axios.post(`${BASE_URL}/auth/signup`, {
         email,
         password,
         fullName,
