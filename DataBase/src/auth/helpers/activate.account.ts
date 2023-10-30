@@ -17,7 +17,7 @@ export async function activateAccount(
 
     console.log("Entrou no try")
 
-    const payload = this.jwt.verify(token);
+    const payload = jwt.verify(token);
   
     const userEmail = payload.email;
 

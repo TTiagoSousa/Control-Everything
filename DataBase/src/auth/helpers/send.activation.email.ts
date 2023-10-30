@@ -8,7 +8,7 @@ export async function sendActivationEmail(
   emailService: EmailService,
 ) {
   const encodedToken = Buffer.from(token).toString('base64');
-  const activationLink = `http://192.168.0.121:5173/auth/activate/${encodedToken}`;
+  const activationLink = `http://192.168.1.18:5173/activate/${encodedToken}`;
   const html = activationEmailTemplate(activationLink, fullName); 
   await emailService.sendEmail(email, 'Activate Your Account', html);
 }

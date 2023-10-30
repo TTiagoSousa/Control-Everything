@@ -1,0 +1,1 @@
+export { default as ActivateAccount } from '../Pages/Intermediate_Pages/ActivateAccount/ActivateAccount';

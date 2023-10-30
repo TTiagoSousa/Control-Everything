@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
-import { CoutriesModule } from 'src/coutries/coutries.module';
-import { CoutriesService } from 'src/coutries/coutries.service';
+import { CountriesModule } from 'src/countries/countries.module'; 
+import { CountriesService } from 'src/countries/countries.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtSecret } from 'src/utils/constants';
@@ -11,7 +11,7 @@ import { UserService } from 'src/user/user.service';
 
 @Module({
   imports: [
-    CoutriesModule,
+    CountriesModule,
     PassportModule,
     JwtModule.register({
       secret: jwtSecret, // Replace with your actual secret key
@@ -19,6 +19,6 @@ import { UserService } from 'src/user/user.service';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, CoutriesService, EmailService, UserService],
+  providers: [AuthService, CountriesService, EmailService, UserService],
 })
 export class AuthModule {}

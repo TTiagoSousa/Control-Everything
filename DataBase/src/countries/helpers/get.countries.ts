@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
-import { PrismaCountryRepository } from '../repositories/prisma/prisma-coutries-repository';
+import { PrismaCountryRepository } from '../repositories/prisma/prisma-countries-repository';
 
 export async function GetCoutries() {
   const apiUrl: string = process.env.Countries_Api;

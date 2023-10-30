@@ -3,11 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { CoutriesModule } from './coutries/coutries.module';
+import { CountriesModule } from './countries/countries.module';
 import { EmailModule } from './email/email.module';
 
 @Module({
-  imports: [AuthModule, UserModule, CoutriesModule, EmailModule],
+  imports: [AuthModule, UserModule, CountriesModule, EmailModule],
   controllers: [AppController],
   providers: [AppService],
 })

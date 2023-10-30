@@ -1,9 +1,9 @@
 import { Controller, Post, Get } from '@nestjs/common';
-import { CoutriesService } from './coutries.service';
+import { CountriesService } from './countries.service';
 
-@Controller('coutries')
-export class CoutriesController {
-  constructor(private readonly coutriesService: CoutriesService) {}
+@Controller('countries')
+export class CountriesController {
+  constructor(private readonly coutriesService: CountriesService) {}
 
   @Post('fetch-data')
   async GetCoutries() {

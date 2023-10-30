@@ -1,4 +1,4 @@
-import { PrismaCountryRepository } from "../repositories/prisma/prisma-coutries-repository";
+import { PrismaCountryRepository } from "../repositories/prisma/prisma-countries-repository";
 
 export async function getCountriesFromDatabaseOrJson(): Promise<any[]> {
 
@@ -8,6 +8,6 @@ export async function getCountriesFromDatabaseOrJson(): Promise<any[]> {
   try {
     return countriesFromBanck;
   } catch (error) {
-
+    
   }
 }

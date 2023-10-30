@@ -1,5 +1,5 @@
 import { Prisma, PrismaClient, Country} from "@prisma/client";
-import { CoutriesRepository } from "../coutries-repository";
+import { CoutriesRepository } from "../countries-repository";
 import { prisma } from '../../../lib/prisma';
 
 export class PrismaCountryRepository implements CoutriesRepository{

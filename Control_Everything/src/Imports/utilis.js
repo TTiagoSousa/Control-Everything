@@ -3,7 +3,7 @@
 // Age
 
 // Country
-  export { valideCoutry } from '../utils/coutry/coutry.validation'
+  export { valideCountry } from '../utils/country/country.validation'
 // Country
 
 // Email

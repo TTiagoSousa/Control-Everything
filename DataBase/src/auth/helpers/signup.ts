@@ -1,7 +1,7 @@
 import { BadRequestException } from "@nestjs/common";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import { signup_dto } from "src/user/dto/signup.dto";
-import { getCountriesFromDatabaseOrJson } from "src/coutries/helpers/get.countries.from.data";
+import { getCountriesFromDatabaseOrJson } from "src/countries/helpers/get.countries.from.data";
 import * as Signup_Error from '../../user/errors/Signup.function.errors';
 import { JwtService } from '@nestjs/jwt';
 import { EmailService } from 'src/email/email.service';

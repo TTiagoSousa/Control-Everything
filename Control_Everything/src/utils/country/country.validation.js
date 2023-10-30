@@ -1,12 +1,15 @@
-import * as Api from '../../Imports/apis';
+// Internal Imports
+  import * as Api from '../../Imports/apis';
+// Internal Imports
+
 import axios from 'axios';
 
-export const valideCoutry = async (country) => {
+export const valideCountry = async (country) => {
 
   try {
-    const response = await axios.get(Api.Countries);
+    const response = await axios.get('http://192.168.1.18:3000/countries/all');
+   
     const countriesData = response.data; 
-
     const requestedCountry = countriesData.find(c => c.countryName === country);
 
     if (requestedCountry) {
@@ -16,6 +19,7 @@ export const valideCoutry = async (country) => {
       
       return false;
     }
+
   } catch (error) {
 
     return false;

@@ -82,7 +82,7 @@ const DataBaseContext = ({ children }) => {
       return;
     }
 
-    const isCountryValid = await Utili.valideCoutry(country);
+    const isCountryValid = await Utili.valideCountry(country);
     if (!isCountryValid) {
       setAlert({
         open: true,
@@ -94,9 +94,7 @@ const DataBaseContext = ({ children }) => {
 
     try{
 
-      console.log('Entrou no try')
-
-      const response = await axios.post('http://localhost:3000/auth/signup', {
+      const response = await axios.post('http://192.168.1.18:3000/auth/signup', {
         email,
         password,
         fullName,

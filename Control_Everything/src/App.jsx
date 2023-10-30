@@ -7,6 +7,7 @@
 // Internal Components
   import * as Public_Page from './Imports/public.pages';
   import * as Container from './Imports/containers';
+  import * as Intermediate_Pages from './Imports/intermediate.pages'
 // Internal Components
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route index element={ <Public_Page.Index /> } />
         <Route path='Auth' element={ <Public_Page.Auth /> } />
+        <Route path="activate/:token" element={ <Intermediate_Pages.ActivateAccount /> } />
       </Routes>
     </main>
   )
