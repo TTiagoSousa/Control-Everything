@@ -6,7 +6,7 @@ export async function getMyUser(id: string, req: Request) {
   
   const usersRepository = new PrismaUsersRepository();
 
-  const user = await usersRepository.findUserById(id)
+  const user = await usersRepository.findUserById(id);
 
   if (!user) {
     throw new NotFoundException();

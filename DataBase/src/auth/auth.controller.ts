@@ -1,6 +1,8 @@
-import { Controller, Post, Body, Get, Param, BadRequestException } from '@nestjs/common';
+import { Body, Controller, Get, Param, Res, Req, Post, BadRequestException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { signup_dto } from 'src/user/dto/signup.dto';
+import { signin_dto } from 'src/user/dto/signin.dto';
+import { Request, Response } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -17,7 +19,7 @@ export class AuthController {
     // Chame o método para ativar a conta no serviço de autenticação
     await this.authService.activateAccount(token);
 
-    return { message: 'Account activated successfully' };
+    return;
   }
 
   @Post('reset-password')
@@ -25,7 +27,7 @@ export class AuthController {
 
    await this.authService.sendResetPasswordEmail(email)
 
-    return { message: 'Email to reset password send' };
+    return;
   }
 
   @Post('reset-password/:token')
@@ -40,5 +42,24 @@ export class AuthController {
 
       throw new BadRequestException('Invalid token or error resetting password.');
     }
+  }
+
+  @Post('signin')
+  async signin(@Body() dto: signin_dto, @Req() req, @Res() res) {
+
+    return this.authService.signin(dto, req, res);
+  }
+
+  @Post('refresh-token')
+  async refreshToken(@Req() req: Request, @Res() res: Response) {
+    const refreshToken = req.cookies.refreshToken;
+  
+    const { token, refreshToken: newRefreshToken } = await this.authService.refreshTokens(refreshToken);
+  
+    // Defina os novos cookies de token de acesso e atualização
+    res.cookie('token', token);
+    res.cookie('refreshToken', newRefreshToken);
+  
+    return res.send({ token });
   }
 }

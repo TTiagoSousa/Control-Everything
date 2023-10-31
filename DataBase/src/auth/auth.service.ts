@@ -7,6 +7,9 @@ import { sendActivationEmail } from './helpers/send.activation.email';
 import { activateAccount } from './helpers/activate.account';
 import { sendResetPasswordEmail } from './helpers/send.reset.password';
 import { resetPassword } from './helpers/reset.password';
+import { signin_dto } from 'src/user/dto/signin.dto';
+import { Signin } from './helpers/signin';
+import { refreshTokens } from './helpers/refresh.tokens';
 
 @Injectable()
 export class AuthService {
@@ -38,5 +41,14 @@ export class AuthService {
   async resetPassword( newPassword: string, token: string) {
     const result  = await resetPassword(this.jwt, newPassword, token);
     return result;
+  }
+
+  async signin(dto: signin_dto, req, res) {
+    const result = await Signin(dto, this.jwt, req, res);
+    return result;
+  }
+
+  async refreshTokens(refreshToken: string) {
+    return refreshTokens(this.jwt, refreshToken);
   }
 }

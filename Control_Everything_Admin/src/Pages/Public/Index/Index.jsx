@@ -11,6 +11,11 @@ const Index = () => {
       >
         <button>Login</button>
       </Link>
+      <Link
+        to="Manual"
+      >
+        <button>Manual</button>
+      </Link>
     </>
   )
 };
