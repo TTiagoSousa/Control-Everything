@@ -52,6 +52,11 @@ const DataBaseContext = ({ children }) => {
 
       console.log("Entrou")
 
+      setTimeout(() => {
+        navigate('/CE_Work_Space');
+        window.location.reload();
+      }, 3000);
+
       setAuthenticated(true); // Atualiza o estado de autenticação
 
     } catch (error) {
@@ -76,6 +81,8 @@ const DataBaseContext = ({ children }) => {
               Authorization: `Bearer ${token}`,
             },
           });
+
+          console.log(response)
         
         } catch (error) {
           console.error(error);
@@ -90,9 +97,6 @@ const DataBaseContext = ({ children }) => {
     checkAuthentication();
   }, []);
 
-  console.log(userId)
-  console.log(authenticated)
-
   return (
     <DataBase.Provider 
       value={{ 
@@ -103,7 +107,8 @@ const DataBaseContext = ({ children }) => {
         country, setCountry,
         confirmPassword, setConfirmPassword,
         gender, setGender,
-        login
+        login,
+        authenticated
       }}
     >
       {children}
