@@ -1,5 +1,5 @@
 import React, { Children, useState } from 'react';
-import '../../Auth.scss'
+import '../../Auth.scss';
 import * as Component from '../../../../../Imports/components';
 import { DataBaseState } from '../../../../../Contexts/DataBase_Context';
 import { NavsState } from '../../../../../Contexts/Navs_Context';

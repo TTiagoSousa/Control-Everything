@@ -29,6 +29,7 @@ function App() {
         <Route index element={ <Public_Page.Index /> } />
         <Route path='Auth' element={ <Public_Page.Auth /> } />
         <Route path="activate/:token" element={ <Intermediate_Pages.ActivateAccount /> } />
+        <Route path='Recover_Password/:token' element={ <Public_Page.Recover_Password/> } />
       </Routes>
     </main>
   )

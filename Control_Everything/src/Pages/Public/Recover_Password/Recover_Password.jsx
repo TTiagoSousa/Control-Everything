@@ -1,25 +1,17 @@
-// React and scss
-  import React, { useState } from 'react';
-  import './Recover_Password.scss';
-  import { Link, useParams, useNavigate } from 'react-router-dom';
-// React and scss
+import React, { useState } from 'react';
+import './Recover_Password.scss';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import * as Component from '../../../Imports/Components';
+import * as Image from '../../../Imports/images';
+import axios from 'axios';
+import { BASE_URL } from '../../../config/urls';
+import { NavsState } from '../../../Contexts/Navs_Context';
+import * as Utili from '../../../Imports/utilis';
 
-// Internal Imports
-  import * as Component from '../../../Imports/Components';
-  import * as Image from '../../../Imports/Assets';
-// Internal Imports
-
-// Contexts
-  import { GlobalState } from '../../../Contexts/Global_Context';
-// Contexts
-
-// Api
-  import axios from 'axios';
-// APi
 
 const Recover_Password = () => {
 
-  const { setAlert } = GlobalState();
+  const { setAlert } = NavsState();
 
   const navigate = useNavigate();
 
@@ -30,7 +22,28 @@ const Recover_Password = () => {
   const decodedToken = atob(token);
 
   const handleChangePassword = async () => {
+
     try {
+
+      if (!password || !confirmPassword) {
+        setAlert({
+          open: true,
+          message: "All fields must be filleds",
+          type: 'error'
+        });
+  
+        return;
+      }
+
+      if (!Utili.isPasswordStrong(password)) {
+        setAlert({
+          open: true,
+          message: "Password is not strong enough",
+          type: 'error'
+        });
+        
+        return;
+      }
 
       if (password !== confirmPassword) {
         setAlert({
@@ -40,9 +53,11 @@ const Recover_Password = () => {
         });
       }
 
-      await axios.post(`http://192.168.0.121:3000/auth/reset-password/${decodedToken}`, {
+      await axios.post(`${BASE_URL}/auth/reset-password/${decodedToken}`, {
         newPassword: password,
       });
+
+      console.log('Fez a chamada ao servidor')
 
       setAlert({
         open: true,
@@ -62,7 +77,7 @@ const Recover_Password = () => {
         if (errorMessage === 'Passwords Weak') {
           setAlert({
             open: true,
-            message: "Passwords Weak",
+            message: errorMessage,
             type: 'error'
           });
         }

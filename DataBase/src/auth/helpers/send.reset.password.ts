@@ -15,7 +15,7 @@ export async function sendResetPasswordEmail(
 
     const resetToken = jwt.sign({ email }, { expiresIn: '1d' });
     const encodedToken = Buffer.from(resetToken).toString('base64');
-    const resetPasswordLink = `http://192.168.0.121:5173/Recover_Password/${encodedToken}`;
+    const resetPasswordLink = `http://192.168.1.18:5173/Recover_Password/${encodedToken}`;
     const html = resetPasswordTemplate(resetPasswordLink); 
     
     await emailService.sendEmail(email, 'reset password', html);

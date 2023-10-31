@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, BadRequestException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { signup_dto } from 'src/user/dto/signup.dto';
 
@@ -26,5 +26,19 @@ export class AuthController {
    await this.authService.sendResetPasswordEmail(email)
 
     return { message: 'Email to reset password send' };
+  }
+
+  @Post('reset-password/:token')
+  async resetPassword(@Param('token') token: string, @Body('newPassword') newPassword: string) {
+    try {
+      await this.authService.resetPassword(token, newPassword);
+      return { message: 'Password reset successfully' };
+    } catch (error) {
+      if (error instanceof BadRequestException) {
+        throw error; 
+      }
+
+      throw new BadRequestException('Invalid token or error resetting password.');
+    }
   }
 }

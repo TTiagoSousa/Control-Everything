@@ -4,7 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { hashPassword, isStrongPassword } from "src/utils/all.utilis";
 import * as Reset_Password_Error from '../../user/errors/recover.passwords.erros';
 
-export async function activateAccount(
+export async function resetPassword(
   jwt: JwtService,
   token: string,
   newPassword: string
@@ -18,10 +18,6 @@ export async function activateAccount(
 
   if (!user) {
     throw new NotFoundException('User not found.');
-  }
-
-  if (isStrongPassword(newPassword)) {
-    throw new Reset_Password_Error.weak_passowrd
   }
 
   const hashedPassword = await hashPassword(newPassword);
