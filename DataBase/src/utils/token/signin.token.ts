@@ -1,8 +1,9 @@
+import { Role } from "@prisma/client";
 import { jwtSecret } from "../constants"
 import { JwtService } from '@nestjs/jwt';
 
 
-export async function createToken(args: { id: string; email: string }) {
+export async function createToken(args: { id: string; email: string; role?: Role }) {
   const payload = args;
 
   const jwtService = new JwtService();

@@ -30,9 +30,12 @@ export async function Signin (
     throw new Singnin_Error.Password_Doenst_Macht;
   }
 
+  const isAdmin = foundUser.role === 'ADMIN';
+
   const { token, refreshToken } = await Utili.createToken({
     id: foundUser.id,
     email: foundUser.email,
+    role: foundUser.role,
   });
 
   if (!token) {
@@ -42,5 +45,5 @@ export async function Signin (
   res.cookie('token', token);
   res.cookie('refreshToken', refreshToken);
 
-  return res.send({ token, message: 'Login successful' });
+  return res.send({ token, isAdmin, message: 'Login successful' });
 }
