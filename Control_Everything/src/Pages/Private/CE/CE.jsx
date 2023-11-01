@@ -9,6 +9,7 @@ const CE = () => {
 
       <Container.Header_Home />
       <Container.Sidebar_Home />
+      <Container.Custumize_Sidebar/>
 
       <div className='CE'></div>
 

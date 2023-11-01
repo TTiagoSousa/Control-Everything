@@ -1,27 +1,22 @@
-// React and scss
-  import React, { useState, useEffect } from 'react';
-  import './Custumize_Sidebar.scss';
-// React and scss
-
-// Internal Imports
-  import * as Component from '../../../Imports/components';
-  import * as Icon from '../../../Imports/icons';
-  import * as Color from '../../../Styles/Colors';
-// Internal Imports
-
-// Contexts
-  import { NavsState } from '../../../Contexts/Navs_Context';
-  import { ThemeState } from '../../../Contexts/Theme_Context';
-// Contexts
+import React, { useState, useEffect } from 'react';
+import './Custumize_Sidebar.scss';
+import * as Component from '../../../Imports/components';
+import * as Icon from '../../../Imports/icons';
+import * as Color from '../../../Styles/Colors';
+import { NavsState } from '../../../Contexts/Navs_Context';
+import { ThemeState } from '../../../Contexts/Theme_Context';
+import { DataBaseState } from '../../../Contexts/DataBase_Context';
 
 const Custumize_Sidebar = () => {
 
-  const { handleDarkMode, handleLightMode, handleAutoMode, mode } = ThemeState();
+  const { handleDarkMode, handleLightMode, handleAutoMode, mode, sidebar_Color_Change, handle_Sidebar_Color_Change, setSidebar_Color_Change } = ThemeState();
   const { customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar } = NavsState();
+  const { authenticated } = DataBaseState();
 
   // Reset Options
   const resetToLightMode = () => {
     handleAutoMode(); 
+    setSidebar_Color_Change('Dark');
   };
 
   return (
@@ -90,6 +85,32 @@ const Custumize_Sidebar = () => {
               </div>
             </div>
           {/* Chosse the theme */}
+
+          {authenticated &&(
+            <>
+
+              <div className='Diviser'></div>
+
+              {/* Chosse color of Sidebar */}
+                <div className="Choose_Color">
+                  <div className="Text">
+                    <h1>Choose a color to Sidebar</h1>
+                    <span>What's your color?</span>
+                  </div>
+                  <div className='Choose_Type_Color'>
+                    <select
+                      name='Sidebar Color'
+                      value={sidebar_Color_Change}
+                      onChange={handle_Sidebar_Color_Change}
+                    >
+                      <option value="Dark">Dark</option>
+                      <option value="Blue">Blue</option>
+                    </select>
+                  </div>
+                </div>
+              {/* Chosse color of Sidebar */}
+            </>
+          )}
 
         </div>
       </nav>

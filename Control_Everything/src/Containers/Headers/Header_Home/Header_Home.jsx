@@ -29,6 +29,9 @@ const Header_Home = () => {
           <div className='Theme_Button'>
             <Component.Change_Theme />
           </div>
+          <div className='Custumize_Sidebar_Button'>
+            <Component.Custumize_Sidebar_Button />
+          </div>
         </div>
       </header>
     </>
