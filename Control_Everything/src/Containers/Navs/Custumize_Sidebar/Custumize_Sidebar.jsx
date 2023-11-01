@@ -10,7 +10,7 @@ import { DataBaseState } from '../../../Contexts/DataBase_Context';
 const Custumize_Sidebar = () => {
 
   const { handleDarkMode, handleLightMode, handleAutoMode, mode, sidebar_Color_Change, handle_Sidebar_Color_Change, setSidebar_Color_Change } = ThemeState();
-  const { customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar } = NavsState();
+  const { customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar, typeOfNavifation, handleTypeofPositionChange, } = NavsState();
   const { authenticated } = DataBaseState();
 
   // Reset Options
@@ -18,6 +18,17 @@ const Custumize_Sidebar = () => {
     handleAutoMode(); 
     setSidebar_Color_Change('Dark');
   };
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -109,6 +120,29 @@ const Custumize_Sidebar = () => {
                   </div>
                 </div>
               {/* Chosse color of Sidebar */}
+
+              <div className='Diviser'></div>
+
+              {/* Chosse the type of Navigation */}
+              <div className='Type_Of_Navigations'>
+                  <div className='Text'> 
+                    <h1>Navigation Position</h1>
+                    <span>Select a suitable navigation system for your web application</span>
+                  </div>
+                  <div className='Choose_The_Type'>
+                    <select 
+                      name="Navigation Position" 
+                      value={screenWidth < 1000 ? "Mobile_Menu" : typeOfNavifation} 
+                      onChange={handleTypeofPositionChange} 
+                      disabled={screenWidth < 1000}
+                    >
+                      <option value="Sidebar_Home">SideBar</option>
+                      <option value="Top_Nav_Navigation">Top Navigation</option>
+                      <option value="Mobile_Menu">Mobile Menu</option>
+                    </select>
+                  </div>
+                </div>  
+              {/* Chosse the type of Navigation */} 
             </>
           )}
 

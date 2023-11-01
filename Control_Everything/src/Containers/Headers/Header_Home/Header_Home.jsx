@@ -10,19 +10,32 @@ import { NavsState } from '../../../Contexts/Navs_Context';
 
 const Header_Home = () => {
 
-  const { sidebar_Home, setSidebar_Home, showSidebar_Home } = NavsState()
+  const { sidebar_Home, setSidebar_Home, typeOfNavifation, show_Mobile_Sidebar_Home } = NavsState();
 
   return (
     <>
       <header className='Header_Home'>
         <div className="Left_Side">
           <div className="Menu">
-            <Hamburger  
-              toggled={sidebar_Home}
-              toggle={setSidebar_Home}
-              size={20}
-              color={Color.blue}
-            />
+          {
+              typeOfNavifation === 'Sidebar_Home' ? (
+                <Hamburger 
+                  toggled={sidebar_Home}
+                  toggle={setSidebar_Home}
+                  size={20}
+                  color={Color.blue}
+                />
+              ) :
+              typeOfNavifation === 'Mobile_Menu' ?  (
+                <button
+                  onClick={show_Mobile_Sidebar_Home}
+                >
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </button>
+              ): null
+            }
           </div>
         </div>
         <div className="Right_Side">
