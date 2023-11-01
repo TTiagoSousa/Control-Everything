@@ -1,0 +1,1 @@
+export { default as CE } from '../Pages/Private/CE/CE';
