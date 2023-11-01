@@ -6,6 +6,7 @@ import * as Color from '../../../Styles/Colors';
 import { NavsState } from '../../../Contexts/Navs_Context';
 import { ThemeState } from '../../../Contexts/Theme_Context';
 import { DataBaseState } from '../../../Contexts/DataBase_Context';
+import Choose_Color from './Components/Choose_Color';
 
 const Custumize_Sidebar = () => {
 
@@ -102,24 +103,7 @@ const Custumize_Sidebar = () => {
 
               <div className='Diviser'></div>
 
-              {/* Chosse color of Sidebar */}
-                <div className="Choose_Color">
-                  <div className="Text">
-                    <h1>Choose a color to Sidebar</h1>
-                    <span>What's your color?</span>
-                  </div>
-                  <div className='Choose_Type_Color'>
-                    <select
-                      name='Sidebar Color'
-                      value={sidebar_Color_Change}
-                      onChange={handle_Sidebar_Color_Change}
-                    >
-                      <option value="Dark">Dark</option>
-                      <option value="Blue">Blue</option>
-                    </select>
-                  </div>
-                </div>
-              {/* Chosse color of Sidebar */}
+                <Choose_Color />
 
               <div className='Diviser'></div>
 

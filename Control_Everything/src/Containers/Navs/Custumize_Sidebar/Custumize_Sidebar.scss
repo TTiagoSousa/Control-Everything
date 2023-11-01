@@ -360,11 +360,15 @@
 }
 
 // Colors
+  .Dark_Mode .Custumize_Sidebar .Choose_Color .Choose_Type_Color select,
+  .Dark_Mode .Custumize_Sidebar .Type_Of_Navigations .Choose_The_Type select,
   .Dark_Mode .Custumize_Sidebar .Settings_Container,
   .Dark_Mode .Custumize_Sidebar{
     background-color: $primary_color_dark;
   }
       
+  .Light_Mode .Custumize_Sidebar .Type_Of_Navigations .Choose_The_Type select,
+  .Light_Mode .Custumize_Sidebar .Choose_Color .Choose_Type_Color select,
   .Light_Mode .Custumize_Sidebar .Settings_Container,
   .Light_Mode .Custumize_Sidebar{
     background-color: $primary_color_light;
@@ -386,20 +390,5 @@
   .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text span {
     color: $gray_dark;
   }
-
-  .Dark_Mode .Custumize_Sidebar .Choose_Color .Choose_Type_Color select{
-    background-color: #0b1727;
-  }
-    
-  .Light_Mode .Custumize_Sidebar .Choose_Color .Choose_Type_Color select{
-    background-color: #edf2f9;
-  }
-
-  .Dark_Mode .Custumize_Sidebar .Type_Of_Navigations .Choose_The_Type select{
-    background-color: #0b1727;
-  }
-    
-  .Light_Mode .Custumize_Sidebar .Type_Of_Navigations .Choose_The_Type select{
-    background-color: #edf2f9;
-  }
+  
 // Colors
