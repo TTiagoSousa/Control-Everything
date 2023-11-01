@@ -8,10 +8,11 @@ import { ThemeState } from '../../../Contexts/Theme_Context';
 import { DataBaseState } from '../../../Contexts/DataBase_Context';
 import Choose_Color from './Components/Choose_Color';
 import Diviser from './Components/Diviser';
+import Toggle_Theme from './Components/Toggle_Theme';
 
 const Custumize_Sidebar = () => {
 
-  const { handleDarkMode, handleLightMode, handleAutoMode, mode, sidebar_Color_Change, handle_Sidebar_Color_Change, setSidebar_Color_Change } = ThemeState();
+  const { handleAutoMode, setSidebar_Color_Change } = ThemeState();
   const { customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar, typeOfNavifation, handleTypeofPositionChange, } = NavsState();
   const { authenticated } = DataBaseState();
 
@@ -79,25 +80,7 @@ const Custumize_Sidebar = () => {
 
         <div className='Settings_Container'>
 
-          {/* Chosse the theme */}
-            <div className='Toggle_Theme'>
-              <div className='Text'>
-                <h1>Color Scheme</h1>
-                <span>Choose the perfect color mode for your app.</span>
-              </div> 
-              <div className='Type_Of_Modes'>
-                <div className={`Dark ${mode === 'dark' ? 'GreenBoxShadow' : ''}`} onClick={handleDarkMode}> 
-                  <span>Dark Mode</span>
-                </div>
-                <div className={`Ligth ${mode === 'light' ? 'GreenBoxShadow' : ''}`} onClick={handleLightMode}>
-                  <span>Light Mode</span>
-                </div>
-                <div className={`Auto ${mode === 'auto' ? 'GreenBoxShadow' : ''}`} onClick={handleAutoMode}>
-                  <span>Auto Mode</span>
-                </div>
-              </div>
-            </div>
-          {/* Chosse the theme */}
+          <Toggle_Theme />
 
           {authenticated &&(
             <>
