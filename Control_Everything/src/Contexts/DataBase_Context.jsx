@@ -168,6 +168,12 @@ const DataBaseContext = ({ children }) => {
         Cookies.set('id', decoded.id);
       }
 
+      setAlert({
+        open: true,
+        message: "Login successful",
+        type: 'success'
+      });
+
       setTimeout(() => {
         navigate('/CE/Dashboard');
         window.location.reload();
