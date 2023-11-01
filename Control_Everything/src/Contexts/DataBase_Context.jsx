@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Utili from '../Imports/utilis';
 import { NavsState } from './Navs_Context';
@@ -21,6 +21,9 @@ const DataBaseContext = ({ children }) => {
   const [dateOfBirth, setDateOfBirth] = useState ('');
   const [country, setCountry] = useState ('');
   const [confirmPassword, setConfirmPassword ] = useState('');
+
+  const [authenticated, setAuthenticated] = useState(false);
+  const [userId, setUserID] = useState(null);
 
   const signup  = async (e) => {  
     e.preventDefault();
@@ -182,6 +185,32 @@ const DataBaseContext = ({ children }) => {
     }
   }
 
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      const token = Cookies.get('token');
+      const id = Cookies.get('id')
+
+      if (token) {
+        try {
+          const response = await axios.get(`${BASE_URL}/user/${id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+        
+        } catch (error) {
+          console.error(error);
+        }
+
+        setUserID(id)
+
+        setAuthenticated(true);
+      }
+    };
+
+    checkAuthentication();
+  }, []);
+
   return (
     <DataBase.Provider 
       value={{ 
@@ -193,7 +222,8 @@ const DataBaseContext = ({ children }) => {
         confirmPassword, setConfirmPassword,
         gender, setGender,
         signup,
-        login
+        login,
+        authenticated
       }}
     >
       {children}
