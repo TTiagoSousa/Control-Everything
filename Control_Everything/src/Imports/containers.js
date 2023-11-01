@@ -5,4 +5,5 @@
 
 // Navs
   export { default as Custumize_Sidebar } from '../Containers/Navs/Custumize_Sidebar/Custumize_Sidebar';
+  export { default as Sidebar_Home } from '../Containers/Navs/Home_Navigation/Sidebar_Home/Sidebar_Home';
 // Navs

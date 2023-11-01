@@ -11,6 +11,11 @@ const NavsContext = ({ children }) => {
     const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
   // Customize Sidebar
 
+  // Open SideBarHome
+  const [ sidebar_Home, setSidebar_Home ] = useState(false);
+  const showSidebar_Home = () => setSidebar_Home(!sidebar_Home);
+// Open SideBarHome
+
   // Alert  
     const [ alert, setAlert ] = useState({
       open: false, // Alert Close
@@ -23,6 +28,7 @@ const NavsContext = ({ children }) => {
     <Navs.Provider 
       value={{ 
         customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
+        sidebar_Home, setSidebar_Home, showSidebar_Home,
         alert, setAlert,
       }}
     >

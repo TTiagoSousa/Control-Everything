@@ -6,8 +6,11 @@ import * as Component from '../../../Imports/components';
 import * as Container from '../../../Imports/containers';
 import * as Color from '../../../Styles/Colors';
 import { Sling as Hamburger } from 'hamburger-react';
+import { NavsState } from '../../../Contexts/Navs_Context';
 
 const Header_Home = () => {
+
+  const { sidebar_Home, setSidebar_Home, showSidebar_Home } = NavsState()
 
   return (
     <>
@@ -15,6 +18,8 @@ const Header_Home = () => {
         <div className="Left_Side">
           <div className="Menu">
             <Hamburger  
+              toggled={sidebar_Home}
+              toggle={setSidebar_Home}
               size={20}
               color={Color.blue}
             />

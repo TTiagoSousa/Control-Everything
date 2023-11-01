@@ -8,6 +8,7 @@ const CE = () => {
     <>
 
       <Container.Header_Home />
+      <Container.Sidebar_Home />
 
       <div className='CE'></div>
 
