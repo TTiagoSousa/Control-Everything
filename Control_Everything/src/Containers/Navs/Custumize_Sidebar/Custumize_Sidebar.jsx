@@ -7,6 +7,7 @@ import { NavsState } from '../../../Contexts/Navs_Context';
 import { ThemeState } from '../../../Contexts/Theme_Context';
 import { DataBaseState } from '../../../Contexts/DataBase_Context';
 import Choose_Color from './Components/Choose_Color';
+import Diviser from './Components/Diviser';
 
 const Custumize_Sidebar = () => {
 
@@ -100,12 +101,9 @@ const Custumize_Sidebar = () => {
 
           {authenticated &&(
             <>
-
-              <div className='Diviser'></div>
-
-                <Choose_Color />
-
-              <div className='Diviser'></div>
+              <Diviser />
+              <Choose_Color />
+              <Diviser />
 
               {/* Chosse the type of Navigation */}
               <div className='Type_Of_Navigations'>
