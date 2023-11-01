@@ -9,6 +9,7 @@ import { DataBaseState } from '../../../Contexts/DataBase_Context';
 import Choose_Color from './Components/Choose_Color';
 import Diviser from './Components/Diviser';
 import Toggle_Theme from './Components/Toggle_Theme';
+import Type_Of_Navigations from './Components/Type_Of_Navigations';
 
 const Custumize_Sidebar = () => {
 
@@ -21,17 +22,6 @@ const Custumize_Sidebar = () => {
     handleAutoMode(); 
     setSidebar_Color_Change('Dark');
   };
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <>
@@ -79,38 +69,15 @@ const Custumize_Sidebar = () => {
         </header>
 
         <div className='Settings_Container'>
-
           <Toggle_Theme />
-
           {authenticated &&(
             <>
               <Diviser />
               <Choose_Color />
               <Diviser />
-
-              {/* Chosse the type of Navigation */}
-              <div className='Type_Of_Navigations'>
-                  <div className='Text'> 
-                    <h1>Navigation Position</h1>
-                    <span>Select a suitable navigation system for your web application</span>
-                  </div>
-                  <div className='Choose_The_Type'>
-                    <select 
-                      name="Navigation Position" 
-                      value={screenWidth < 1000 ? "Mobile_Menu" : typeOfNavifation} 
-                      onChange={handleTypeofPositionChange} 
-                      disabled={screenWidth < 1000}
-                    >
-                      <option value="Sidebar_Home">SideBar</option>
-                      <option value="Top_Nav_Navigation">Top Navigation</option>
-                      <option value="Mobile_Menu">Mobile Menu</option>
-                    </select>
-                  </div>
-                </div>  
-              {/* Chosse the type of Navigation */} 
+              <Type_Of_Navigations />
             </>
           )}
-
         </div>
       </nav>
     </>
