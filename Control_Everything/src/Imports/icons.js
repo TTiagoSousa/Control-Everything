@@ -31,3 +31,7 @@ export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
   export { default as Sun_N1 } from '../Assets/Icons/Sun/Sun_N1';
 // Sun
 
+// Triangle
+  export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle'
+// Triangle
+
