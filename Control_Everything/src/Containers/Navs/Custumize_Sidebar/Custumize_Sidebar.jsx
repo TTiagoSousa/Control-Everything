@@ -14,6 +14,9 @@ const Custumize_Sidebar = () => {
   const { customize_Sidebar, setCustomize_Sidebar } = NavsState();
   const { authenticated } = DataBaseState();
 
+  const currentLocation = window.location.pathname;
+  const isHomePage = currentLocation === "/CE" || currentLocation.startsWith("/CE/");
+
   return (
     <>
       <Component.Dark_Div 
@@ -27,7 +30,7 @@ const Custumize_Sidebar = () => {
 
         <div className='Settings_Container'>
           <Toggle_Theme />
-          {authenticated &&(
+          {authenticated && isHomePage &&(
             <>
               <Diviser />
               <Choose_Color />
