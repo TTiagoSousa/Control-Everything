@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header_Home.scss';
@@ -7,6 +6,7 @@ import * as Container from '../../../Imports/containers';
 import * as Color from '../../../Styles/Colors';
 import { Sling as Hamburger } from 'hamburger-react';
 import { NavsState } from '../../../Contexts/Navs_Context';
+import { DataBaseState } from '../../../Contexts/DataBase_Context';
 
 const Header_Home = () => {
 
@@ -17,7 +17,7 @@ const Header_Home = () => {
       <header className='Header_Home'>
         <div className="Left_Side">
           <div className="Menu">
-          {
+            {
               typeOfNavifation === 'Sidebar_Home' ? (
                 <Hamburger 
                   toggled={sidebar_Home}

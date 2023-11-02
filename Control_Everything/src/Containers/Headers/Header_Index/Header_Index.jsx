@@ -1,16 +1,14 @@
-// React and Scss
-  import React from 'react';
-  import './Header_Index.scss';
-  import { Link } from 'react-router-dom';
-// React and Scss
-
-// Internal Imports
-  import * as Component from '../../../Imports/components';
-// Internal Imports
+import React from 'react';
+import './Header_Index.scss';
+import { Link } from 'react-router-dom';
+import * as Component from '../../../Imports/components';
+import { DataBaseState } from '../../../Contexts/DataBase_Context';
 
 const Header_Index = () => {
-  return (
 
+  const { authenticated } = DataBaseState();
+
+  return (
     <header className='Header_Index'>
       <div className="Left_Side">
         <div className="Title">
@@ -18,9 +16,12 @@ const Header_Index = () => {
         </div>
       </div>
       <div className="Right_Side">
-        <Link to="Auth">
-          <span>Login or Register</span>
-        </Link>
+        { authenticated ? (
+            <Link to="CE/Dashboard"><span>Back to Dashboard</span></Link>
+          ) : (
+            <Link to="Auth"><span>Login or Register</span></Link>
+          )
+        }
         <div className='Theme_Button'>
           <Component.Change_Theme />
         </div>
