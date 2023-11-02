@@ -10,20 +10,22 @@ const Choose_Color = () => {
 
   const [open, setOpen] = useState(false);
 
-  let menuRef = useRef();
+  let menuRefe = useRef();
 
   useEffect(() => {
-    let handler = (e)=>{
-      if(!menuRef.current.contains(e.target)){
-        setOpen(false);
-      }      
+    let handler = (e) => {
+      if (!menuRefe.current.contains(e.target)) {
+        setTimeout(() => {
+          setOpen(false);
+        }, 500); 
+      }
     };
 
     document.addEventListener("mousedown", handler);
-    
-    return() =>{
+
+    return () => {
       document.removeEventListener("mousedown", handler);
-    }
+    };
   });
 
   const handleColorSelection = (color) => {
@@ -34,7 +36,7 @@ const Choose_Color = () => {
   const iconClassName = `Arrow ${open ? 'active' : ''}`;
 
   return (
-    <div className="Choose_Color" ref={menuRef}>
+    <div className="Choose_Color" ref={menuRefe}>
       <div className="Text" >
         <h1>Choose a color to Sidebar</h1>
         <span>What's your color?</span>

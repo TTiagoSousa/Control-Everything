@@ -8,25 +8,27 @@ const Type_Of_Navigations = () => {
 
   const { handleTypeofPositionChange, typeOfNavifation } = NavsState();
 
-  const [open1, setOpen1] = useState(false);
+  const [open, setOpen] = useState(false);
 
   let menuRefe = useRef();
 
   useEffect(() => {
-    let handler = (e)=>{
-      if(!menuRefe.current.contains(e.target)){
-        setOpen1(false);
-      }      
+    let handler = (e) => {
+      if (!menuRefe.current.contains(e.target)) {
+        setTimeout(() => {
+          setOpen(false);
+        }, 1000); // Atraso de 1 segundo
+      }
     };
 
     document.addEventListener("mousedown", handler);
-    
-    return() =>{
+
+    return () => {
       document.removeEventListener("mousedown", handler);
-    }
+    };
   });
 
-  const iconClassName = `Arrow ${open1 ? 'active' : ''}`;
+  const iconClassName = `Arrow ${open ? 'active' : ''}`;
 
   return (
     <div className='Type_Of_Navigations' ref={menuRefe}>
@@ -34,7 +36,7 @@ const Type_Of_Navigations = () => {
         <h1>Navigation Position</h1>
         <span>Select a suitable navigation system for your web application</span>
       </div>
-      <div className='Choose_The_Type' onClick={()=>{setOpen1(!open1)}}>
+      <div className='Choose_The_Type' onClick={()=>{setOpen(!open)}}>
         <div>
           <span>Select Value:</span>
           <span>{typeOfNavifation}</span>
@@ -45,7 +47,7 @@ const Type_Of_Navigations = () => {
           </div>
         </div>
       </div>
-      <div className={`Navigation_Options ${open1? 'active' : 'inactive'}`}>
+      <div className={`Navigation_Options ${open? 'active' : 'inactive'}`}>
         <div><span>Sidebar</span></div>
         <div><span>Mobile Menu</span></div>
       </div>
