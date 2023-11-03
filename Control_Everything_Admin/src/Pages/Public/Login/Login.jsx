@@ -13,19 +13,7 @@ const Login = () => {
 
   return (
     <>
-      <input 
-        type="email" 
-        placeholder='Email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input 
-        type="password" 
-        placeholder='Password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={login}>Login</button>
+
     </>
   )
 };
