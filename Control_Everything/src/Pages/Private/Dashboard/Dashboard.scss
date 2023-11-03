@@ -1,0 +1,6 @@
+@import '../../../Styles/Global.scss';
+
+.Dashboard{
+  @include Pages_Configs;
+  height: 95vh;
+}
