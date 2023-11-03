@@ -44,10 +44,16 @@ const DataBaseContext = ({ children }) => {
 
       const { token, id } = response.data;
       if (token) {
+        const decoded = jwt_decode.jwtDecode(token);
+  
+        if (decoded.role !== "ADMIN") {
+          console.log("Only ADMIN users are allowed to log in.");
+          return;
+        }
+  
         sessionStorage.setItem('token', token);
-        var decoded = jwt_decode.jwtDecode(token);
-        Cookies.set('token', token);
-        Cookies.set('id', decoded.id);
+        Cookies.set('Control_Everyting_Admin', token);
+        Cookies.set('Control_Everyting_Admin_ID', decoded.id);
       }
 
       console.log("Entrou")
@@ -71,8 +77,8 @@ const DataBaseContext = ({ children }) => {
 
   useEffect(() => {
     const checkAuthentication = async () => {
-      const token = Cookies.get('token');
-      const id = Cookies.get('id')
+      const token = Cookies.get('Control_Everyting_Admin');
+      const id = Cookies.get('Control_Everyting_Admin_ID')
 
       if (token) {
         try {

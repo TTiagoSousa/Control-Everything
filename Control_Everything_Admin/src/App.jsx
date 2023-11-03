@@ -1,5 +1,4 @@
 import React from 'react';
-import './Styles/Global.scss'
 import { Route, Routes, useLocation } from 'react-router-dom';
 import * as Public_Page from './Imports/public.pages';
 import * as Private_Page from './Imports/private.pages';

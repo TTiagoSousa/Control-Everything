@@ -9,8 +9,6 @@ const Authentication_Check = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true); 
   const navigate = useNavigate();
 
-  console.log("Entrada", authenticated)
-
   useEffect(() => {
     const delay = setTimeout(() => {
       setIsLoading(false);

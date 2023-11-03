@@ -164,8 +164,8 @@ const DataBaseContext = ({ children }) => {
       if (token) {
         sessionStorage.setItem('token', token);
         var decoded = jwt_decode.jwtDecode(token);
-        Cookies.set('token', token);
-        Cookies.set('id', decoded.id);
+        Cookies.set('Control_Everthing', token);
+        Cookies.set('Control_Everthing_ID', decoded.id);
       }
 
       setAlert({
@@ -193,8 +193,8 @@ const DataBaseContext = ({ children }) => {
 
   useEffect(() => {
     const checkAuthentication = async () => {
-      const token = Cookies.get('token');
-      const id = Cookies.get('id');
+      const token = Cookies.get('Control_Everthing');
+      const id = Cookies.get('Control_Everthing_ID');
   
       if (token) {
         try {
@@ -212,8 +212,8 @@ const DataBaseContext = ({ children }) => {
   
           if (error.response && error.response.status === 401) {
 
-            Cookies.remove('token');
-            Cookies.remove('id');
+            Cookies.remove('Control_Everthing');
+            Cookies.remove('Control_Everthing_ID');
             setAuthenticated(false);
             navigate('/Auth');
           }
