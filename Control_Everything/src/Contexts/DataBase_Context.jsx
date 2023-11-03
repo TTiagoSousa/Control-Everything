@@ -194,8 +194,8 @@ const DataBaseContext = ({ children }) => {
   useEffect(() => {
     const checkAuthentication = async () => {
       const token = Cookies.get('token');
-      const id = Cookies.get('id')
-
+      const id = Cookies.get('id');
+  
       if (token) {
         try {
           const response = await axios.get(`${BASE_URL}/user/${id}`, {
@@ -203,17 +203,24 @@ const DataBaseContext = ({ children }) => {
               Authorization: `Bearer ${token}`,
             },
           });
-        
+
+  
+          setUserID(id);
+          setAuthenticated(true);
         } catch (error) {
           console.error(error);
+  
+          if (error.response && error.response.status === 401) {
+
+            Cookies.remove('token');
+            Cookies.remove('id');
+            setAuthenticated(false);
+            navigate('/Auth');
+          }
         }
-
-        setUserID(id)
-
-        setAuthenticated(true);
       }
     };
-
+  
     checkAuthentication();
   }, []);
 
