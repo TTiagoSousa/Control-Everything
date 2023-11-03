@@ -10,10 +10,18 @@
   export { default as Simple_Check } from '../Assets/Icons/Check/Simple_Check';
 // Check
 
+// Dashboard
+  export { default as Dashboard_Cubes } from '../Assets/Icons/Dashboard/Dashboard_Cubes';
+// Dashboard
+
 // Eyes
-export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
-export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
+  export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
+  export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
 // Eyes
+
+// GLobal
+  export { default as GLobal_SVG } from '../Assets/Icons/GLobal_SVG';
+// Global
 
 // Moon
   export { default as Moon_N1 } from '../Assets/Icons/Moon/Moon_N1';
