@@ -10,24 +10,6 @@ const Choose_Color = () => {
 
   const [open, setOpen] = useState(false);
 
-  let menuRefe = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRefe.current.contains(e.target)) {
-        setTimeout(() => {
-          setOpen(false);
-        }, 500); 
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
-
   const handleColorSelection = (color) => {
     setSidebar_Color_Change(color);
     handle_Sidebar_Color_Change({ target: { value: color } });
@@ -35,8 +17,25 @@ const Choose_Color = () => {
 
   const iconClassName = `Arrow ${open ? 'active' : ''}`;
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Check if the click is outside the Choose_Color component
+      if (open && !event.target.closest('.Choose_Color')) {
+        setOpen(false);
+      }
+    };
+
+    // Add click event listener to the document
+    document.addEventListener('click', handleClickOutside);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [open]);
+
   return (
-    <div className="Choose_Color" ref={menuRefe}>
+    <div className="Choose_Color">
       <div className="Text" >
         <h1>Choose a color to Sidebar</h1>
         <span>What's your color?</span>
