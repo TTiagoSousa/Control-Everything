@@ -8,7 +8,7 @@ import Authentication_Check from './Authentication/Authentication_Check';
 function App() {
 
   return (
-    <>
+    <main>
       <Routes>
         <Route index element={ <Public_Page.Index /> } />
         <Route path='Login' element={ <Public_Page.Login /> } />
@@ -21,7 +21,7 @@ function App() {
             } 
           />
       </Routes>
-    </>
+    </main>
   )
 }
 

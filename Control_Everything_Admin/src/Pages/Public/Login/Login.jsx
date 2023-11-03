@@ -14,7 +14,28 @@ const Login = () => {
     <>
       <div className='Login'>
         <form>
-
+          <div className="Input_Field">
+            <Component.Global_Input 
+              Text="Email"
+              Type="email"
+              Value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="Input_Field">
+            <Component.Global_Input 
+              Text="Password"
+              Type="password"
+              Value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="Input_Field">
+            <Component.Global_Button 
+              Text="Login"
+              onClick={login}
+            />
+          </div>  
         </form>
       </div>
     </>
