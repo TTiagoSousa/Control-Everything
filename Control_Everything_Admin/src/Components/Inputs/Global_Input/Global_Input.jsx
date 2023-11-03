@@ -1,12 +1,7 @@
-// React More CSS
-  import React, { useState } from 'react';
-  import './Global_Input.scss';
-// React More CSS
-
-// Internal Components
-  import * as Icon from '../../../Imports/icons';
-  import * as Color from '../../../Styles/Colors';
-// Internal Components
+import React, { useState } from 'react';
+import './Global_Input.scss';
+import * as Icon from '../../../Imports/icons';
+import * as Color from '../../../Styles/Colors';
 
 const Global_Input = ({ Type, Placeholder, Value, onChange, max, ref, Text }) => {
 
