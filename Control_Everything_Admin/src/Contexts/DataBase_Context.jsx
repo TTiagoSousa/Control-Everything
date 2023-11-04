@@ -4,12 +4,15 @@ import { BASE_URL } from '../../../Control_Everything/src/config/urls';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import * as jwt_decode from "jwt-decode";
+import { NavsState } from './Navs_Context';
 
 const DataBase = createContext({});
 
 const DataBaseContext = ({ children }) => {
 
   const navigate = useNavigate();
+
+  const { setAlert } = NavsState()
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,17 +28,17 @@ const DataBaseContext = ({ children }) => {
   const login = async (e) => {
     e.preventDefault();
 
-    console.log("Entrou no login")
-
     if (!email || !password ) {
-      console.log("All fields must be filled")
+      setAlert({
+        open: true,
+        message: "All fields must be filled",
+        type: 'error'
+      });
 
       return
     }
     
     try {
-
-      console.log("Entrou no try")
 
       const response = await axios.post(`${BASE_URL}/auth/signin`, {
         email: email,
@@ -47,7 +50,12 @@ const DataBaseContext = ({ children }) => {
         const decoded = jwt_decode.jwtDecode(token);
   
         if (decoded.role !== "ADMIN") {
-          console.log("Only ADMIN users are allowed to log in.");
+          setAlert({
+            open: true,
+            message: "Only ADMIN users are allowed to login.",
+            type: 'error'
+          });
+
           return;
         }
   
@@ -56,21 +64,27 @@ const DataBaseContext = ({ children }) => {
         Cookies.set('Control_Everyting_Admin_ID', decoded.id);
       }
 
-      console.log("Entrou")
+      setAlert({
+        open: true,
+        message: "Login successful",
+        type: 'success'
+      });
 
       setTimeout(() => {
         navigate('/CE_Work_Space');
         window.location.reload();
       }, 3000);
 
-      setAuthenticated(true); // Atualiza o estado de autenticação
+      setAuthenticated(true);
 
     } catch (error) {
-      console.log("Deu erro")
-      console.log(error);
       if (error.response && error.response.status === 400) {
         const errorMessage = error.response.data.message;
-        console.log(errorMessage)
+        setAlert({
+          open: true,
+          message: errorMessage,
+          type: 'success'
+        });
       }
     }
   }
@@ -87,8 +101,6 @@ const DataBaseContext = ({ children }) => {
               Authorization: `Bearer ${token}`,
             },
           });
-
-          console.log(response)
         
         } catch (error) {
           console.error(error);
