@@ -14,6 +14,9 @@ const Login = () => {
   return (
     <>
       <div className='Login'>
+        <div className='Alert'>
+          <Component.Mui_Alert />
+        </div>
         <form>
           <div className="Input_Field">
             <Component.Global_Input 
