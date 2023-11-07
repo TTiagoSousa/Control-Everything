@@ -57,7 +57,7 @@ const Recover_Password_Form = ({ Children }) => {
         if (errorMessage === 'Email is not valid'){
           setAlert({
             open: true,
-            message: "Email is not valid",
+            message: errorMessage,
             type: 'error'
           });
         }

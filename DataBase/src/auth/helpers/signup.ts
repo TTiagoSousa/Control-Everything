@@ -28,11 +28,6 @@ export async function Signup (
 
   const activationToken = jwt.sign({ email }, { expiresIn: '1d' });
 
-  await sendActivationEmail(email, activationToken, fullName, emailService);
-
-
-  console.log(activationToken)
-
   const foundUser = await usersRepository.findByEmail(email);
   if (foundUser) {
     throw new Signup_Error.Email_Already_Exists();
@@ -42,9 +37,9 @@ export async function Signup (
     throw new Signup_Error.Email_is_Not_Valid();
   }
 
-  if (isDisposableEmail(email)) {
-    throw new Signup_Error.Disposable_Emails();
-  }
+  // if (isDisposableEmail(email)) {
+  //   throw new Signup_Error.Disposable_Emails();
+  // }
 
   if (password !== confirmPassword) {
     throw new Signup_Error.Passwords_Do_Not_Match();
@@ -77,6 +72,8 @@ export async function Signup (
   if (!requestedCountry) {
     throw new Signup_Error.Invalid_Country();
   }
+
+  await sendActivationEmail(email, activationToken, fullName, emailService);
 
   const user = usersRepository.create({
     email: email,

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Recover_Password.scss';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import * as Component from '../../../Imports/Components';
+import * as Component from '../../../Imports/components';
 import * as Image from '../../../Imports/images';
 import axios from 'axios';
 import { BASE_URL } from '../../../config/urls';
@@ -43,14 +43,6 @@ const Recover_Password = () => {
         });
         
         return;
-      }
-
-      if (password !== confirmPassword) {
-        setAlert({
-          open: true,
-          message: "Password changed successfully",
-          type: 'error'
-        });
       }
 
       await axios.post(`${BASE_URL}/auth/reset-password/${decodedToken}`, {

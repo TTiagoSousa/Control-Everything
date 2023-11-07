@@ -54,7 +54,7 @@ const DataBaseContext = ({ children }) => {
         message: "You must be at least 16 years old to create an account.",
         type: 'error'
       });
-  
+      
       return;
     }
 
@@ -115,6 +115,7 @@ const DataBaseContext = ({ children }) => {
         message: "Email to activate account sent",
         type: 'success'
       });
+      
     }catch (error) {
       console.log('Entrou nos erros')
       if (error.response && error.response.status === 400) {

@@ -9,6 +9,7 @@ export async function sendResetPasswordEmail(
   emailService: EmailService,
   jwt: JwtService,
 ) {
+  
     if (!isValidEmail(email)) {
       throw new Send_Reset_Password_Email_Error.Email_is_Not_Valid;
     }
