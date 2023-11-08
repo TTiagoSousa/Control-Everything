@@ -237,7 +237,8 @@ const DataBaseContext = ({ children }) => {
         gender, setGender,
         signup,
         login,
-        authenticated
+        authenticated,
+        userId,
       }}
     >
       {children}
