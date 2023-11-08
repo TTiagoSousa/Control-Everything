@@ -23,10 +23,25 @@ model User {
   dateOfBirth       String
   gender            String?             @default("unknown")
   role              Role                @default(USER)
+  SavingTransitions SavingTransitions[] @relation("CreatedBy")
 }
 
 model Country {
   id                   Int       @id @default(autoincrement())
   countryName         String     @unique   
   CoutryFlag          String
+}
+
+model SavingTransitions {
+  id             String @id @default(uuid())
+  transitionID   String
+  transitiontype String
+  data           String
+  hour           String
+  platform       String
+  amount         Int
+  currencyType   String
+  createdById    String
+  isActive       Boolean
+  createdBy      User   @relation("CreatedBy", fields: [createdById], references: [id])
 }
