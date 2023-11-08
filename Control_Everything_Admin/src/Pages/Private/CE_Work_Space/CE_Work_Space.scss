@@ -1,0 +1,12 @@
+@import '../../../Styles/Global.scss';
+
+.CE_Work_Space{
+  @include Pages_Configs;
+  height: 100vh;
+
+  div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
