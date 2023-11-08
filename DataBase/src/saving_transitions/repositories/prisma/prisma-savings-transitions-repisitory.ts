@@ -25,4 +25,13 @@ export class PrismaSavingsTransitionsRepository implements SavingsTransitionRepo
     }
   }
 
+  async getTotalTransitionsByUserId(userId: string): Promise<number> {
+    const totalCount = await prisma.savingTransitions.count({
+      where: {
+        createdById: userId,
+      },
+    });
+
+    return totalCount;
+  }
 }

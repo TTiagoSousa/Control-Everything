@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { createSavingTransition_dto } from './dto/create.savings.transition.dto';
 import { CreateSavingTransition } from './helpers/create.saving.transition';
+import { getTotalTransitionsByUserId } from './helpers/get.total.transitions.by.user';
 
 @Injectable()
 export class SavingTransitionsService {
@@ -10,4 +11,8 @@ export class SavingTransitionsService {
     return result;
   }
 
+  async getTotalTransitionsByUserId(userId: string) {
+    const result = await getTotalTransitionsByUserId(userId);
+    return result;
+  }
 }
