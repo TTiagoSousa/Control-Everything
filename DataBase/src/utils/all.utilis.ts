@@ -7,6 +7,10 @@
   export { isDisposableEmail } from './email/disposable.emails'
 // Email
 
+// Numbers
+  export { containsOnlyNumber } from './numbers/contains.only.numbers';
+// Numbers
+
 // Password
   export { comparePasswords } from './password/compare.passwords'
   export { hashPassword } from './password/hashPassword';

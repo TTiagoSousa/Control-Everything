@@ -1,6 +1,7 @@
 import { BadGatewayException } from "@nestjs/common";
 import { createSavingTransition_dto } from "../dto/create.savings.transition.dto";
 import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prisma-savings-transitions-repisitory";
+import { containsOnlyNumber } from "src/utils/all.utilis";
 
 export async function CreateSavingTransition (
   dto: createSavingTransition_dto,
@@ -18,9 +19,9 @@ export async function CreateSavingTransition (
   let transitionAmount = amount;
 
   if (transitiontype === 'Deposit') {
-    transitionAmount = Math.abs(amount); // Torna o valor positivo
+    transitionAmount = Math.abs(amount);
   } else if (transitiontype === 'Withdraw') {
-    transitionAmount = -amount; // Torna o valor negativo
+    transitionAmount = -amount;
   }
 
   if (
@@ -29,6 +30,10 @@ export async function CreateSavingTransition (
     transitiontype !== 'Transfer'
   ) {
     throw new BadGatewayException('Invalid transition type');
+  }
+
+  if(!containsOnlyNumber(amount.toString())) {
+    throw new BadGatewayException('Invalid transition amount');
   }
 
   const savingTransition = await SavingsTransitionRepository.create({
@@ -42,5 +47,6 @@ export async function CreateSavingTransition (
     createdById: userId,
     isActive: true,   
   })
+  
   return { message: 'Transição criada com sucesso', savingTransition };
 }
