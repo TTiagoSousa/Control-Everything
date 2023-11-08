@@ -5,7 +5,6 @@ import { getCountriesFromDatabaseOrJson } from "src/countries/helpers/get.countr
 import * as Signup_Error from '../../user/errors/Signup.function.errors';
 import { JwtService } from '@nestjs/jwt';
 import { EmailService } from 'src/email/email.service';
-
 import { 
   hashPassword, 
   isValidEmail, 

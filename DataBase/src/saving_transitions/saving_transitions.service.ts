@@ -1,4 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { createSavingTransition_dto } from './dto/create.savings.transition.dto';
+import { CreateSavingTransition } from './helpers/create.saving.transition';
 
 @Injectable()
-export class SavingTransitionsService {}
+export class SavingTransitionsService {
+
+  async CreateSavingTransition(dto: createSavingTransition_dto, userId: string) {
+    const result = await CreateSavingTransition(dto, userId);
+    return result;
+  }
+
+}
