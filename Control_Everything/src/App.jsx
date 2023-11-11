@@ -7,7 +7,6 @@ import * as Intermediate_Pages from './Imports/intermediate.pages';
 import * as Private_Page from './Imports/private.pages';
 import Authentication_Check from './Authentication/Authentication_Check';
 
-
 function App() {
 
   const location = useLocation();
