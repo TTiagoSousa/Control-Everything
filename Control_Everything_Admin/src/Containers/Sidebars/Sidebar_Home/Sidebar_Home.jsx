@@ -16,6 +16,11 @@ const Sidebar_Home = () => {
       color: Color.blue
     };
 
+    const TextStyle = {
+      color: 
+         Color.gray 
+    };
+
   const handleClick = (item) => {
     setActiveItem(activeItem === item ? null : item);
   };
@@ -51,6 +56,7 @@ const Sidebar_Home = () => {
               <NavLink
                 className="Hyper_Link"
                 onClick={() => handleClick(item.title)}
+                style={location.pathname === item.link ? activeNavLinkStyle : TextStyle}
                 to={item.link}
                 key={index}
               >
