@@ -3,9 +3,9 @@ import * as SVG from '../../../Imports/icons';
 export const Navigation_Map = [
 
   {
-    title: 'Dashboard',
+    title: 'Home',
     icon: <SVG.Dashboard_Cubes />,
-    link: '/CE/Dashboard',
+    link: '/CE_Work_Space/Home',
   },
 
   // {

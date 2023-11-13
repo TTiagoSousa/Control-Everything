@@ -2,18 +2,18 @@ import React from 'react';
 import './CE_Work_Space.scss';
 import { Link } from 'react-router-dom';
 import * as Container from '../../../Imports/containers';
+import Private_Routes from '../../../Routes/Private_Routes';
 
 const CE_Work_Space = () => {
   return (
 
     <>
-      <div className='CE_Section'>
-
-        <Container.Sidebar_Home />
+      <Container.Sidebar_Home />
         
-
-        <div className='CE_Work_Space'></div>
-
+      <div className='CE_Section'>
+        <div className='Container'>
+          <Private_Routes />
+        </div>
       </div>
     </>
 
