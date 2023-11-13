@@ -2,6 +2,7 @@ import { BadGatewayException } from "@nestjs/common";
 import { createSavingTransition_dto } from "../dto/create.savings.transition.dto";
 import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prisma-savings-transitions-repisitory";
 import { containsOnlyNumber } from "src/utils/all.utilis";
+import { containsOnlyLettersAndNumbers } from "src/utils/Text/contains.only.letters.and.numbers";
 
 export async function CreateSavingTransition (
   dto: createSavingTransition_dto,
@@ -34,6 +35,10 @@ export async function CreateSavingTransition (
 
   if(!containsOnlyNumber(amount.toString())) {
     throw new BadGatewayException('Invalid transition amount');
+  }
+
+  if(!containsOnlyLettersAndNumbers(platform)) {
+    throw new BadGatewayException('Platform name must contain only letters and numbers');
   }
 
   const savingTransition = await SavingsTransitionRepository.create({
