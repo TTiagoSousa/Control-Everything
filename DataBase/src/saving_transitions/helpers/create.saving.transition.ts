@@ -4,6 +4,7 @@ import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prism
 import { containsOnlyNumber } from "src/utils/all.utilis";
 import { containsOnlyLettersAndNumbers } from "src/utils/Text/contains.only.letters.and.numbers";
 import { isValidHour } from "src/utils/hour/is.valid.hour";
+import * as CreateSavingTransition_Error from '../errors/create.savings.transition.errors';
 
 export async function CreateSavingTransition (
   dto: createSavingTransition_dto,
@@ -31,19 +32,19 @@ export async function CreateSavingTransition (
     transitiontype !== 'Withdraw' &&
     transitiontype !== 'Transfer'
   ) {
-    throw new BadGatewayException('Invalid transition type');
+    throw new CreateSavingTransition_Error.InvalitTypeTransition;
   }
 
   if(!isValidHour(hour)) {
-    throw new BadGatewayException('Invalid transition hour');
+    throw new CreateSavingTransition_Error.InvalidHour;
   }
 
   if(!containsOnlyNumber(amount.toString())) {
-    throw new BadGatewayException('Invalid transition amount');
+    throw new CreateSavingTransition_Error.InvalidTransitionAmount;
   }
 
   if(!containsOnlyLettersAndNumbers(platform)) {
-    throw new BadGatewayException('Platform name must contain only letters and numbers');
+    throw new CreateSavingTransition_Error.InvalidPlatform;
   }
 
   const savingTransition = await SavingsTransitionRepository.create({
