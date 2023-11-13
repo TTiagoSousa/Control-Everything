@@ -46,7 +46,7 @@ const ThemeContext = ({ children }) => {
   // Change Sidebar Color
     const [sidebar_Color_Change, setSidebar_Color_Change] = useState(() => {
       const storedColor = localStorage.getItem('sidebar_Color_Change');
-      return storedColor ? storedColor : 'dark';
+      return storedColor ? storedColor : 'Dark';
     });
 
     const handle_Sidebar_Color_Change = (e) => {
