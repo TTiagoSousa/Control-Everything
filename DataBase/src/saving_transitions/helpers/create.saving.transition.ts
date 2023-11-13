@@ -3,6 +3,7 @@ import { createSavingTransition_dto } from "../dto/create.savings.transition.dto
 import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prisma-savings-transitions-repisitory";
 import { containsOnlyNumber } from "src/utils/all.utilis";
 import { containsOnlyLettersAndNumbers } from "src/utils/Text/contains.only.letters.and.numbers";
+import { isValidHour } from "src/utils/hour/is.valid.hour";
 
 export async function CreateSavingTransition (
   dto: createSavingTransition_dto,
@@ -31,6 +32,10 @@ export async function CreateSavingTransition (
     transitiontype !== 'Transfer'
   ) {
     throw new BadGatewayException('Invalid transition type');
+  }
+
+  if(!isValidHour(hour)) {
+    throw new BadGatewayException('Invalid transition hour');
   }
 
   if(!containsOnlyNumber(amount.toString())) {
