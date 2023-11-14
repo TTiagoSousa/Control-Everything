@@ -1,0 +1,51 @@
+@import '../../../../Styles/Global.scss';
+
+.Apis_Dashboard{
+  width: 100%;
+  height: 100vh;
+
+  .Section_N1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .Api{
+      width: 100%;
+      border-radius: $border_radius;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: $box_shadow;
+      padding: 5px 0px 5px 0px;
+
+      .Title{
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+
+        span{
+          font-family: $font_family_poppins;
+          color: $blue;
+          font-size: 15px;
+        }
+      }
+
+      &.Country{
+
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Apis_Dashboard .Api.Country{
+    background-color: $secundery_color_dark;
+  }
+
+  .Ligth_Mode .Apis_Dashboard .Api.Country{
+    background-color: $secundery_color_light;
+  }
+// Colors

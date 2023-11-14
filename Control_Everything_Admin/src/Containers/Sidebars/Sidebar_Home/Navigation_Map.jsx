@@ -10,7 +10,7 @@ export const Navigation_Map = [
 
   {
     title: 'Apis',
-    icon: <SVG.Dashboard_Cubes />,
+    icon: <SVG.Api_Icon />,
     link: '/CE_Work_Space/Apis_Dashboard',
   },
 
