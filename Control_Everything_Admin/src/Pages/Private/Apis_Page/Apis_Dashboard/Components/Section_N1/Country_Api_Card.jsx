@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../../Apis_Dashboard.scss';
 import useFetchCountryFromDataBase from '../../../../../../Hooks/Coutries/useFetchCoutryFromDataBase';
 import useFetchCoutryFromApi from '../../../../../../Hooks/Coutries/useFetchCoutryFromApi';
@@ -7,6 +8,8 @@ const Country_Api_Card = () => {
 
   const {countriesDataBase, totalCountriesDataBase} = useFetchCountryFromDataBase();
   const {countriesApi, totalCountriesApi} = useFetchCoutryFromApi();
+
+  console.log(totalCountriesApi);
 
   const renderCountryDataBase = () => {
     if (totalCountriesDataBase === 0) {
@@ -32,6 +35,7 @@ const Country_Api_Card = () => {
         <div>
           {renderCountryDataBase()}
           {ApiUpdate()}
+          <Link to="Country_Api_Dashboard">Api Dashboard</Link>
         </div>
     </div>
   )

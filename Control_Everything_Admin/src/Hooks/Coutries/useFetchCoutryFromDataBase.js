@@ -5,7 +5,7 @@ import axios from 'axios';
 const useFetchCountryFromDataBase = () => {
 
   const [countriesDataBase, setCountriesDataBase] = useState([]);
-  const [totalCountriesDataBase, setTotalCountriesDataBase] = useState(0);
+  const [totalCountriesDataBase, setTotalCountriesDataBase] = useState(null);
 
   useEffect(() => {
     const fetchCountryApi = async () => {
