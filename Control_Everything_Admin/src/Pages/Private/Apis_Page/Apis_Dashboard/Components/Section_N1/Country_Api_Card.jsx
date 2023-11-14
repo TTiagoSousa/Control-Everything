@@ -29,9 +29,10 @@ const Country_Api_Card = () => {
       <div className='Title'>
         <span>Country List</span>
       </div>
-      <div>
-      {renderCountryDataBase()}
-      </div>
+        <div>
+          {renderCountryDataBase()}
+          {ApiUpdate()}
+        </div>
     </div>
   )
 };

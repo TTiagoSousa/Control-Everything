@@ -4,6 +4,7 @@ import * as path from 'path';
 import { PrismaCountryRepository } from '../repositories/prisma/prisma-countries-repository';
 
 export async function GetCoutries() {
+
   const apiUrl: string = process.env.Countries_Api;
   const countriesRepository = new PrismaCountryRepository();
 
@@ -41,6 +42,5 @@ export async function GetCoutries() {
   } catch (error) {
     console.error('Error fetching or processing countries:', error);
   }
-
 
 }
