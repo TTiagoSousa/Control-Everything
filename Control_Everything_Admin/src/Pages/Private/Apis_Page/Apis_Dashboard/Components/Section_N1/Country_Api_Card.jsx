@@ -32,14 +32,14 @@ const Country_Api_Card = () => {
       <div className='Title'>
         <span>Country List</span>
       </div>
-        <div>
-          {renderCountryDataBase()}
-          {ApiUpdate()}
-          <Link to="Country_Api_Dashboard">Api Dashboard</Link>
-        </div>
+      <div className='Information'>
+        {renderCountryDataBase()}
+        {ApiUpdate()}
+        <Link to="Country_Api_Dashboard">Api Dashboard</Link>
+      </div>
     </div>
   )
 };
 
-export default Country_Api_Card;
+export default Country_Api_Card;  
 
