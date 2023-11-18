@@ -1,6 +1,5 @@
 import React from 'react';
 import './CE_Work_Space.scss';
-import { Link } from 'react-router-dom';
 import * as Container from '../../../Imports/containers';
 import Private_Routes from '../../../Routes/Private_Routes';
 
@@ -9,6 +8,7 @@ const CE_Work_Space = () => {
 
     <>
       <Container.Sidebar_Home />
+      <Container.Header_Home/>
         
       <div className='CE_Section'>
         <div className='Container'>
