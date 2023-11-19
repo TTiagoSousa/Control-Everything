@@ -8,9 +8,9 @@ const useCompareCountryNames = () => {
   const { countriesDataBase, totalCountriesDataBase } = useFetchCountryFromDataBase();
 
   const [mismatchWarning, setMismatchWarning] = useState([]);
-  const [errorLength, setErrorLength] = useState();
-  const [errorName, setErrorName] = useState();
-  const [errorFlag, setErrorFlag] = useState();
+  const [errorLength, setErrorLength] = useState(false);
+  const [errorName, setErrorName] = useState(false);
+  const [errorFlag, setErrorFlag] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
