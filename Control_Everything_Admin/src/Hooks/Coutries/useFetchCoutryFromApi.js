@@ -12,7 +12,12 @@ const useFetchCoutryFromApi = () => {
       try {
         const response = await axios.get('https://restcountries.com/v3/all');
 
-        setCountriesApi(response);
+        const formattedData = response.data.map(country => ({
+          name: country.name.common,
+          flag: country.flags[1],
+        }));
+
+        setCountriesApi(formattedData);
         setTotalCountriesApi(response.data.length);
       } catch (error) {
         console.error(error);

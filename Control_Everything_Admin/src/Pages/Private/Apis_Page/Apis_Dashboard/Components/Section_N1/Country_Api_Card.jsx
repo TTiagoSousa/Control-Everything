@@ -1,31 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import '../../Apis_Dashboard.scss';
-import useFetchCountryFromDataBase from '../../../../../../Hooks/Coutries/useFetchCoutryFromDataBase';
-import useFetchCoutryFromApi from '../../../../../../Hooks/Coutries/useFetchCoutryFromApi';
+import useCompareCountryNames from '../../../../../../Hooks/Coutries/useCompareCountryNames';
 
 const Country_Api_Card = () => {
 
-  const {countriesDataBase, totalCountriesDataBase} = useFetchCountryFromDataBase();
-  const {countriesApi, totalCountriesApi} = useFetchCoutryFromApi();
-
-  console.log(totalCountriesApi);
-
-  const renderCountryDataBase = () => {
-    if (totalCountriesDataBase === 0) {
-      return <span className='NoData'>API without data</span>;
-    } else if (totalCountriesDataBase > 0) {
-      return <span className='DataAvailable'>API with data</span>;
-    }
-  };
+  const { errorLength, errorName, errorFlag } = useCompareCountryNames();
 
   const ApiUpdate = () => {
-    if (totalCountriesDataBase !== totalCountriesApi) {
+    if(errorLength === undefined, errorName === undefined, errorFlag === undefined){
+      return <span className='Loading'>Loading</span>;
+    }else if (errorLength === true, errorName === true, errorFlag === true) {
       return <span className='NoData'>Possible Update</span>;
-    } else if (totalCountriesDataBase > 0) {
-      return <></>;
+    } else if (errorLength === false, errorName === false, errorFlag === false) {
+      return <span className='DataAvailable'>Api Working</span>;
     }
   };
+
+  console.log('errorName', errorName);
 
   return (
     <div className='Api Country'>
@@ -33,7 +25,6 @@ const Country_Api_Card = () => {
         <span>Country List</span>
       </div>
       <div className='Information'>
-        {renderCountryDataBase()}
         {ApiUpdate()}
         <Link to="Country_Api_Dashboard">Api Dashboard</Link>
       </div>

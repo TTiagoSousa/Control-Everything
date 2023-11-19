@@ -19,12 +19,6 @@ export async function GetCoutries() {
         flag: country.flags[1],
       };
     }).filter(Boolean);
-
-    // Define the path for the JSON file
-    const jsonFilePath = path.join(__dirname, '..', '..', '..', 'src', 'coutries', 'jsons', 'countries.json');
-    
-    // Write the JSON file
-    fs.writeFileSync(jsonFilePath, JSON.stringify(countries, null, 2), 'utf-8');
     
     // Loop through countries and interact with the database
     for (const country of countries) {
