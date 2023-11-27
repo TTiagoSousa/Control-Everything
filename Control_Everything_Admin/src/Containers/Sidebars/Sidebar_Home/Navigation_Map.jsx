@@ -14,6 +14,12 @@ export const Navigation_Map = [
     link: '/CE_Work_Space/Apis_Dashboard',
   },
 
+  {
+    title: 'Docs',
+    icon: <SVG.Paper />,
+    link: '/CE_Work_Space/Decumentations',
+  },
+
   // {
   //   title: 'Assets',
   //   icon: <SVG.Dashboard_Cubes/>,

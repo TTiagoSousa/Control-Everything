@@ -12,6 +12,7 @@ const Private_Routes = () => {
           <Route index element={ <Private_Page.Apis_Dashboard /> } />
           <Route path='Country_Api_Dashboard' element={ <Private_Page.Country_Api_Dashboard /> } />
         </Route>
+        <Route path='Decumentations' element={ <Private_Page.Decumentations /> }/>
       </Routes>
     </>
   )

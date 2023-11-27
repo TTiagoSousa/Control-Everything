@@ -2,6 +2,10 @@
   export { default as Api_Icon } from '../Assets/Icons/Api/Api_Icon';
 // Api
 
+// Docs
+  export { default as Paper } from '../Assets/Icons/Docs/Paper';
+// Docs
+
 // Eyes
   export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
   export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
