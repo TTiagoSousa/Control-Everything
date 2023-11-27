@@ -2,13 +2,14 @@ import React from 'react';
 import './Country_Api_Dashboard.scss';
 import useCompareCountryNames from '../../../../Hooks/Coutries/useCompareCountryNames';
 import useFetchUpdateCoutries from '../../../../Hooks/Coutries/useFetchUpdateCoutries';
+import * as Componente from '../../../../Imports/components';
 
 const Country_Api_Dashboard = () => {
 
   const { mismatchWarning } = useCompareCountryNames();
-  const {UpdadeCountriesApi, loading} = useFetchUpdateCoutries()
+  const {UpdadeCountriesApi, update} = useFetchUpdateCoutries()
 
-  console.log("Loading" + loading)
+  console.log("update-" + update)
 
   return (
     <div className='Country_Api_Dashboard'>
@@ -19,7 +20,15 @@ const Country_Api_Dashboard = () => {
           ))}
         </ul>
       )}
-      <button onClick={UpdadeCountriesApi}>Update</button>
+      <section className='Section_N1'>
+        <div>
+          <Componente.Global_Button 
+            onClick={UpdadeCountriesApi}
+            Text={update ? 'Loading' : 'Update Countries Api'}
+            disabled={update}
+          />
+        </div>
+      </section>
     </div>
   )
 };

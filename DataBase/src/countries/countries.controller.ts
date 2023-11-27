@@ -1,4 +1,4 @@
-import { Controller, Post, Get } from '@nestjs/common';
+import { Controller, Post, Get, Delete } from '@nestjs/common';
 import { CountriesService } from './countries.service';
 
 @Controller('countries')
@@ -15,5 +15,11 @@ export class CountriesController {
   async getCountriesData() {
     const countries = await this.coutriesService.GetCoutriesFromDatabaseOrJson();
     return countries;
+  }
+
+  @Delete('delete-all')
+  async deleteAllCountries() {
+    await this.coutriesService.DeleteAllCountries();
+    return { message: 'Todos os países foram apagados com sucesso' };
   }
 }

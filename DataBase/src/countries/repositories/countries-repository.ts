@@ -5,4 +5,5 @@ export interface CoutriesRepository {
   findByName(countryName: string): Promise<Country>;
   updateCountries(countryName: string, coutryFlag: string): Promise<Country>;
   findAll(): Promise<Country[]>;
+  deleteAllCountries(): Promise<Prisma.BatchPayload>;
 }

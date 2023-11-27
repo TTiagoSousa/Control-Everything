@@ -29,7 +29,7 @@ const useFetchTotalTransitions = () => {
     fetchTotalTransitions();
   }, [userId, authenticated]); // Dependências do efeito
 
-  return totalTransitions;
+  return {totalTransitions, setTotalTransitions};
 }
 
 export default useFetchTotalTransitions;

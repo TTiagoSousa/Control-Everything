@@ -4,17 +4,17 @@ import axios from 'axios';
 
 const useFetchUpdateCoutries = () => {
 
-  const [loading, setLoading] = useState(false);
+  const [update, setUpdate] = useState(false);
 
   const UpdadeCountriesApi = async () =>{
     
     try {
 
-      setLoading(true);
+      setUpdate(true);
 
       const response = await axios.post(`${BASE_URL}/countries/fetch-data`);
     
-      setLoading(true);
+      setUpdate(false);
 
     } catch (error) {
       console.log(error);
@@ -22,7 +22,7 @@ const useFetchUpdateCoutries = () => {
 
   }
 
-  return {UpdadeCountriesApi, loading};
+  return {UpdadeCountriesApi, update};
 }
 
 

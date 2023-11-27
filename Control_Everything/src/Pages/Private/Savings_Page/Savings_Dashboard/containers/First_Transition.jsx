@@ -2,18 +2,20 @@ import React from 'react';
 import '../Savings_Dashboard.scss';
 import * as Component from '../../../../../Imports/components';
 import useCreateFirstSavingTransition from '../../../../../Hooks/Saving_Transitions/useCreateFirstSavingTransition';
+import { set } from 'zod';
 
-const First_Transition = () => {
+const First_Transition = ({ setTotalTransitions, date, setDate, hour, setHour, amount, setAmount, platform, setPlatform, currencyType, setCurrencyType, createFirstSavingTransaction }) => {
 
-  const { 
-    createFirstSavingTransaction,    
-    date, setDate,
-    hour, setHour,
-    amount, setAmount,
-    platform, setPlatform,
-    currencyType, setCurrencyType,
-    transitiontype, setTransitiontype
-  } = useCreateFirstSavingTransition(null);
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    try{
+      createFirstSavingTransaction();
+      setTotalTransitions(1);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className='First_Transition'>
@@ -73,7 +75,7 @@ const First_Transition = () => {
           <div className="Button_Field">
             <Component.Global_Button 
               Text="Submit"
-              onClick={createFirstSavingTransaction}
+              onClick={handleSubmit}
             />
           </div>
         </form>

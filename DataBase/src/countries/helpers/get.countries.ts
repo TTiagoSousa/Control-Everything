@@ -2,6 +2,7 @@ import axios from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
 import { PrismaCountryRepository } from '../repositories/prisma/prisma-countries-repository';
+import { DeleteAllCountries } from './delete.coutries.database';
 
 export async function GetCoutries() {
 
@@ -9,6 +10,8 @@ export async function GetCoutries() {
   const countriesRepository = new PrismaCountryRepository();
 
   try {
+
+    await DeleteAllCountries()
     // Fetch data from the API
     const response = await axios.get(apiUrl);
     

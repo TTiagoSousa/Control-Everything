@@ -8,9 +8,9 @@ const useCompareCountryNames = () => {
   const { countriesDataBase, totalCountriesDataBase } = useFetchCountryFromDataBase();
 
   const [mismatchWarning, setMismatchWarning] = useState([]);
-  const [errorLength, setErrorLength] = useState(false);
-  const [errorName, setErrorName] = useState(false);
-  const [errorFlag, setErrorFlag] = useState(false);
+  const [errorLength, setErrorLength] = useState();
+  const [errorName, setErrorName] = useState();
+  const [errorFlag, setErrorFlag] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const useCompareCountryNames = () => {
             warnings.push(`Name Mismatch: ${nameMismatches.join(', ')}`);
             setErrorName(true);
           }
+          
           if (flagMismatches.length > 0) {
             warnings.push(`Flag Mismatch: ${flagMismatches.join(', ')} (incorrect flag)`);
             setErrorFlag(true);
@@ -52,6 +53,10 @@ const useCompareCountryNames = () => {
 
         setMismatchWarning(warnings);
       }, 500); // 500 milliseconds delay
+
+      setErrorFlag(false)
+      setErrorName(false)
+      setErrorLength(false)
     }
 
     return () => {

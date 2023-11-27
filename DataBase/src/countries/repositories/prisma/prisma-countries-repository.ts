@@ -42,4 +42,8 @@ export class PrismaCountryRepository implements CoutriesRepository{
     return country;
   }
 
+  async deleteAllCountries() {
+    const deleteInfo = await prisma.country.deleteMany();
+    return deleteInfo;
+  }
 }

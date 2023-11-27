@@ -95,11 +95,13 @@
   }
 
   .Dark_Mode .Dashboard .Section_N1 .Assets_Card body ul li a,
+  .Dark_Mode .Dashboard .Section_N1 .Assets_Card body ul li span,
   .Dark_Mode .Dashboard .Section_N1 .Assets_Card header h1 {
     color: $gray ;
   }
 
   .Light_Mode .Dashboard .Section_N1 .Assets_Card body ul li a,
+  .Light_Mode .Dashboard .Section_N1 .Assets_Card body ul li span,
   .Light_Mode .Dashboard .Section_N1 .Assets_Card header h1 {
     color: $gray_dark;
   }

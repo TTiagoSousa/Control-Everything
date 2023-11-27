@@ -12,7 +12,7 @@ const Section_N1 = () => {
         </header>
         <body>
           <ul>
-            <li><Link className='Title' to="/CE/Savings">Savings Account</Link> <span>Test</span></li>
+            <li><Link className='Title' to="/CE/Savings">Savings Account</Link> <span>0 $</span></li>
           </ul>
         </body>
         <footer>

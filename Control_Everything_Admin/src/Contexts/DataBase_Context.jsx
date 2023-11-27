@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BASE_URL } from '../../../Control_Everything/src/config/urls';
+import { BASE_URL } from '../config/urls';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import * as jwt_decode from "jwt-decode";

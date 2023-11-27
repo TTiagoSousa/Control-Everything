@@ -4,7 +4,7 @@
   import './Global_Button.scss';
 // React More CSS
 
-const Global_Button = ({ Text, to, id, style, onClick }) => {
+const Global_Button = ({ Text, to, id, style, onClick, disabled }) => {
   
   return (
     <>
@@ -16,6 +16,7 @@ const Global_Button = ({ Text, to, id, style, onClick }) => {
           id={id}
           style={style}
           onClick={onClick}
+          disabled={disabled}
         >
           <span>{Text}</span>
           </button>

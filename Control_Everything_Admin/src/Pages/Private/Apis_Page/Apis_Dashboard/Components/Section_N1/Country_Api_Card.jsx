@@ -17,8 +17,6 @@ const Country_Api_Card = () => {
     }
   };
 
-  console.log("errorLength: " + errorLength)
-
   return (
     <div className='Api Country'>
       <div className='Title'>
