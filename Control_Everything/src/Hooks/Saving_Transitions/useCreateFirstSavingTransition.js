@@ -2,12 +2,10 @@ import { useState } from "react";
 import { NavsState } from "../../Contexts/Navs_Context";
 import axios from "axios";
 import { BASE_URL } from "../../config/urls";
-import useFetchTotalTransitions from "./useFetchTotalTransitions";
 
 const useCreateFirstSavingTransition = () => {
 
   const { setAlert, alert } = NavsState();
-  const { setTotalTransitions, totalTransitions } = useFetchTotalTransitions();
 
   const [ date, setDate ] = useState('');
   const [ hour, setHour]  = useState('');
@@ -16,8 +14,6 @@ const useCreateFirstSavingTransition = () => {
   const [ currencyType, setCurrencyType ] = useState();
   const [ transitiontype, setTransitiontype ] = useState('Deposit');
   const [ loading, setLoading ] = useState(false);
-
-
 
   const createFirstSavingTransaction = async () => {
 
@@ -55,9 +51,6 @@ const useCreateFirstSavingTransition = () => {
         message: 'Transition created successfully',
         type: 'success',
       });
-
-      setTotalTransitions(1)
-      console.log(totalTransitions)
 
       setTimeout(() => {
         setLoading(true);

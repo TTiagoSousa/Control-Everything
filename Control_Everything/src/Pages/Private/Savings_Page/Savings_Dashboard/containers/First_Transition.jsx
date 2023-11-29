@@ -6,14 +6,14 @@ import { set } from 'zod';
 
 const First_Transition = ({ setTotalTransitions, date, setDate, hour, setHour, amount, setAmount, platform, setPlatform, currencyType, setCurrencyType, createFirstSavingTransaction }) => {
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-
-    try{
-      createFirstSavingTransaction();
-      setTotalTransitions(1);
-    } catch (error) {
-      console.log(error);
+    
+    const success = await createFirstSavingTransaction();
+    if (success) {
+      setTotalTransitions(1)
+    } else {
+      console.log('Falha na transação');
     }
   }
 
