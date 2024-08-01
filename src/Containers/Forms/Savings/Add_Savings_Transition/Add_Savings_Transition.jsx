@@ -133,27 +133,33 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
               />
             </div>
             <div className='Search_Result'>
-              {filteredCurrencies.length > 0 ? (
-                <ul>
-                  {filteredCurrencies.map((currency, index) => (
-                    <li key={index} onClick={() => handleSelectCurrency(currency)}>
-                      <div className='Currency_Name'>
-                        <span>{currency.short_code}</span>
-                        <span>-</span>
-                        <span>{currency.name}</span>
-                      </div>
-                      <div className='Currency_Symbols'>
-                        <span>{currency.symbol}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className='Not_Found'>
-                  <div>
-                    <Ghost Text={t('Currency not found')}/>
-                  </div>
+              {currenciesList === null ? (
+                <div className='Loading'>
+               
                 </div>
+              ) : (
+                filteredCurrencies.length > 0 ? (
+                  <ul>
+                    {filteredCurrencies.map((currency, index) => (
+                      <li key={index} onClick={() => handleSelectCurrency(currency)}>
+                        <div className='Currency_Name'>
+                          <span>{currency.short_code}</span>
+                          <span>-</span>
+                          <span>{currency.name}</span>
+                        </div>
+                        <div className='Currency_Symbols'>
+                          <span>{currency.symbol}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className='Not_Found'>
+                    <div>
+                      <Ghost Text={t('Currency not found')}/>
+                    </div>
+                  </div>
+                )
               )}
             </div>
           </div>
@@ -170,25 +176,31 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
               />
             </div>
             <div className='Search_Result'>
-              {filteredPlatforms.length > 0 ? (
-                <ul>
-                  {filteredPlatforms.map((platform, index) => (
-                    <li key={index} onClick={() => handleSelectPlatform(platform)}>
-                      <div className='Platform_Name'>
-                        <span>{platform.name}</span>
-                      </div>
-                      <div className='Platform_Img'>
-                        <img src={platform.image} alt={platform.name} />
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <div className='Not_Found'>
-                  <div>
-                    <Ghost Text={t('Platform not found')}/>
-                  </div>
+              {platformsList === null ? (
+                <div className='Loading'>
+
                 </div>
+              ) : (
+                filteredPlatforms.length > 0 ? (
+                  <ul>
+                    {filteredPlatforms.map((platform, index) => (
+                      <li key={index} onClick={() => handleSelectPlatform(platform)}>
+                        <div className='Platform_Name'>
+                          <span>{platform.name}</span>
+                        </div>
+                        <div className='Platform_Img'>
+                          <img src={platform.image} alt={platform.name} />
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className='Not_Found'>
+                    <div>
+                      <Ghost Text={t('Platform not found')}/>
+                    </div>
+                  </div>
+                )
               )}
             </div>
           </div>
