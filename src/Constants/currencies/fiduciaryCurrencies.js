@@ -1,5 +1,5 @@
 export const fiduciaryCurrencies = [
-  { name: 'USD', value: '5d4d94dc-8b3f-45c0-a2c7-141c13c3f634' },
-  { name: 'EUR', value: '76a8e4d5-00fc-43f3-982c-f194b88c569c' },
-  { name: 'BRL', value: '0057e2fb-8dcc-40a6-8693-2cd321c01068' }
+  { name: 'USD', value: 'c93ec4dd-aab9-4440-bac1-8cbfc1b4e59f' },
+  { name: 'EUR', value: '799e4948-f524-40c4-8e63-72d011e47917' },
+  { name: 'BRL', value: '0dec8acb-20a7-4163-8823-a31bed00b5ca' }
 ];
