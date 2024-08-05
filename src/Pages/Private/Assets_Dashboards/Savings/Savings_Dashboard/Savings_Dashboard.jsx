@@ -90,6 +90,8 @@ const Savings_Dashboard = () => {
           </div>
           <div className="Footer">
             <Link to="Savings_Transitions_History">{t("View history")}</Link>
+            <Link onClick={handleOpenForm} >{t("Create Transition")}</Link>
+            <Link to="Savings_Transitions_History">{t("Transfer")}</Link>
           </div>
         </div>
         <div className='Savings_Pie_Chart'>
@@ -124,19 +126,6 @@ const Savings_Dashboard = () => {
               <SavingsPieChart data={totalSavingsAndPlatforms} selectedCurrency={selectedCurrency} />
             </div>
           )}
-        </div>
-      </div>
-      <div className='Actions'>
-        <div className="Button_Field">
-          <Global_Button 
-            Text={t("Create Transition")}
-            onClick={handleOpenForm}
-          />
-        </div>
-        <div className="Button_Field">
-          <Global_Button 
-            Text={t("Transfer")}
-          />
         </div>
       </div>
     </div>
