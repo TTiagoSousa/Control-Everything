@@ -23,6 +23,7 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
     currencyTypeID, setCurrencyTypeID,
     transitionType, setTransitionType,
     description, setDescription,
+    feesPaid, setFeesPaid
   } = useCreateSavingTransition();
 
   const [step, setStep] = useState(1);
@@ -244,6 +245,14 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
                 Type="number"
                 Value={amount}
                 onChange={(e) => setAmount(e.target.value)}
+              />
+            </div>
+            <div className='Input_Field'>
+              <Global_Input 
+                Text={t("Fees")}
+                Type="number"
+                Value={feesPaid}
+                onChange={(e) => setFeesPaid(e.target.value)}
               />
             </div>
             <div className='Input_Field'>

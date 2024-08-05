@@ -16,6 +16,7 @@ const useCreateSavingTransition = () => {
   const [ currencyTypeID, setCurrencyTypeID ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ transitionType, setTransitionType ] = useState('DEPOSIT');
+  const [ feesPaid, setFeesPaid ] = useState('')
 
   const createSavingTransaction = async () => {
 
@@ -58,7 +59,8 @@ const useCreateSavingTransition = () => {
         amount: parseInt(amount, 10),
         platformID: platformID,
         currencyTypeID: currencyTypeID,
-        description: description
+        description: description,
+        feesPaid: parseInt(feesPaid, 10),
       });
  
       setAlert({
@@ -93,6 +95,7 @@ const useCreateSavingTransition = () => {
     currencyTypeID, setCurrencyTypeID,
     transitionType, setTransitionType,
     description, setDescription,
+    feesPaid, setFeesPaid
   }
 }
 
