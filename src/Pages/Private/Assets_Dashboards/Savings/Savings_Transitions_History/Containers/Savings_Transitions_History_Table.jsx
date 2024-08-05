@@ -115,14 +115,22 @@ const Savings_Transitions_History_Table = () => {
                                 style={{
                                   color:
                                     transition.transitionType === 'DEPOSIT'
-                                    ? '#00d27a'
-                                    : '#ff3737',
+                                      ? '#00d27a'
+                                      : transition.transitionType === 'WITHDRAWAL'
+                                      ? '#ff3737'
+                                      : transition.transitionType === 'TRANSFER'
+                                      ? '#f58344' 
+                                      : '#000000', 
                                 }}
                               >
                                 <span>
                                   {transition.transitionType === 'DEPOSIT'
                                     ? t('Deposit')
-                                    : t('Withdrawal')}
+                                    : transition.transitionType === 'WITHDRAWAL'
+                                    ? t('Withdrawal')
+                                    : transition.transitionType === 'TRANSFER'
+                                    ? t('Transference')
+                                    : t('Unknown Transition Type')} {/* Tratamento opcional para tipos inesperados */}
                                 </span>
                               </td>
                               <td
