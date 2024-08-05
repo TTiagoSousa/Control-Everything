@@ -349,3 +349,75 @@
     }
   }
 }
+
+.Light_Mode{
+ 
+  .Savings_Dashboard{
+
+    .Totals{
+
+      .Total_On_Savings,
+      .Savings_Pie_Chart{
+        background-color: $secundary_color_light;
+        box-shadow: $border_light;
+      }
+
+      .Total_On_Savings{
+
+        .Header{
+          background-color: $terciary_color_light;
+
+          span{
+            color: $gray_dark;
+          }
+        }
+
+        .Body{
+  
+          span{
+            color: $gray_dark
+          }
+        }
+
+        .Footer{
+          background-color: $terciary_color_light;
+
+          a{
+            color: $gray_dark;
+          }
+        }
+      }
+
+      .Savings_Pie_Chart{
+        background-color: $secundary_color_light;
+        box-shadow: $box_shadow_light;
+
+        .Header{
+          background-color: $terciary_color_light;
+
+          span{
+            color: $gray_dark;
+          }
+
+          select{
+            background-color: $secundary_color_light;
+            color: $gray;
+            border: 1px solid $blue;
+          }
+        }
+
+        .No_Transition{
+  
+          span{
+            color: $gray_dark;
+          }
+        }
+      }
+    }
+
+    .Actions{
+      background-color: $secundary_color_light;
+      box-shadow: $box_shadow_light;
+    }
+  }
+}
