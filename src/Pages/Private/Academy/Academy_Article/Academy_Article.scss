@@ -1,0 +1,107 @@
+@import '../../../../Styles/Colors.scss';
+@import '../../../../Styles/Fonts.scss';
+@import '../../../../Styles/Formats.scss';
+
+.Academy_Article{
+  @include Pages_Configs;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+
+  article{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+
+    .Academy_Article_Image{
+      width: 400px;
+
+      img{
+        width: 100%;
+        border-radius: $border_radius;
+      }
+    }
+
+    .Title{
+
+      h1{
+        font-family: $font_family_poppins;
+      }
+    }
+
+    .Content{
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+
+      h1, h2{
+        font-family: $font_family_poppins;
+        text-align: center !important;
+      }
+
+      p{
+        font-family: $font_family_open_sans;
+        text-indent: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Academy_Article{
+
+    article{
+
+      .Title{
+
+        h1{
+          color: $gray;
+        }
+      }
+
+      .Content{
+
+        h1,h2{
+          color: $gray;
+        }
+
+        p{
+          color: $gray;
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Academy_Article{
+
+    article{
+
+      .Title{
+
+        h1{
+          color: $gray_dark;
+        }
+      }
+
+      .Content{
+
+        h1,h2{
+          color: $gray_dark;
+        }
+
+        p{
+          color: $gray_darker;
+        }
+      }
+    }
+  }
+}
