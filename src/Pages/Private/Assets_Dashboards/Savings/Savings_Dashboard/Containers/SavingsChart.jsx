@@ -12,7 +12,7 @@ const SavingsPieChart = ({ data, selectedCurrency }) => {
 
   const { mode } = ThemeState();
 
-  const labelColor = mode === 'dark_mode' ? Color.gray : Color.gray;
+  const labelColor = mode === 'dark' ? Color.gray : Color.gray_dark;
 
   const filteredData = data
     .map(platform => {
@@ -40,7 +40,7 @@ const SavingsPieChart = ({ data, selectedCurrency }) => {
         label: {
           color: labelColor,
           fontSize: 15,
-          fontWeight: 'bolder'
+          fontWeight: 'bolder',
         }
       }
     ]
