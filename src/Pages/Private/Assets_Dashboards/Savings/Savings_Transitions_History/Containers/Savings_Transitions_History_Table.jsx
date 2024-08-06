@@ -87,7 +87,6 @@ const Savings_Transitions_History_Table = () => {
               <th className="Amount"><span>{t('Currency')}</span></th>
               <th className="Platform"><span>{t('Platform')}</span></th>
               <th className="Date"><span>{t('Date')}</span></th>
-              <th className='Actions'><span>{t('Actions')}</span></th>
             </tr>
           </thead>
           <tbody>
@@ -158,29 +157,7 @@ const Savings_Transitions_History_Table = () => {
                                 <span>{new Date(transition.date).toLocaleDateString()}</span>
                                 <span>{new Date(transition.date).toLocaleTimeString()}</span>
                               </td>
-                              <td className='Actions'>
-                                {transition.isActive ? (
-                                  // Render the disable button if the transition is active
-                                  <button onClick={() => disableSavingTransition(transition.id)}>
-                                    <div className="Delete_Icon" >
-                                      <Icon.Trash Global_Color={Color.red}/>
-                                    </div>
-                                  </button>
-                                  ) : (
-                                  // Render the enable button if the transition is inactive
-                                  <button onClick={() => enableSavingTransition(transition.id)}>
-                                    <div className="Delete_Icon" >
-                                      <Icon.Trash_Restore Global_Color={Color.red}/>
-                                    </div>
-                                  </button>
-                                )}
-                                <button>
-                                  {/* Use an arrow function to pass the transition.id */}
-                                  <div className="Modify_Icon" >
-                                    <Icon.Settings Global_Color={Color.orange}/>
-                                  </div>
-                                </button>
-                              </td>
+
                               {!transition.isActive && (
                                 <>
                                   <div className="Cut_Line">
