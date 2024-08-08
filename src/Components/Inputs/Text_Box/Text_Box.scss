@@ -31,8 +31,10 @@
   .Text_Box{
 
     textarea{
-      background-color: $fourth_color_Dark;
+      background-color: $primary_color_dark;
       color: $gray;
+      border: $border_dark;
+      box-sizing: border-box;
     }
   }
 }
@@ -42,8 +44,9 @@
   .Text_Box{
 
     textarea{
-      background-color: $fourth_color_light;
+      background-color: $primary_color_light;
       color: $gray_darker;
+      border: $border_light;
     }
   }
 }

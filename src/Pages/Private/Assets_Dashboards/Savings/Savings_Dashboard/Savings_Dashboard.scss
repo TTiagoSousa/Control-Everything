@@ -30,7 +30,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: $border;
 
       .Header{
         width: 100%;
@@ -270,7 +269,7 @@
       .Total_On_Savings,
       .Savings_Pie_Chart{
         background-color: $secundary_color_dark;
-        box-shadow: $border_dark;
+        border: $border_dark;
       }
 
       .Total_On_Savings{
@@ -301,7 +300,6 @@
 
       .Savings_Pie_Chart{
         background-color: $secundary_color_dark;
-        box-shadow: $box_shadow_dark;
 
         .Header{
           background-color: $terciary_color_dark;
@@ -325,11 +323,6 @@
         }
       }
     }
-
-    .Actions{
-      background-color: $secundary_color_dark;
-      box-shadow: $border_dark;
-    }
   }
 }
 
@@ -342,7 +335,7 @@
       .Total_On_Savings,
       .Savings_Pie_Chart{
         background-color: $secundary_color_light;
-        box-shadow: $box_shadow_light;
+        border: $border_light;
       }
 
       .Total_On_Savings{
@@ -373,8 +366,7 @@
 
       .Savings_Pie_Chart{
         background-color: $secundary_color_light;
-        box-shadow: $box_shadow_light;
-
+        
         .Header{
           background-color: $terciary_color_light;
 
@@ -396,11 +388,6 @@
           }
         }
       }
-    }
-
-    .Actions{
-      background-color: $secundary_color_light;
-      box-shadow: $box_shadow_light;
     }
   }
 }

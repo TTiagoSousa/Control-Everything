@@ -50,6 +50,7 @@
     border-radius: 0px 10px 10px 0px;
     font-family: $font_family_open_sans;
     gap: 10px;
+    box-sizing: border-box;
 
     img{
       width: 20px;
@@ -64,8 +65,11 @@
   .Global_Input_Forms{
 
     .Container{
-      background-color: $fourth_color_Dark;
+      background-color: $primary_color_dark;
       color: $gray;
+      border-top: $border_dark;
+      border-bottom: $border_dark;
+      border-right: $border_dark;;
     }
   }
 }
@@ -75,7 +79,10 @@
   .Global_Input_Forms{
 
     .Container{
-      background-color: $fourth_color_light;
+      background-color: $primary_color_light;
+      border-top: $border_light;
+      border-bottom: $border_light;
+      border-right: $border_light;
       color: $gray_dark;
     }
   }

@@ -30,7 +30,7 @@
     position: absolute;
     width: 100px;
     top: 140%;
-    right: 3px;
+    right: 0px;
     border-radius: 10px 0px 10px 10px;
 
 
@@ -48,7 +48,7 @@
       position: absolute;
       width: 10px;
       height: 10px;
-      top: -5px;
+      top: -7.5px;
       right: 2.5px;
       transform: (rotate(45deg));
       z-index: 3;
@@ -90,15 +90,16 @@
 
     .Arrow{
       background-color: $terciary_color_dark;
+      border-top: $border_dark;
+      border-left: $border_dark;
     }
 
     .Language_Options{
       background-color: $terciary_color_dark;
-      box-shadow: $box_shadow_dark;
+      border: $border_dark;
 
       ul{
         background-color: $terciary_color_dark;
-        box-shadow: $box_shadow_dark;
 
         li{
 
@@ -117,15 +118,16 @@
 
     .Arrow{
       background-color: $terciary_color_light;
+      border-top: $border_light;
+      border-left: $border_light;
     }
 
     .Language_Options{
       background-color: $terciary_color_light;
-      box-shadow: $box_shadow_light;
+      border: $border_light;
 
       ul{
         background-color: $terciary_color_light;
-        box-shadow: $box_shadow_light;
 
         li{
 

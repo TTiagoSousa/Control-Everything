@@ -20,7 +20,6 @@
       border-radius: $border_radius;
       box-sizing: border-box;
       padding: 5px;
-      border: $border;
     }
 
     .Table_Wrapper{
@@ -221,7 +220,7 @@
         
         tfoot{
           position: relative;
-          width: 100%;
+          width: 99%;
           display: flex;
   
           tr{
@@ -414,7 +413,7 @@
 
     .Filters{
       background-color: $secundary_color_dark;
-      box-shadow: $box_shadow_dark;
+      border: $border_dark;
 
       .Info{
 
@@ -425,7 +424,7 @@
     }
 
     .Table_Wrapper{ 
-      box-shadow: $box_shadow_dark;
+      border: $border_dark;
 
       thead{
         background-color: $terciary_color_dark;
@@ -472,7 +471,7 @@
 
     .Filters{
       background-color: $secundary_color_light;
-      box-shadow: $box_shadow_light;
+      border: $border_light;
 
       .Info{
 
@@ -483,7 +482,7 @@
     }
 
     .Table_Wrapper{ 
-      box-shadow: $box_shadow_light;
+      border: $border_light;
 
       thead{
         background-color: $terciary_color_light;

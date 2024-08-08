@@ -62,6 +62,7 @@
     justify-content: space-between;
     padding: 1%;
     box-sizing: border-box;
+    align-items: center;
 
     header{
       width: 100%;
@@ -79,11 +80,15 @@
     }
 
     form{
+      height: auto;
+      width: auto;
+      padding: 20px;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px; 
+      border-radius: $border_radius;
 
       .Title{
         display: flex;
@@ -192,10 +197,11 @@
 
       form{
         position: absolute;
-        width: 100%;
+        width: auto;
         top: 40%;
         left: 50%;
         transform: translate(-50%,-50%);
+        padding: 15px;
       }
 
       .Info{
@@ -212,8 +218,11 @@
 .Dark_Mode{
 
   .Sign_In{
-   
+    background-color: $primary_color_dark;
+
     form{
+      background-color: $secundary_color_dark;
+      border: $border_dark;
 
       .Title{
 
@@ -246,8 +255,11 @@
 .Light_Mode{
 
   .Sign_In{
-   
+    background-color: $primary_color_light;
+
     form{
+      background-color: $secundary_color_light;
+      border: $border_light;
 
       .Title{
 
