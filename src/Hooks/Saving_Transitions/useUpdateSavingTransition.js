@@ -3,12 +3,15 @@ import { NavsState } from "../../Contexts/Navs_Context";
 import http from "../../Services/httpService";
 import { useTranslation } from 'react-i18next';
 import { containsOnlyLettersNumbersAndHyphens } from "../../Utils/text/contains.only.letters.numbers.and.hyphens";
+import { DataBaseState } from "../../Contexts/DataBase_Context";
 
-const useCreateSavingTransition = () => {
+const useUpdateSavingTransition = (selectedTransition) => {
 
   const { t } = useTranslation();
 
   const { setAlert } = NavsState();
+
+  const { authenticated, userId } = DataBaseState();
 
   const [ date, setDate ] = useState('');
   const [ amount, setAmount ] = useState('');
@@ -18,7 +21,7 @@ const useCreateSavingTransition = () => {
   const [ transitionType, setTransitionType ] = useState('DEPOSIT');
   const [ feesPaid, setFeesPaid ] = useState('')
 
-  const createSavingTransaction = async () => {
+  const updateSavingTransition = async () => {
 
     if (!date || !amount || !platformID || !transitionType || !date) {
       console.log("All fields must be filled")
@@ -51,21 +54,23 @@ const useCreateSavingTransition = () => {
 
     const formattedDate = new Date(date).toISOString();
 
-    try {
-      
-      const response = await http.post('saving-transitions/create', {
-        transitionType: transitionType,
+    try{
+
+      const data = {
         date: formattedDate,
-        amount: parseInt(amount, 10),
-        platformID: platformID,
-        currencyTypeID: currencyTypeID,
-        description: description,
-        feesPaid: parseInt(feesPaid, 10),
-      });
- 
+        amount: parseInt(amount, 10), // Assuming amount should be a number
+        platformID,
+        currencyTypeID,
+        description,
+        transitionType,
+        feesPaid: parseFloat(feesPaid), // Assuming feesPaid should be a number
+      };
+
+      const response = await http.patch(`saving-transitions/${userId}/update-savings-transition/${selectedTransition.id}`, data);
+
       setAlert({
         open: true,
-        message: 'Transition created successfully',
+        message: t('Transition updated successfully'),
         type: 'success',
       });
 
@@ -73,7 +78,8 @@ const useCreateSavingTransition = () => {
         window.location.reload();
       }, 2000);
 
-    } catch (error) {
+    }catch (error) {
+      console.log(error)
       if (error.response && error.response.status === 502) {
         let errorMessage = error.response.data.message;
         errorMessage = t(errorMessage);
@@ -87,7 +93,7 @@ const useCreateSavingTransition = () => {
   }
 
   return {
-    createSavingTransaction,    
+    updateSavingTransition,    
     date, setDate,
     amount, setAmount,
     platformID, setPlatformID,
@@ -98,4 +104,4 @@ const useCreateSavingTransition = () => {
   }
 }
 
-export default useCreateSavingTransition;
+export default useUpdateSavingTransition;

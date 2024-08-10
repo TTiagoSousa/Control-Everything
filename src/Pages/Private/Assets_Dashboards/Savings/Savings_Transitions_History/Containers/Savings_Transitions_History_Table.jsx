@@ -9,7 +9,7 @@ import Pagination from '../../../../../../Components/Pagination/Pagination';
 import { useTranslation } from 'react-i18next';
 import useDisableOrEnableSavingTransition from '../../../../../../Hooks/Saving_Transitions/useDisableOrEnableSavingTransition';
 
-const Savings_Transitions_History_Table = () => {
+const Savings_Transitions_History_Table = ({handleOpenForm, setSelectedTransition}) => {
 
   const { t } = useTranslation();
 
@@ -63,6 +63,11 @@ const Savings_Transitions_History_Table = () => {
 
   const isRowExpanded = (index) => {
     return expandedRows.includes(index);
+  };
+
+  const handleSelectTransition = (transition) => {
+    setSelectedTransition(transition);
+    handleOpenForm(); // Abre o módulo quando a transição é selecionada
   };
 
   return (
@@ -223,7 +228,7 @@ const Savings_Transitions_History_Table = () => {
                                     )}
                                     <button>
                                       {/* Use an arrow function to pass the transition.id */}
-                                      <div className="Modify_Icon" >
+                                      <div className="Modify_Icon" onClick={() => handleSelectTransition(transition)}>
                                         <Icon.Settings Global_Color={Color.orange}/>
                                       </div>
                                     </button>
