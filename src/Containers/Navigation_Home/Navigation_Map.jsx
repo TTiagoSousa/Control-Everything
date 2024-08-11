@@ -14,6 +14,12 @@ export const navItems = [
   
   { to: '/CE/Academy', text: 'Academy', icon: <Icon.Academy_Cap /> },
 
-  { to: '/CE/Settings', text: 'Settings', icon: <Icon.Settings /> },
+  {
+    text: 'Settings',
+    icon: <Icon.Settings />,
+    dropdownItems: [
+      { to: '/CE/Settings', text: 'Payment' },
+    ],
+  },
 
 ];
