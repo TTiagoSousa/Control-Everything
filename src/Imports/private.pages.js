@@ -5,3 +5,4 @@ export { default as Savings_Transitions_History } from '../Pages/Private/Assets_
 export { default as Academy } from '../Pages/Private/Academy/Academy_Dashboard/Academy';
 export { default as Crypto_Dashboard } from '../Pages/Private/Assets_Dashboards/Crypto/Crypto_Dashboard/Crypto_Dashboard';
 export { default as Academy_Article } from '../Pages/Private/Academy/Academy_Article/Academy_Article';
+export { default as Payment } from '../Pages/Private/Settings/Payment/Payment';

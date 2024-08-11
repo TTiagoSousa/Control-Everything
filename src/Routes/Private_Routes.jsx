@@ -20,7 +20,7 @@ const Private_Routes = () => {
           <Route path='Article/:id' element={ <Private_Page.Academy_Article /> } />
         </Route>
         <Route path='Settings'> 
-          
+          <Route path='Payment' element={ <Private_Page.Payment /> } />
         </Route>
       </Routes>
     </>

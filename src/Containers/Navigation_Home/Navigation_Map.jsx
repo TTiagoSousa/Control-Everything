@@ -18,7 +18,7 @@ export const navItems = [
     text: 'Settings',
     icon: <Icon.Settings />,
     dropdownItems: [
-      { to: '/CE/Settings', text: 'Payment' },
+      { to: '/CE/Settings/Payment', text: 'Payment' },
     ],
   },
 
