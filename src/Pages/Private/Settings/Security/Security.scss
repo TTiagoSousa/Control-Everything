@@ -5,4 +5,159 @@
 .Security{
   @include Pages_Configs;
   min-height: 95vh;
+
+  .Authentication{
+    width: 100%;
+    border-radius: $border_radius;
+
+    .Header{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px 10px 0px 0px;
+
+      h1{
+        font-family: $font_family_poppins;
+        font-size: 20px;
+      }
+    }
+
+    .Body{
+      width: 100%;
+      height: auto;
+      display: flex;
+
+      ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        box-sizing: border-box;
+        gap: 15px;
+
+        li{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            span:nth-child(1){
+              font-family: $font_family_poppins;
+            }
+
+            span:nth-child(2){
+              font-family: $font_family_open_sans;
+              font-size: 14px;
+            }
+          }
+
+          div:nth-child(2){
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            span{
+              font-family: $font_family_open_sans;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Security{
+
+    .Authentication{
+      border: $border_dark;
+
+      .Header{
+        background-color: $terciary_color_dark;
+
+        h1{
+          color: white;
+        }
+      }
+
+      .Body{
+
+        ul{
+
+          li{
+
+            div:nth-child(1){
+
+              span:nth-child(1){
+                color: $white;
+              }
+
+              span:nth-child(2){
+                color: $gray;
+              }
+            }
+
+            div:nth-child(2){
+  
+              span{
+                color: $gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Security{
+
+    .Authentication{
+      border: $border_light;
+
+      .Header{
+        background-color: $terciary_color_light;
+
+        h1{
+          color: $gray_dark;
+        }
+      }
+
+      .Body{
+
+        ul{
+
+          li{
+
+            div:nth-child(1){
+
+              span:nth-child(1){
+                color: $gray_dark;
+              }
+
+              span:nth-child(2){
+                color: $gray_dark;
+              }
+            }
+
+            div:nth-child(2){
+  
+              span{
+                color: $gray_dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
