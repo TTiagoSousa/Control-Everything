@@ -8,6 +8,8 @@ import { useTranslation } from 'react-i18next';
 
 const SavingsPieChart = ({ data, selectedCurrency }) => {
 
+  console.log(data)
+
   const { t } = useTranslation();
 
   const { mode } = ThemeState();
@@ -17,13 +19,19 @@ const SavingsPieChart = ({ data, selectedCurrency }) => {
   const filteredData = data
     .map(platform => {
       const currency = platform.currencies.find(cur => cur.code === selectedCurrency);
-      return currency ? { name: platform.platformName, value: currency.total } : null;
+      return currency ? { 
+          name: platform.platformName, 
+          value: currency.total,
+      } : null;
     })
     .filter(item => item !== null);
 
   const options = {
     tooltip: {
-      trigger: 'item'
+      trigger: 'item',
+      formatter: ({ name, value }) => {
+        return `${name}: ${value} ${selectedCurrency}`;
+      }
     },
     series: [
       {
@@ -41,6 +49,9 @@ const SavingsPieChart = ({ data, selectedCurrency }) => {
           color: labelColor,
           fontSize: 15,
           fontWeight: 'bolder',
+          formatter: ({ name, value }) => {
+            return `${name}: ${value} ${selectedCurrency}`;
+          }
         }
       }
     ]
