@@ -30,7 +30,7 @@ export const useSignup = () => {
     if (!email || !password || !fullName || !gender || !dateOfBirth || !country || !confirmPassword) {
       setAlert({
         open: true,
-        message: t("All fields must be filled"),
+        message: t("All fields must be filled in"),
         type: 'error'
       });
       setCreatingAccount(false);

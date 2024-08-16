@@ -25,7 +25,7 @@ export const useSignin = () => {
     if (!email || !password) {
       setAlert({
         open: true,
-        message: t("All fields must be filled"),
+        message: t("All fields must be filled in"),
         type: 'error'
       });
       

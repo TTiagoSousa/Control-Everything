@@ -21,7 +21,10 @@ const Private_Routes = () => {
         </Route>
         <Route path='Settings'> 
           <Route path='Payment' element={ <Private_Page.Payment /> } />
-          <Route path='Security' element={ <Private_Page.Security /> } />
+          <Route path='Security'>
+            <Route index element={ <Private_Page.Security /> } />
+            <Route path='Manage_Password' element={ <Private_Page.Manage_Password /> } />
+          </Route>
         </Route>
       </Routes>
     </>

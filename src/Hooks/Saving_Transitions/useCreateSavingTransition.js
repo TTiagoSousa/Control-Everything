@@ -21,10 +21,9 @@ const useCreateSavingTransition = () => {
   const createSavingTransaction = async () => {
 
     if (!date || !amount || !platformID || !transitionType || !date) {
-      console.log("All fields must be filled")
       setAlert({
         open: true,
-        message: t("All fields must be filled"),
+        message: t("All fields must be filled in"),
         type: 'error'
       });
 

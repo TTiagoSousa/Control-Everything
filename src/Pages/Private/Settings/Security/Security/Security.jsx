@@ -1,14 +1,23 @@
 import React from 'react';
 import './Security.scss';
 import { useTranslation } from 'react-i18next';
-import Simple_Button from '../../../../Components/Buttons/Simple_Button/Simple_Button';
+import Simple_Button from '../../../../../Components/Buttons/Simple_Button/Simple_Button';
+import Mui_Alert from '../../../../../Components/Alerts/Mui_Alert/Mui_Alerts';
+import useFetchCreateValidationToken from '../../../../../Hooks/Reset_Password/useFetchCreateValidationToken';
 
 const Security = () => {
 
   const { t } = useTranslation();
 
+  const { fetchCreateValidationToken } = useFetchCreateValidationToken();
+
   return (
     <div className='Security'>
+
+      <div className='Alert'>
+        <Mui_Alert />
+      </div>
+
       <section className='Authentication'>
         <div className='Header'>
           <h1>{t('Authentication')}</h1>
@@ -38,6 +47,7 @@ const Security = () => {
                 <div>
                   <Simple_Button 
                     Text={t('Manage')}
+                    onClick={fetchCreateValidationToken}
                   />
                 </div>
               </div>

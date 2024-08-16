@@ -1,10 +1,19 @@
-@import '../../../../Styles/Colors.scss';
-@import '../../../../Styles/Fonts.scss';
-@import '../../../../Styles/Formats.scss';
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
 
 .Security{
   @include Pages_Configs;
   min-height: 95vh;
+
+  .Alert{
+    position: absolute;
+    width: auto;
+    bottom: 2%;
+    left: 10%;
+    transform: translate(-30%, -50%);
+    z-index: 22;
+  }
 
   .Authentication{
     width: 100%;

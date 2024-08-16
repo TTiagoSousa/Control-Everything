@@ -31,9 +31,9 @@
     "Sign in" : "Sign in",
     "Search" : "Search",
     "Country not found" : "Country not found",
-    "All fields must be filled" : "All fields must be filled",
+    "All fields must be filled in" : "All fields must be filled in",
     "Invalid email" : "Invalid email",
-    "The full name can only contain letters only" : "The full name can only contain letters only",
+    "The name can only contain letters only" : "The name can only contain letters only",
     "Password weak" : "Password wea",
     "Passwords do not match" : "Passwords do not match",
     "Email to activate account sent" : "Email to activate account sent",
@@ -46,7 +46,7 @@
     "Email to recover passowrd send" : "Email to recover passowrd send",
     "Something is wrong" : "Something is wrong",
     "Login successful" : "Login successful",
-    "Account not active" : "Account not active",
+    "The account is not active" : "The account is not active",
     "Password changed successfully" : "Password changed successfully",
     "Activating the account" : "Activating the account",
     "Please wait..." : "Please wait...",
@@ -103,6 +103,11 @@
     "Login Password" : "Login Password",
     "Login password is used to log in to your account." : "Login password is used to log in to your account.",
     "Use your email to protect your account and transactions." : "Use your email to protect your account and transactions.",
-    "Authentication" : "Authentication"
+    "Authentication" : "Authentication",
+    "Change password"  : "Change password",
+    "Code" : "Code",
+    "Validate code" : "Validate code",
+    "Invalid or expired token." : "Invalid or expired token.",
+    "Email sent with confirmation code" : "Email sent with confirmation code"
   }
 }

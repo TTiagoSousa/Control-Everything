@@ -6,4 +6,5 @@ export { default as Academy } from '../Pages/Private/Academy/Academy_Dashboard/A
 export { default as Crypto_Dashboard } from '../Pages/Private/Assets_Dashboards/Crypto/Crypto_Dashboard/Crypto_Dashboard';
 export { default as Academy_Article } from '../Pages/Private/Academy/Academy_Article/Academy_Article';
 export { default as Payment } from '../Pages/Private/Settings/Payment/Payment';
-export { default as Security } from '../Pages/Private/Settings/Security/Security';
+export { default as Security } from '../Pages/Private/Settings/Security/Security/Security';
+export { default as Manage_Password } from '../Pages/Private/Settings/Security/Manage_Password/Manage_Password';
