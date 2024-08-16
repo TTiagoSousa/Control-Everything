@@ -13,7 +13,8 @@ const Manage_Password = () => {
 
   const { t } = useTranslation();
 
-  const[ token, setToken] = useState()
+  // Initialize token with an empty string to ensure controlled input
+  const [token, setToken] = useState('');
 
   const { isValid, fetchValidateResetPasswordToken } = useFetchValidateResetPasswordToken(token);
   
@@ -128,7 +129,7 @@ const Manage_Password = () => {
               </div>
               <div className='Button_Field'>
                 <Global_Button 
-                  Text={t('Confirmar')}
+                  Text={t('Confirm')}
                   onClick={updatePassword}
                 />
               </div>
