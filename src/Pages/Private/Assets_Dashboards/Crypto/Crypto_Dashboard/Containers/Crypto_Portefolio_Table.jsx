@@ -12,9 +12,10 @@ const Crypto_Portefolio_Table = () => {
   const { cryptoList, serCryptoList } = useFetchCryptoPortefolio(); console.log(cryptoList)
 
   const [isLoading, setIsLoading] = useState(false);
+  
   useEffect(() => {
     setIsLoading(true);
-    const delay = 1500;
+    const delay = 2000;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, delay);
