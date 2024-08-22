@@ -108,6 +108,14 @@
     "Code" : "Code",
     "Validate code" : "Validate code",
     "Invalid or expired token." : "Invalid or expired token.",
-    "Email sent with confirmation code" : "Email sent with confirmation code"
+    "Email sent with confirmation code" : "Email sent with confirmation code",
+    "Crypto" : "Crypto",
+    "Price" : "Price",
+    "Average price" : "Average price",
+    "Total spent" : "Total spent",
+    "Current investment" : "Current investment",
+    "Current return" : "Current return",
+    "Return percentage" : "Return percentage",
+    "Quantity purchased" : "Quantity purchased"
   }
 }
