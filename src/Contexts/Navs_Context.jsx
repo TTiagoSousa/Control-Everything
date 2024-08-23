@@ -52,7 +52,7 @@ const NavsContext = ({ children }) => {
 
     useEffect(() => {
       function handleResize() {
-        const isMobile = window.innerWidth < 1000;
+        const isMobile = window.innerWidth < 1100;
         if (isMobile) {
           setTypeOfNavifation("Mobile_Menu");
         }

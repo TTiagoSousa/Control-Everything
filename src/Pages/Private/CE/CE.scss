@@ -9,7 +9,7 @@
   justify-content: right;
   
   .Small_Container_With_SideBar_Close {
-    width: calc(100% - 70px);
+    width: calc(100% - 50px);
     height: auto;
     margin-top: 5vh;
     transition: 0.3s all;
@@ -21,7 +21,7 @@
   }
 
   .Small_Container_With_SideBar_Open {
-    width: calc(100% - 270px);
+    width: calc(100% - 250px);
     height: auto;
     margin-top: 5vh;
     transition: 0.3s all;
