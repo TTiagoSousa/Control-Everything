@@ -47,10 +47,10 @@ const SavingsPieChart = ({ data, selectedCurrency }) => {
         },
         label: {
           color: labelColor,
-          fontSize: 15,
+          fontSize: 12,
           fontWeight: 'bolder',
           formatter: ({ name, value }) => {
-            return `${name}: ${value} ${selectedCurrency}`;
+            return `${name}: ${value}`;
           }
         }
       }
