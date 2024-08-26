@@ -9,7 +9,7 @@ const Crypto_Portefolio_Table = () => {
 
   const { t } = useTranslation();
 
-  const { cryptoList, serCryptoList } = useFetchCryptoPortefolio(); console.log(cryptoList)
+  const { cryptoList, serCryptoList } = useFetchCryptoPortefolio();
 
   const [isLoading, setIsLoading] = useState(false);
   
