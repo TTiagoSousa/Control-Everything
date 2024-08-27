@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Security.scss';
 import { useTranslation } from 'react-i18next';
 import Simple_Button from '../../../../../Components/Buttons/Simple_Button/Simple_Button';
@@ -10,6 +10,14 @@ const Security = () => {
   const { t } = useTranslation();
 
   const { fetchCreateValidationToken } = useFetchCreateValidationToken();
+
+  const [isLoading, setIsLoading] = useState(false); // Estado para controlar o carregamento do botão
+
+  const handleClick = async () => {
+    setIsLoading(true); 
+    await fetchCreateValidationToken();
+
+  };
 
   return (
     <div className='Security'>
@@ -46,8 +54,8 @@ const Security = () => {
               <div>
                 <div>
                   <Simple_Button 
-                    Text={t('Manage')}
-                    onClick={fetchCreateValidationToken}
+                    Text={isLoading ? t('Please wait...') : t('Manage')} 
+                    onClick={handleClick} 
                   />
                 </div>
               </div>
