@@ -6,6 +6,64 @@
   @include Pages_Configs;
   min-height: 95vh;
 
+  .Pie_Charts{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;  
+
+    .Total_Spent,
+    .Current_Investment{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      border-radius: $border_radius;
+
+      .Header{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px 10px 0px 0px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 12px;
+        }
+      }
+
+      .Body{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .Pie_Chart{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80%;
+          width: 350px;
+        }
+      }
+    }
+  }
+
   .Table_Wrapper{
     width: 100%;
     height: auto;
@@ -200,6 +258,23 @@
 .Dark_Mode{
 
   .Crypto_Dashboard{
+
+    .Pie_Charts{
+
+      .Total_Spent,
+      .Current_Investment{
+        background-color: $secundary_color_dark;
+        border: $border_dark;
+
+        .Header{
+          background-color: $terciary_color_dark;
+
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
   
     .Table_Wrapper{
       border: $border_dark;
@@ -277,6 +352,24 @@
 
 @media (max-width: 750px){
   .Crypto_Dashboard{
+
+    .Pie_Charts{
+      height: 450px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+
+      .Total_Spent,
+      .Current_Investment{
+
+        .Body{
+
+          .Pie_Chart{
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
 
     .Table_Wrapper{
 
