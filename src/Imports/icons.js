@@ -14,3 +14,4 @@ export { default as Trash_Restore } from '../Assets/Icons/Trash/Trash_Restore';
 export { default as Settings } from '../Assets/Icons/Settings/Settings';
 export { default as Academy_Cap } from '../Assets/Icons/Academy/Academy_Cap';
 export { default as Wallet } from '../Assets/Icons/Wallet/Wallet';
+export { default as Zoom_In } from '../Assets/Icons/Signals/Zoom_In';

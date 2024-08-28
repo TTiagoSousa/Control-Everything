@@ -1,23 +1,23 @@
 import React from 'react';
 import * as echarts from 'echarts';
-import '../Crypto_Dashboard.scss';
-import { ThemeState } from '../../../../../../Contexts/Theme_Context';
-import * as Color from '../../../../../../Styles/Colors';
+import '../../Crypto_Dashboard.scss';
+import { ThemeState } from '../../../../../../../Contexts/Theme_Context';
+import * as Color from '../../../../../../../Styles/Colors';
 import ReactECharts from "echarts-for-react";
 import { useTranslation } from 'react-i18next';
 
-const Pie_Chart_Total_Spent = ({ data }) => {
+const Pie_Chart_Investment_Percentage = ({ data }) => {
 
   const { t } = useTranslation();
   const { mode } = ThemeState();
 
   const labelColor = mode === 'dark' ? Color.gray : Color.gray_dark;
 
-  // Map the data to extract the spentPercentage for each crypto and filter out entries with 0%
+  // Map the data to extract the investmentPercentage for each crypto and filter out entries with 0%
   const filteredData = data
-    .map(crypto => ({
-      name: crypto.cryptoSymbol,
-      value: parseFloat(crypto.spentPercentage),
+    .map(platform => ({
+      name: platform.cryptoSymbol,
+      value: parseFloat(platform.investmentPercentage),
     }))
     .filter(item => item.value > 0);
 
@@ -71,4 +71,4 @@ const Pie_Chart_Total_Spent = ({ data }) => {
   );
 };
 
-export default Pie_Chart_Total_Spent;
+export default Pie_Chart_Investment_Percentage;

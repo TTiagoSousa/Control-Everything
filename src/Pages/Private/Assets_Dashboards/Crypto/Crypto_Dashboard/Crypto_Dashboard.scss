@@ -6,6 +6,96 @@
   @include Pages_Configs;
   min-height: 95vh;
 
+  .Pie_Chart_Total_Spent_And_Current_Investment_Zoom{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    display: none;
+    position: fixed;
+    z-index: 5;
+    border-radius: $border_radius;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 10px;
+  
+    &.active{
+      display: flex;
+    }
+
+    .Header{
+      position: relative;
+      width: 100%;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      border-radius: 10px 10px 0px 0px;
+
+      .Chart_Buttons{
+        width: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        button{
+          width: 190px;
+          justify-content: center;
+          height: 20px;
+          background: none;
+          padding: 5px 10px 5px 10px ;
+          border-radius: $border_radius;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+  
+          span{
+            font-family: $font_family_poppins;
+            font-size: 12px;
+            letter-spacing: 2px;
+            
+            &.active{
+              color: $orange !important;
+            }
+          }
+        }
+      }
+    }
+
+    .Body{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      .Chart{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        .Pie_Chart{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 80%;
+        }
+      }
+    }
+  }
+
   .Pie_Charts{
     position: relative;
     width: 100%;
@@ -26,18 +116,48 @@
       border-radius: $border_radius;
 
       .Header{
+        position: relative;
         width: 100%;
         height: 30px;
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
         border-radius: 10px 10px 0px 0px;
         padding: 5px;
         box-sizing: border-box;
 
-        span{
+        .Title{
+          position: absolute;
           font-family: $font_family_poppins;
           font-size: 12px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        button {
+          position: relative;
+          background: none;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: 5px;
+
+          span{
+            font-family: $font_family_open_sans;
+            font-size: 12px;
+            font-weight: 600;
+            color: $orange !important;
+          }
+
+          .Icon{
+            width: 15px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
         }
       }
 
@@ -263,6 +383,26 @@
 
   .Crypto_Dashboard{
 
+    .Pie_Chart_Total_Spent_And_Current_Investment_Zoom{
+      background-color: $primary_color_dark;
+      border: $border_dark;
+
+      .Header{
+        background-color: $secundary_color_dark;
+
+        .Chart_Buttons{
+          
+          button{
+            border: $border_dark;
+
+            span{
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+
     .Pie_Charts{
 
       .Total_Spent,
@@ -273,7 +413,7 @@
         .Header{
           background-color: $terciary_color_dark;
 
-          span{
+          .Title{
             color: $gray;
           }
         }
@@ -318,6 +458,23 @@
 .Light_Mode{
 
   .Crypto_Dashboard{
+
+    .Pie_Charts{
+
+      .Total_Spent,
+      .Current_Investment{
+        background-color: $secundary_color_light;
+        border: $border_light;
+
+        .Header{
+          background-color: $terciary_color_light;
+
+          .Title{
+            color: $gray_dark;
+          }
+        }
+      }
+    }
   
     .Table_Wrapper{
       border: $border_light;
@@ -347,6 +504,34 @@
             td{
               color: $gray_dark;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px){
+  .Crypto_Dashboard{
+
+    .Pie_Chart_Total_Spent_And_Current_Investment_Zoom{
+
+      .Header{
+        height: 70px;
+
+        .Chart_Buttons{
+          flex-direction: column;
+        }
+      }
+      
+      .Body{
+        flex-direction: column;
+
+        .Chart{
+          overflow: hidden;
+
+          .Pie_Chart{
+            width: 450px;
           }
         }
       }
