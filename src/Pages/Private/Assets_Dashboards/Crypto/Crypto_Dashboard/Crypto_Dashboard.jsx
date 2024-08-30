@@ -86,7 +86,7 @@ const Crypto_Dashboard = () => {
 
       <div className='Portefolio_Evolution'>
         <div className="Header">
-          <span>{t('Evolution of the portfolio')}</span>
+          <span>{t('Portfolio evolution')}</span>
         </div>
         <div className='Body'>
           {isLoading || data === null ? (

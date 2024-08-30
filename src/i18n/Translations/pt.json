@@ -117,6 +117,8 @@
     "Current return" : "Retorno",
     "Return percentage" : "Retorno %",
     "Quantity purchased" : "Quantidade comprada",
-    "Total heritage" : "Patrimônio total"
+    "Total heritage" : "Patrimônio total",
+    "Total in crypto" : "Total em criptomoedas",
+    "Portfolio evolution" : "Evolução do portfólio"
   }
 }
