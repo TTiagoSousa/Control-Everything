@@ -8,8 +8,6 @@ import { useTranslation } from 'react-i18next';
 
 const SavingsPieChart = ({ data, selectedCurrency }) => {
 
-  console.log(data)
-
   const { t } = useTranslation();
 
   const { mode } = ThemeState();

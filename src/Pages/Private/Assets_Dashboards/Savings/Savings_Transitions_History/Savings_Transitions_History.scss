@@ -60,7 +60,7 @@
   
               span{
                 font-family: $font_family_poppins;
-                font-size: 13px;
+                font-size: 12px;
               }
             }
           }
@@ -96,7 +96,7 @@
   
               span{
                 font-family: $font_family_poppins;
-                font-size: 13px;
+                font-size: 12px;
               }
             }
 
@@ -191,6 +191,7 @@
                 font-family: $font_family_poppins;
                 transition: 0.5s;
                 cursor: pointer;
+                font-size: 12px;
 
                 &:hover{
                   color: $orange;
@@ -360,29 +361,9 @@
       
         table{
 
-          thead{
-
-            tr{
-
-              th{
-
-                span{
-                  font-size: 12px;
-                }
-              }
-            }
-          }
-
           tbody{
 
             tr{
-
-              td{
-    
-                span{
-                  font-size: 12px;
-                }
-              }
 
               .Platform{
   

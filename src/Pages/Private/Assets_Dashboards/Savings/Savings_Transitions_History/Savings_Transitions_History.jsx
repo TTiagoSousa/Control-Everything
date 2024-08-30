@@ -9,8 +9,6 @@ const Savings_Transitions_History = () => {
   const [ openForm, setOpenForm ] = useState(false);
   const [ selectedTransition, setSelectedTransition ] = useState('')
 
-  console.log(selectedTransition)
-
   const handleOpenForm = () => {
     setOpenForm(true); // Abre o formulário
   };

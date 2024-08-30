@@ -41,8 +41,7 @@
 
         span{
           font-family: $font_family_poppins;
-          font-size: 14px;
-          letter-spacing: 1px;
+          font-size: 12px;
         }
       }
 
@@ -71,7 +70,7 @@
         a{
           text-decoration: none;
           font-family: $font_family_poppins;
-          font-size: 14px;
+          font-size: 12px;
           letter-spacing: 1px;
           transition: 0.5s;
 
@@ -103,7 +102,7 @@
 
         span{
           font-family: $font_family_poppins;
-          font-size: 14px;
+          font-size: 12px;
           letter-spacing: 1px;
         }
 
@@ -133,7 +132,7 @@
 
         span{
           font-family: $font_family_poppins;
-          font-size: 20px;
+          font-size: 12px;
         }
       }
 
@@ -151,7 +150,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           display: flex;
-          font-size: 13px;
+          font-size: 12px;
           justify-content: center;
           align-items: center;
           padding: 10px;
@@ -165,41 +164,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-    }
-  }
-}
-
-@media (max-width: 1050px){
-  .Savings_Dashboard{
-
-    .Totals{
-
-      .Total_On_Savings{
-
-        .Header{
-
-          span{
-            font-size: 12px;
-          }
-        }
-
-        .Footer{
-
-          a{
-            font-size: 12px;
-          }
-        }
-      }
-
-      .Savings_Pie_Chart{
-
-        .Header{
-
-          span{
-            font-size: 12px;
-          }
-        }
       }
     }
   }

@@ -9,17 +9,22 @@ import { useTranslation } from 'react-i18next';
 import * as Icon from '../../../../../Imports/icons';
 import * as Color from '../../../../../Styles/Colors';
 import Pie_Chart_Total_Spent_And_Current_Investment_Zoom from './Containers/Zoom/Pie_Chart_Total_Spent_And_Current_Investment_Zoom';
+import useFetchGetTotalOnCryptoConverted from '../../../../../Hooks/Crypto_Transitions/useFetchGetTotalOnCryptoConverted';
+import useFetchGetPortfolioEvolution from '../../../../../Hooks/Crypto_Transitions/useFetchGetPortfolioEvolution';
+import Line_Chart_Portefolio_Evolution from './Containers/Charts/Line_Chart_Portefolio_Evolution';
 
 const Crypto_Dashboard = () => {
 
   const { t } = useTranslation();
 
   const { totalSpentAndCurrentInvestment } = useFetchTotalSpentAndCurrentInvestment();
+  const { totalOnCrypto } = useFetchGetTotalOnCryptoConverted();
+  const { data } = useFetchGetPortfolioEvolution();
 
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
-    const delay = 1500;
+    const delay = 3500;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, delay);
@@ -34,8 +39,6 @@ const Crypto_Dashboard = () => {
     setPieChartsZoom(true);
   };
 
-  console.log(pieChartsZoom)
-
   return (
     <div className='Crypto_Dashboard'>
 
@@ -48,6 +51,58 @@ const Crypto_Dashboard = () => {
         />
       )}
 
+      <div className='Totals'>
+        <div className='Total_Crypto'>
+          <div className="Header">
+            <span>{t('Total in crypto')}</span>
+          </div>
+          <div className='Body'>
+            <div className='Content'>
+              {isLoading || totalOnCrypto === null ? (
+                <div className='Loading'>
+                  <Loading_Balls count={6}/>
+                </div>
+              ) : totalOnCrypto === null ? ( 
+                <div className='Loading'>
+                  <Loading_Balls count={6}/>
+                </div>
+              ) : (
+                <>
+                  <div style={{ color: crypto.returnPercentage > 0 ? Color.green : Color.red }}>
+                    <span>{totalOnCrypto.totalConverted}</span>
+                    <span>{totalOnCrypto.targetSymbol}</span>
+                  </div>
+                  <span className='Diviser'>/</span>
+                  <div style={{ color: crypto.returnPercentage > 0 ? Color.green : Color.red }}>
+                    <span>{totalOnCrypto.returnPercentage}</span>
+                    <span>%</span>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='Portefolio_Evolution'>
+        <div className="Header">
+          <span>{t('Evolution of the portfolio')}</span>
+        </div>
+        <div className='Body'>
+          {isLoading || data === null ? (
+            <div className='Loading'>
+              <Loading_Balls count={6}/>
+            </div>
+          ) : data.length === 0 ? (
+            <div className='No_Transition'>
+              <span>{t("No transitions")}</span>
+            </div>
+          ) : (
+            <Line_Chart_Portefolio_Evolution data={data} />
+          )}
+        </div>
+      </div>
+      
       <div className='Pie_Charts'>
         <div className='Total_Spent'>
           <div className='Header'>
