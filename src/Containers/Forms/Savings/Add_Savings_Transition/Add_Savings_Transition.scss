@@ -71,14 +71,16 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        
+        padding: 5px;
+        box-sizing: border-box;
+  
         li{
           width: 100%;
           display: flex;
           justify-content: space-between;
           box-sizing: border-box;
           cursor: pointer;
-          padding: 8px;
+          padding: 5px;
           border-radius: $border_radius;
           transition: 0.5s;
   
@@ -350,7 +352,7 @@
           li{
 
             &:hover{
-              background-color: $primary_color_dark;
+              background-color: $terciary_color_dark;
             }
 
             span{
