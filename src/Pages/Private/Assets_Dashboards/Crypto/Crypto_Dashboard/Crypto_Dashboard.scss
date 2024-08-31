@@ -643,6 +643,26 @@
       }
     }
 
+    .Pie_Chart_Total_Spent_And_Current_Investment_Zoom{
+      background-color: $primary_color_light;
+      border: $border_light;
+
+      .Header{
+        background-color: $secundary_color_light;
+
+        .Chart_Buttons{
+          
+          button{
+            border: $border_light;
+
+            span{
+              color: $gray_darker;
+            }
+          }
+        }
+      }
+    }
+
     .Pie_Charts{
 
       .Total_Spent,
