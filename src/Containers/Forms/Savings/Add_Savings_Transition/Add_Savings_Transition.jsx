@@ -112,7 +112,7 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
     }
   }, [selectSavingsForm]);
 
-  console.log(currenciesList)
+  console.log(feesPaid)
 
   return (
     <>

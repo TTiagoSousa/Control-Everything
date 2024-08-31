@@ -182,7 +182,8 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        
+        padding: 5px;
+        box-sizing: border-box;
   
         li{
           width: 100%;
@@ -190,7 +191,7 @@
           justify-content: space-between;
           box-sizing: border-box;
           cursor: pointer;
-          padding: 8px;
+          padding: 5px;
           border-radius: $border_radius;
           transition: 0.5s;
           
@@ -222,6 +223,7 @@
 
             img{
               width: 100%;
+              border-radius: 5px;
             }
           }
         }

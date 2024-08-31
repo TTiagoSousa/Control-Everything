@@ -16,7 +16,7 @@ const useCreateSavingTransition = () => {
   const [ currencyTypeID, setCurrencyTypeID ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ transitionType, setTransitionType ] = useState('DEPOSIT');
-  const [ feesPaid, setFeesPaid ] = useState('')
+  const [ feesPaid, setFeesPaid ] = useState(0)
 
   const createSavingTransaction = async () => {
 
@@ -49,6 +49,7 @@ const useCreateSavingTransition = () => {
     }
 
     const formattedDate = new Date(date).toISOString();
+    const fees = feesPaid ? parseInt(feesPaid, 10) : 0;
 
     try {
       
@@ -59,7 +60,7 @@ const useCreateSavingTransition = () => {
         platformID: platformID,
         currencyTypeID: currencyTypeID,
         description: description,
-        feesPaid: parseInt(feesPaid, 10),
+        feesPaid: fees,
       });
  
       setAlert({
