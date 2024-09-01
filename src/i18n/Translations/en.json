@@ -1,5 +1,9 @@
 {
   "translation": {
-
+    "Language" : "Language",
+    "Crypto" : "Crypto",
+    "Currency" : "Currency",
+    "Search" : "Shearch",
+    "Currency or Crypto" : "Currency or Crypto"
   }
 }

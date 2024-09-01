@@ -1,5 +1,9 @@
 {
   "translation": {
-
+    "Language" : "Linguagem",
+    "Crypto" : "Cripto",
+    "Currency" : "Moeda",
+    "Search" : "Pesquisa",
+    "Currency or Crypto" : "Moedas ou cripto"
   }
 }
