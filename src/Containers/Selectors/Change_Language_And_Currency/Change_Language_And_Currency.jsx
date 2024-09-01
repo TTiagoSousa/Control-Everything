@@ -45,10 +45,18 @@ const Change_Language_And_Currency = () => {
     setOpen(false); // Fechar o menu após selecionar uma moeda
   };
 
+  const resetFilters = () => {
+    setLanguageSearch('');
+    setCryptoSearch('');
+    setCurrencySearch('');
+    setCurrencyOrCryptoSearch('');
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setOpen(false);
+        resetFilters(); // Reseta os filtros ao fechar o menu
       }
     };
 
