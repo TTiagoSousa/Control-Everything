@@ -29,3 +29,5 @@ export const red = "#eb4646"
 export const red_light = "rgb(240, 133, 133)"
 
 export const orange = '#f58344'
+
+export const yellow = '#f0b90b'

@@ -19,6 +19,19 @@
       font-weight: 700;
     }
   }
+
+  .Right_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .Button_Field{
+      position: relative;
+      width: 21px;
+      height: 21px;
+    }
+  }
 }
 
 .Dark_Mode{
