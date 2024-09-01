@@ -1,0 +1,50 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Header_Index{
+  position: fixed;
+  height: 5vh;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+
+  .Left_Side{
+
+    span{
+      font-family: $font_family_poppins;
+      font-weight: 700;
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Header_Index{
+    background-color: $primary_color_dark;
+
+    .Left_Side{
+
+      span{
+        color: #f0b90b;
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Header_Index{
+    background-color: $primary_color_light;
+
+    .Left_Side{
+
+      span{
+        color: #f0b90b;
+      }
+    }
+  }
+}
