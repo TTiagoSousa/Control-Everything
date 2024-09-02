@@ -32,6 +32,7 @@ const Header_Index = () => {
               <Simple_Button 
                 text={t('Sign up')}
                 buttonStyle='type2'
+                to='Sign_Up'
               />
             </div>
           </>

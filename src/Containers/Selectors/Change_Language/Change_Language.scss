@@ -1,0 +1,271 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Change_Language{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none; 
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Language_Options{
+    position: absolute;
+    width: 200px;
+    top: 180%;
+    right: 0px;
+    border-radius: 10px 0px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.inactive{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .Arrow{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -7.5px;
+      right: 2.5px;
+      transform: (rotate(45deg));
+      z-index: 3;
+    }
+
+    .Currency_Or_Crypto_Selector{
+      display: none;
+    }
+
+    .Language_Selector{
+      width: 100%;
+      height: 250px;
+      flex-direction: column;
+      padding: 5px;
+      box-sizing: border-box;
+      gap: 10px;
+      display: flex;
+
+      .Title{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 14px;
+          font-weight: 550;
+        }
+      }
+
+      .Input_Field{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 25px;
+      }
+
+      ul{
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        overflow: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        scroll-behavior: smooth;
+
+        li{
+          cursor: pointer;
+          transition: 0.5s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 0px 10px 10px 0px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        display: none;
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        height: 50px;
+        border-radius: 0px 10px 10px 0px;
+      }
+    
+        ::-webkit-scrollbar-track
+      {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+      }
+    
+      ::-webkit-scrollbar-thumb
+      {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #2c7be5;
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Change_Language {
+
+    .Arrow{
+      background-color: $secundary_color_dark;
+      border-top: $border_dark;
+      border-left: $border_dark;
+    }
+
+    .Language_Options{
+      background-color: $secundary_color_dark;
+      border: $border_dark;
+
+      .Language_Selector{
+
+        .Title{
+  
+          span{
+            color: $gray;
+          }
+        }
+
+        ul{
+
+          li{
+
+            span{
+              color: $white;
+            }
+
+            &:hover{
+              background-color: $terciary_color_dark;
+
+              span{
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Change_Language {
+
+    .Arrow{
+      background-color: $secundary_color_light;
+      border-top: $border_light;
+      border-left: $border_light;
+    }
+
+    .Language_Options{
+      background-color: $secundary_color_light;
+      border: $border_light;
+
+      .Language_Selector{
+
+        .Title{
+  
+          span{
+            color: $black;
+          }
+        }
+
+        ul{
+
+          li{
+
+            span{
+              color: $black;
+            }
+
+            &:hover{
+              background-color: $terciary_color_light;
+
+              span{
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px){
+
+  .Change_Language{
+
+    .Language_Options{
+
+      .Language_Selector{
+
+        .Title{
+
+          span{
+            font-size: 13px;
+          }
+        }
+
+        ul{
+
+          li{
+
+            span{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

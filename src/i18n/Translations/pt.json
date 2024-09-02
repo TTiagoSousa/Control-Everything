@@ -6,6 +6,10 @@
     "Search" : "Pesquisa",
     "Currency or Crypto" : "Moedas ou cripto",
     "Sign in" : "Iniciar sessão",
-    "Sign up" : "Registar"
+    "Sign up" : "Registar",
+    "Already have a account ?" : "Ainda não tens conta ?",
+    "Password": "Senha",
+    "Email" : "Email",
+    "Confirm password" : "Confirma a senha"
   }
 }
