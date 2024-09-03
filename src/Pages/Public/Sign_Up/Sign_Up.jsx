@@ -82,12 +82,12 @@ const Sign_Up = () => {
             />
           </div>
           <div className="Button_Field">
-          <Global_Button 
-            text={loading ? t('Loading...') : t('Sign up')}
-            type="button"
-            onClick={handleSignup}
-            disabled={loading}
-          />
+            <Global_Button 
+              text={loading ? t('Loading...') : t('Sign up')}
+              type="button"
+              onClick={handleSignup}
+              disabled={loading}
+            />
           </div>
         </form>
 

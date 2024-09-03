@@ -20,6 +20,10 @@
     "Sign Up" : "Sign Up",
     "Don't have an account ?" : "Don't have an account ?",
     "Reset password" : "Reset password",
-    "Forgot your password ?" : "Forgot your password ?"
+    "Forgot your password ?" : "Forgot your password ?",
+    "Something is wrong" : "Something is wrong",
+    "The account is not active" : "The account is not active",
+    "Something went wrong" : "Something went wrong",
+    "Login successful" : "Login successful"
   }
 }
