@@ -1,0 +1,51 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+
+.Header_Home{
+  position: fixed;
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  box-sizing: border-box;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  box-sizing: border-box;
+
+  .Left_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .Right_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+
+    .Button_Field{
+      position: relative;
+      width: 21px;
+      height: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.Dark_Mode{
+  
+  .Header_Home {
+    background-color: $primary_color_dark;
+  }
+}
+  
+.Light_Mode {
+
+  .Header_Home{
+    background-color: $primary_color_light;
+  }
+}
