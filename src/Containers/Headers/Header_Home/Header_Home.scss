@@ -18,6 +18,11 @@
     display: flex;
     gap: 10px;
     align-items: center;
+
+    span{
+      font-family: $font_family_poppins;
+      font-weight: 700;
+    }
   }
 
   .Right_Side{
@@ -37,15 +42,29 @@
 }
 
 .Dark_Mode{
-  
-  .Header_Home {
+
+  .Header_Home{
     background-color: $primary_color_dark;
+
+    .Left_Side{
+
+      span{
+        color: #f0b90b;
+      }
+    }
   }
 }
-  
-.Light_Mode {
+
+.Light_Mode{
 
   .Header_Home{
     background-color: $primary_color_light;
+
+    .Left_Side{
+
+      span{
+        color: #f0b90b;
+      }
+    }
   }
 }
