@@ -35,7 +35,7 @@ const NavsContext = ({ children }) => {
 
     useEffect(() => {
       function handleResize() {
-        const isMobile = window.innerWidth < 1100;
+        const isMobile = window.innerWidth < 1200;
         if (isMobile) {
           setTypeOfNavifation("Mobile_Menu");
         }
@@ -46,11 +46,17 @@ const NavsContext = ({ children }) => {
     }, []);
   // Choose navigation type
 
+  // Open SideBarHome
+    const [ mobile_Sidebar_Home, set_Mobile_Sidebar_Home ] = useState(false);
+    const show_Mobile_Sidebar_Home = () => set_Mobile_Sidebar_Home(!mobile_Sidebar_Home);
+  // Open SideBarHome
+
   return (
     <Navs.Provider 
       value={{ 
         alert, setAlert,
-        typeOfNavifation, setTypeOfNavifation
+        typeOfNavifation, setTypeOfNavifation,
+        mobile_Sidebar_Home, set_Mobile_Sidebar_Home, show_Mobile_Sidebar_Home,
       }}
     >
       {children}

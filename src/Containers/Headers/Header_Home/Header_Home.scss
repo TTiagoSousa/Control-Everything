@@ -19,6 +19,38 @@
     gap: 10px;
     align-items: center;
 
+    .Menu{
+      width: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+
+      &.With_SideBar{
+        display: none;
+      }
+
+      button{
+        width: auto;
+        height: 100%;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        div{
+          background-color: $yellow;
+          width: 20px;
+          height: 2px;
+        }
+      }
+    }
+
     span{
       font-family: $font_family_poppins;
       font-weight: 700;
