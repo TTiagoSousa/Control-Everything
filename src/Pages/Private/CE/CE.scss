@@ -7,20 +7,8 @@
   width: 100%;
   height: auto;
   justify-content: right;
-  
-  .Small_Container_With_SideBar_Close {
-    width: calc(100% - 50px);
-    height: auto;
-    margin-top: 5vh;
-    transition: 0.3s all;
-    box-sizing: border-box;
-    transition: all 0.3s;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-  }
 
-  .Small_Container_With_SideBar_Open {
+  .Container_Sidebar {
     width: calc(100% - 250px);
     height: auto;
     margin-top: 5vh;
