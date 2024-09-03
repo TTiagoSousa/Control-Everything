@@ -51,12 +51,18 @@ const NavsContext = ({ children }) => {
     const show_Mobile_Sidebar_Home = () => set_Mobile_Sidebar_Home(!mobile_Sidebar_Home);
   // Open SideBarHome
 
+  // Customize Sidebar
+    const [ customize_Sidebar, setCustomize_Sidebar ] = useState(false);
+    const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
+  // Customize Sidebar
+
   return (
     <Navs.Provider 
       value={{ 
         alert, setAlert,
         typeOfNavifation, setTypeOfNavifation,
         mobile_Sidebar_Home, set_Mobile_Sidebar_Home, show_Mobile_Sidebar_Home,
+        customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
       }}
     >
       {children}

@@ -5,9 +5,11 @@ import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
 import { NavsState } from '../../../Contexts/Navs_Context';
 import Sidebar_Home from '../../../Containers/Navigation_Home/Sidebar_Home/Sidebar_Home';
 import Mobile_Menu_Home from '../../../Containers/Navigation_Home/Mobile_Menu_Home/Mobile_Menu_Home';
+import Custumize_Sidebar from '../../../Containers/Navs/Custumize_Sidebar/Custumize_Sidebar';
+
 const CE = () => {
 
-  const { typeOfNavifation, sidebar_Home } = NavsState();
+  const { typeOfNavifation } = NavsState();
 
   function getNavClass() {
     switch (typeOfNavifation) {
@@ -24,6 +26,7 @@ const CE = () => {
   return (
     <>
       <Header_Home />
+      <Custumize_Sidebar />
 
       {
         typeOfNavifation === "Sidebar_Home" ? (
