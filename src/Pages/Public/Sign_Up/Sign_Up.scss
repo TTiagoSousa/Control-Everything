@@ -9,6 +9,15 @@
   display: flex;
   justify-content: space-between;
 
+  .Alert{
+    position: absolute;
+    width: auto;
+    bottom: 2%;
+    left: 10%;
+    transform: translate(-30%, -50%);
+    z-index: 22;
+  }
+
   .Image_Container{
     width: 60%;
     height: 100%;
@@ -224,6 +233,13 @@
   .Sign_Up{
     flex-direction: column;
     position: relative;
+
+    .Alert{
+      position: fixed;
+      bottom: 80%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
 
     header{
       position: fixed;

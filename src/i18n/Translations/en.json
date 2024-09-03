@@ -10,6 +10,12 @@
     "Already have a account ?" : "Already have a account ?",
     "Password": "Password",
     "Email" : "Email",
-    "Confirm password" : "Confirm password"
+    "Confirm password" : "Confirm password",
+    "All fields are required" : "All fields are required",
+    "Invalid email address" : "Invalid email address",
+    "Password is too weak" : "Password is too weak",
+    "Passwords do not match" : "Passwords do not match",
+    "Loading..." : "Loading...",
+    "Activation email sent" : "Activation email sent"
   }
 }

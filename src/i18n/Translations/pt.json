@@ -10,6 +10,12 @@
     "Already have a account ?" : "Ainda não tens conta ?",
     "Password": "Senha",
     "Email" : "Email",
-    "Confirm password" : "Confirma a senha"
+    "Confirm password" : "Confirma a senha",
+    "All fields are required" : "Todos os campos são obrigatórios",
+    "Invalid email address" : "Endereço de email inválido",
+    "Password is too weak" : "A senha é muito fraca",
+    "Passwords do not match" : "As senhas não coincidem",
+    "Loading..." : "A carregar...",
+    "Activation email sent" : "Email de ativação enviado"
   }
 }
