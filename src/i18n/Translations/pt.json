@@ -16,6 +16,10 @@
     "Password is too weak" : "A senha é muito fraca",
     "Passwords do not match" : "As senhas não coincidem",
     "Loading..." : "A carregar...",
-    "Activation email sent" : "Email de ativação enviado"
+    "Activation email sent" : "Email de ativação enviado",
+    "Sign Up" : "Registar",
+    "Don't have an account ?" : "Não possui uma conta ?",
+    "Reset password" : "Recuperar palavra-passe",
+    "Forgot your password ?" : "Esqueceu-se da sua palavra-passe ?"
   }
 }

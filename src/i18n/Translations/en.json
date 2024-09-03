@@ -16,6 +16,10 @@
     "Password is too weak" : "Password is too weak",
     "Passwords do not match" : "Passwords do not match",
     "Loading..." : "Loading...",
-    "Activation email sent" : "Activation email sent"
+    "Activation email sent" : "Activation email sent",
+    "Sign Up" : "Sign Up",
+    "Don't have an account ?" : "Don't have an account ?",
+    "Reset password" : "Reset password",
+    "Forgot your password ?" : "Forgot your password ?"
   }
 }
