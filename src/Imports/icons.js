@@ -7,3 +7,4 @@ export { default as Dashboard_Cubes } from '../Assets/Icons/Dashboard/Dashboard_
 export { default as GLobal_SVG } from '../Assets/Icons/GLobal_SVG';
 export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle';
 export { default as Settings_With_Two_Arrows } from '../Assets/Icons/Settings/Settings_With_Two_Arrows';
+export { default as Painting } from '../Assets/Icons/Painting/Painting'; 

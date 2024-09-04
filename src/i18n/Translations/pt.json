@@ -24,6 +24,8 @@
     "Something is wrong" : "Algo está errado",
     "The account is not active" : "A conta não está ativa",
     "Something went wrong" : "Algo correu mal",
-    "Login successful" : "Início de sessão bem-sucedido"
+    "Login successful" : "Início de sessão bem-sucedido",
+    "Settings" : "Defenições",
+    "Set your own customized style" : "Custumiza ao teu estilo o CE"
   }
 }

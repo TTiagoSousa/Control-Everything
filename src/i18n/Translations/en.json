@@ -24,6 +24,8 @@
     "Something is wrong" : "Something is wrong",
     "The account is not active" : "The account is not active",
     "Something went wrong" : "Something went wrong",
-    "Login successful" : "Login successful"
+    "Login successful" : "Login successful",
+    "Settings" : "Settings",
+    "Set your own customized style" : "Set your own customized style"
   }
 }
