@@ -25,9 +25,9 @@ const Header_Home = () => {
   return (
     <header className='Header_Home'>
       <div className="Left_Side">
-        <div className='Menu'>
-          {
-            typeOfNavifation === 'Mobile_Menu' ? (
+        {
+          typeOfNavifation === 'Mobile_Menu' ? (
+            <div className='Menu'>
               <button
                 onClick={show_Mobile_Sidebar_Home}
               >
@@ -35,9 +35,9 @@ const Header_Home = () => {
                 <div></div>
                 <div></div>
               </button>
-            ) : null
-          }
-        </div>
+            </div>
+          ) : null
+        }
         <span>Control Everytinhg</span>
       </div>
       <div className="Right_Side">
