@@ -14,13 +14,12 @@ export const navItems = [
   
   // { to: '/CE/Academy', text: 'Academy', icon: <Icon.Dashboard_Cubes /> },
 
-  // {
-  //   text: 'Settings',
-  //   icon: <Icon.Dashboard_Cubes />,
-  //   dropdownItems: [
-  //     { to: '/CE/Settings/Payment', text: 'Payment' },
-  //     { to: '/CE/Settings/Security', text: 'Security' },
-  //   ],
-  // },
+  {
+    text: 'Settings',
+    icon: <Icon.Settings />,
+    dropdownItems: [
+      { to: '/CE/Settings/Security', text: 'Security' },
+    ],
+  },
 
 ];
