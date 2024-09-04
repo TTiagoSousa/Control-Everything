@@ -26,6 +26,7 @@
     "Something went wrong" : "Something went wrong",
     "Login successful" : "Login successful",
     "Settings" : "Settings",
-    "Set your own customized style" : "Set your own customized style"
+    "Set your own customized style" : "Set your own customized style",
+    "Sign out" : "Sign out"
   }
 }

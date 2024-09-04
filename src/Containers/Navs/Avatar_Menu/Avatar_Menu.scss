@@ -1,0 +1,182 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Avatar_Menu{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none; 
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Avatar_Menu_Options{
+    position: absolute;
+    width: 200px;
+    top: 180%;
+    right: 0px;
+    border-radius: 10px 0px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.inactive{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .Arrow{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -7.5px;
+      right: 2.5px;
+      transform: (rotate(45deg));
+      z-index: 3;
+    }
+
+    .Options{
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      padding: 5px;
+      box-sizing: border-box;
+      gap: 10px;
+
+      ul{
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .Diviser{
+          border-bottom: 1px solid white;
+          padding: 0px !important;
+        }
+
+        li{
+          cursor: pointer;
+          transition: 0.5s;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 2px 5px 2px 5px;
+          border-radius: 5px;
+
+          button{
+            width: auto;
+            font-family: $font_family_poppins;
+            font-size: 12px;
+            font-weight: 600;
+          }
+
+          .Icon{
+            width: 23px;
+            height: 23px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.Dark_Mode{
+
+  .Avatar_Menu {
+
+    .Arrow{
+      background-color: $secundary_color_dark;
+      border-top: $border_dark;
+      border-left: $border_dark;
+    }
+
+    .Avatar_Menu_Options{
+      background-color: $secundary_color_dark;
+      border: $border_dark;
+
+      .Options{
+
+        ul{
+
+          li{
+
+            button{
+              color: $white;
+            }
+
+            &:hover{
+             background-color: $terciary_color_dark; 
+
+              button{
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Avatar_Menu {
+
+    .Arrow{
+      background-color: $secundary_color_light;
+      border-top: $border_light;
+      border-left: $border_light;
+    }
+
+    .Avatar_Menu_Options{
+      background-color: $secundary_color_light;
+      border: $border_light;
+
+      .Options{
+
+        ul{
+
+          li{
+
+            button{
+              color: $black;
+            }
+
+            &:hover{
+             background-color: $terciary_color_light; 
+
+              button{
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

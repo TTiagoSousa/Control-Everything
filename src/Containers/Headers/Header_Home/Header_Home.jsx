@@ -6,6 +6,7 @@ import Change_Language_And_Currency from '../../Selectors/Change_Language_And_Cu
 import { NavsState } from '../../../Contexts/Navs_Context';
 import * as Color from '../../../Styles/Colors';
 import * as Icon from '../../../Imports/icons';
+import Avatar_Menu from '../../Navs/Avatar_Menu/Avatar_Menu';
 
 const Header_Home = () => {
 
@@ -56,6 +57,9 @@ const Header_Home = () => {
           >
             <Icon.Settings_With_Two_Arrows Color_1={Color.yellow} Color_2={Color.yellow} GlobalColor={getColor}/>
           </div>
+        </div>
+        <div className='Button_Field'>
+          <Avatar_Menu />
         </div>
       </div>
     </header>
