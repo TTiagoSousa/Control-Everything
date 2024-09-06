@@ -32,6 +32,10 @@
     "Mobile Menu Navigation" : "Navegação em Menu Mobile",
     "Navigation Position" : "Posição da Navegação",
     "Select a suitable navigation system for your web application" : "Selecione um Sistema de Navegação Adequado para a Sua Aplicação Web",
-    "Navigation :" : "Navegação :"
+    "Navigation :" : "Navegação :",
+    "What's your color ?" : "Qual é a sua cor?",
+    "Choose a color to sidebar" : "Escolha uma cor para a barra lateral",
+    "Blue" : "Azul",
+    "Dark" : "Escuro"
   }
 }
