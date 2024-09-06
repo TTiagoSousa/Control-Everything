@@ -27,6 +27,11 @@
     "Login successful" : "Login successful",
     "Settings" : "Settings",
     "Set your own customized style" : "Set your own customized style",
-    "Sign out" : "Sign out"
+    "Sign out" : "Sign out",
+    "Sidebar Navigation" : "Sidebar Navigation",
+    "Mobile Menu Navigation" : "Mobile Menu Navigation",
+    "Navigation Position" : "Navigation Position",
+    "Select a suitable navigation system for your web application" : "Select a suitable navigation system for your web application",
+    "Navigation :" : "Navigation :"
   }
 }

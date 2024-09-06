@@ -27,6 +27,11 @@
     "Login successful" : "Início de sessão bem-sucedido",
     "Settings" : "Defenições",
     "Set your own customized style" : "Custumiza ao teu estilo o CE",
-    "Sign out" : "Terminar sessão"
+    "Sign out" : "Terminar sessão",
+    "Sidebar Navigation" : "Navegação na Barra Lateral",
+    "Mobile Menu Navigation" : "Navegação em Menu Mobile",
+    "Navigation Position" : "Posição da Navegação",
+    "Select a suitable navigation system for your web application" : "Selecione um Sistema de Navegação Adequado para a Sua Aplicação Web",
+    "Navigation :" : "Navegação :"
   }
 }
