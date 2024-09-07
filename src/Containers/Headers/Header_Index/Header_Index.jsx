@@ -19,7 +19,15 @@ const Header_Index = () => {
       </div>
       <div className="Right_Side">
         {authenticated ?
-          <></>
+          <>
+            <div className="Button_Field">
+              <Simple_Button 
+                text={t('Back to dashboard')}
+                buttonStyle='type2'
+                to='CE/Dashboard'
+              />
+            </div>
+          </>
           :
           <>
             <div className="Button_Field">

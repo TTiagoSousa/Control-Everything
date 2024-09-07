@@ -27,6 +27,7 @@
 
   .Right_Side{
     position: relative;
+    width: auto;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -86,7 +87,7 @@
       display: flex;
       align-items: center;
 
-      > div:nth-child(3) {
+      > div:nth-child(2) {
         margin-left: auto; // Empurra a terceira div para a direita
       }
     }
