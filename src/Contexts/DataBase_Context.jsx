@@ -3,11 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { NavsState } from './Navs_Context';
 import * as jwt_decode from "jwt-decode";
 import Cookies from 'js-cookie';
+import { TOKEN_COOKIE_NAME, USER_ID_COOKIE_NAME } from '../config/cookies';
 
 const DataBase = createContext({});
-
-const TOKEN_COOKIE_NAME = 'rthtrh3445gv@@firnf1rgher';
-const USER_ID_COOKIE_NAME = 'agerg3234rrthrts322455';
 
 const DataBaseContext = ({ children }) => {
 
@@ -60,6 +58,22 @@ const DataBaseContext = ({ children }) => {
   useEffect(() => {
     checkAuthentication();
   }, [checkAuthentication]);
+
+  const logout = useCallback(() => {
+    Cookies.remove(TOKEN_COOKIE_NAME);
+    Cookies.remove(USER_ID_COOKIE_NAME);
+
+    setAuthenticated(false);
+    setUserID(null);
+
+    navigate('/');
+
+    setAlert({
+      open: true,
+      message: 'Logged out successfully.',
+      type: 'info',
+    });
+  }, [navigate, setAlert]);
 
   return (
     <DataBase.Provider

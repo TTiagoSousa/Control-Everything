@@ -4,12 +4,15 @@ import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
 import { ThemeState } from '../../../Contexts/Theme_Context';
 import { useTranslation } from 'react-i18next';
+import { useLogout } from '../../../Hooks/Auth/useLogout';
 
 const Avatar_Menu = () => {
 
   const { t } = useTranslation();
 
   const { mode } = ThemeState();
+
+  const { logout } = useLogout();
 
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -55,7 +58,7 @@ const Avatar_Menu = () => {
         <div className='Options'>
           <ul>
             <li>
-              <button>{t('Sign out')}</button>
+              <button onClick={logout}>{t('Sign out')}</button>
               <div className='Icon'>
                 <Icon.Double_Dor GlobalColor={Color.yellow}/>
               </div>
