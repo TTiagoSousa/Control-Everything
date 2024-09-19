@@ -57,8 +57,8 @@ const Avatar_Menu = () => {
         <div className='Arrow'></div>
         <div className='Options'>
           <ul>
-            <li>
-              <button onClick={logout}>{t('Sign out')}</button>
+            <li onClick={logout}>
+              <button>{t('Sign out')}</button>
               <div className='Icon'>
                 <Icon.Double_Dor GlobalColor={Color.yellow}/>
               </div>
