@@ -37,6 +37,21 @@
     "Choose a color to sidebar" : "Choose a color to sidebar",
     "Blue" : "Blue",
     "Dark" : "Dark",
-    "Back to dashboard" : "Back to dashboard"
+    "Back to dashboard" : "Back to dashboard",
+    "Manage" : "Manage",
+    "Login Password" : "Login Password",
+    "Login password is used to log in to your account." : "Login password is used to log in to your account.",
+    "Use your email to protect your account and transactions." : "Use your email to protect your account and transactions.",
+    "Authentication" : "Authentication",
+    "Change password"  : "Change password",
+    "Please wait..." : "Please wait...",
+    "Email sent with confirmation code" : "Email sent with confirmation code",
+    "Code" : "Code",
+    "Validate code" : "Validate code",
+    "Confirm" : "Confirm",
+    "The password must be at least 6 characters long" : "Deve ter pelo menos 6 caracteres de comprimento",
+    "The password must contain at least one uppercase letter" : "Deve incluir pelo menos uma letra maiúscula",
+    "The password must contain at least one numeric character" : "Deve incluir pelo menos um caractere numérico",
+    "The password must contain at least one special character" : "Deve incluir pelo menos um caractere especial"
   }
 }

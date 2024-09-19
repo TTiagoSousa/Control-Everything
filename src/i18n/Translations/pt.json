@@ -37,6 +37,21 @@
     "Choose a color to sidebar" : "Escolha uma cor para a barra lateral",
     "Blue" : "Azul",
     "Dark" : "Escuro",
-    "Back to dashboard" : "Voltar ao painel de controlo"
+    "Back to dashboard" : "Voltar ao painel de controlo",
+    "Manage" : "Gerir",
+    "Login Password" : "Palavra-passe de início de sessão",
+    "Login password is used to log in to your account." : "É utilizada uma palavra-passe para iniciar a sessão na sua conta.",
+    "Use your email to protect your account and transactions." : "Utiliza o teu e-mail para proteger a tua conta e transações.",
+    "Authentication" : "Authenticação",
+    "Change password"  : "Alterar senha",
+    "Please wait..." : "Por favor espere...",
+    "Email sent with confirmation code" : "Email enviado com o código de confirmação",
+    "Code" : "Código",
+    "Validate code" : "Validar código",
+    "Confirm" : "Confirmar",
+    "The password must be at least 6 characters long" : "Deve ter pelo menos 6 caracteres de comprimento",
+    "The password must contain at least one uppercase letter" : "Deve incluir pelo menos uma letra maiúscula",
+    "The password must contain at least one numeric character" : "Deve incluir pelo menos um caractere numérico",
+    "The password must contain at least one special character" : "Deve incluir pelo menos um caractere especial"
   }
 }

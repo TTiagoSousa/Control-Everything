@@ -14,6 +14,7 @@ const Private_Routes = () => {
         <Route path='Settings'> 
           <Route path='Security'>
             <Route index element={ <Private_Page.Security /> } />
+            <Route path='Manage_Password' element={ <Private_Page.Manage_Password /> } />
           </Route>
         </Route>
       </Routes>
