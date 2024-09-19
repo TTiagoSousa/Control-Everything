@@ -15,8 +15,11 @@ const Security = () => {
 
   const handleClick = async () => {
     setIsLoading(true); 
-    await fetchCreateValidationToken();
-
+    try {
+      await fetchCreateValidationToken();
+    } finally {
+      setIsLoading(false); // Garante que o isLoading seja setado para false, independente do resultado
+    }
   };
 
   return (
