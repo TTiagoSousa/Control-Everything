@@ -12,6 +12,7 @@
   justify-content: space-between;
   z-index: 3;
   top: 0;
+  background-color: $primary_color_dark;
 
   .Left_Side{
     position: relative;
@@ -22,6 +23,7 @@
     span{
       font-family: $font_family_poppins;
       font-weight: 700;
+      color: #f0b90b;
     }
   }
 
@@ -42,34 +44,6 @@
       position: relative;
       width: 21px;
       height: 21px;
-    }
-  }
-}
-
-.Dark_Mode{
-
-  .Header_Index{
-    background-color: $primary_color_dark;
-
-    .Left_Side{
-
-      span{
-        color: #f0b90b;
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Header_Index{
-    background-color: $primary_color_light;
-
-    .Left_Side{
-
-      span{
-        color: #f0b90b;
-      }
     }
   }
 }

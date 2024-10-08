@@ -2,15 +2,12 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './Avatar_Menu.scss';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
-import { ThemeState } from '../../../Contexts/Theme_Context';
 import { useTranslation } from 'react-i18next';
 import { useLogout } from '../../../Hooks/Auth/useLogout';
 
 const Avatar_Menu = () => {
 
   const { t } = useTranslation();
-
-  const { mode } = ThemeState();
 
   const { logout } = useLogout();
 
@@ -19,11 +16,8 @@ const Avatar_Menu = () => {
   const menuRef = useRef(null);
 
   const getColor = useMemo(() => {
-    if (mode === 'dark' || mode === 'light') {
-      return isHovered ? Color.yellow : Color.gray_dark;
-    }
-    return isHovered ? Color.blue : Color.gray;
-  }, [mode, isHovered]);
+    return isHovered ? Color.yellow : Color.gray_dark;
+  }, [isHovered]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

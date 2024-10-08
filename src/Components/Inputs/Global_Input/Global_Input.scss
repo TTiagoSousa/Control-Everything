@@ -45,6 +45,12 @@
     outline: none;
     border-radius: 0px 10px 10px 0px;
     font-family: $font_family_open_sans;
+    background-color: $primary_color_dark;
+    color: $gray;
+    border-top: $border_dark;
+    border-bottom: $border_dark;
+    border-right: $border_dark;
+    box-sizing: border-box;
 
     &::placeholder {
       font-family: $font_family_open_sans;
@@ -59,35 +65,5 @@
     right: 1%;
     top: 18%;
     cursor: pointer;
-  }
-}
-
-.Dark_Mode{
-
-  .Global_Input{
-  
-    input{
-      background-color: $primary_color_dark;
-      color: $gray;
-      border-top: $border_dark;
-      border-bottom: $border_dark;
-      border-right: $border_dark;
-      box-sizing: border-box;
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Global_Input{
-
-    input{
-      background-color: $primary_color_light;
-      border-top: $border_light;
-      border-bottom: $border_light;
-      border-right: $border_light;
-      color: $black;
-      box-sizing: border-box;
-    }
   }
 }

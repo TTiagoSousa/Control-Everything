@@ -36,6 +36,8 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    background-color: $secundary_color_dark;
+    border: $border_dark;
 
     &.active{
       opacity: 1;
@@ -55,6 +57,9 @@
       right: 2.5px;
       transform: (rotate(45deg));
       z-index: 3;
+      background-color: $secundary_color_dark;
+      border-top: $border_dark;
+      border-left: $border_dark;
     }
 
     .Options{
@@ -92,88 +97,20 @@
             font-family: $font_family_poppins;
             font-size: 12px;
             font-weight: 600;
+            color: $white;
           }
+
+          &:hover{
+            background-color: $terciary_color_dark; 
+
+             button{
+               color: $blue;
+             }
+           }
 
           .Icon{
             width: 23px;
             height: 23px;
-          }
-        }
-      }
-    }
-  }
-}
-
-
-.Dark_Mode{
-
-  .Avatar_Menu {
-
-    .Arrow{
-      background-color: $secundary_color_dark;
-      border-top: $border_dark;
-      border-left: $border_dark;
-    }
-
-    .Avatar_Menu_Options{
-      background-color: $secundary_color_dark;
-      border: $border_dark;
-
-      .Options{
-
-        ul{
-
-          li{
-
-            button{
-              color: $white;
-            }
-
-            &:hover{
-             background-color: $terciary_color_dark; 
-
-              button{
-                color: $blue;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Avatar_Menu {
-
-    .Arrow{
-      background-color: $secundary_color_light;
-      border-top: $border_light;
-      border-left: $border_light;
-    }
-
-    .Avatar_Menu_Options{
-      background-color: $secundary_color_light;
-      border: $border_light;
-
-      .Options{
-
-        ul{
-
-          li{
-
-            button{
-              color: $black;
-            }
-
-            &:hover{
-             background-color: $terciary_color_light; 
-
-              button{
-                color: $blue;
-              }
-            }
           }
         }
       }

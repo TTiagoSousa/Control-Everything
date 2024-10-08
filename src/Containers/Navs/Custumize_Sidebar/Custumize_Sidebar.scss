@@ -15,6 +15,7 @@
   z-index: 5;
   user-select: none;
   -webkit-user-select: none;
+  background-color: $primary_color_dark;
 
   &.active {
     right: 0;
@@ -37,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: $blue_dark;
 
     .Circle_N1 {
       position: absolute;
@@ -45,7 +47,7 @@
       top: -70%;
       right: -16%;
       border-radius: 100%;
-      background-color: $blue;
+      background-color: $blue_darker;
     }
     
     .Circle_N2 {
@@ -55,7 +57,7 @@
       bottom: -130%;
       right: 35%;
       border-radius: 100%;
-      background-color: $blue;
+      background-color: $blue_darker;
     }
 
     .Container{
@@ -164,6 +166,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: $primary_color_dark;
 
     .Type_Of_Navigations{
       width: 100%;
@@ -182,11 +185,13 @@
           font-size: 13px;
           letter-spacing: 2px;
           font-weight: 550;
+          color: $white;
         }
  
         span:nth-child(2){
           font-family: $font_family_open_sans;
           font-size: 13px;
+          color: $gray;
         }
       }
 
@@ -199,6 +204,7 @@
         align-items: center;
         padding: 3px;
         box-sizing: border-box;
+        border: $border_dark;
 
         .Information{
           width: auto;
@@ -208,6 +214,14 @@
           color: $blue_darker;
           padding: 5px;
           gap: 10px;
+
+          span:nth-child(1){
+            color: $white;
+           }
+   
+           span:nth-child(2){
+            color: $yellow;
+          }
         }
 
         .Icon{
@@ -238,6 +252,7 @@
         gap: 2px;
         font-family: $font_family_poppins;
         border-radius: $border_radius;
+        border: $border_dark;
 
         &.inactive{
           height: 0px;
@@ -256,6 +271,7 @@
           span{
             font-size: 13px;
             transition: 0.5s;
+            color: $gray;
 
             &.selected{
               color: $yellow !important;
@@ -288,11 +304,13 @@
           font-size: 13px;
           letter-spacing: 2px;
           font-weight: 550;
+          color: $white;
         }
  
         span:nth-child(2){
           font-family: $font_family_open_sans;
           font-size: 13px;
+          color: $gray;
         }
       }
 
@@ -322,6 +340,7 @@
               font-family: $font_family_open_sans;
               font-size: 13px;
               font-weight: 600;
+              color: $gray;
             }
           }
 
@@ -343,6 +362,7 @@
             grid-template-columns: 1fr 1fr 1fr; 
             grid-template-rows: 1fr 1fr 1fr; 
             gap: 5px 5px; 
+            border: $border_dark;
             grid-template-areas: 
               "Nav Header Header"
               "Nav Cube_1 Cube_2"
@@ -350,6 +370,7 @@
 
             div{
               border-radius: 10px;
+              background-color: $gray;
             }
 
             .Nav { grid-area: Nav; }
@@ -387,194 +408,4 @@
     right: -100%;
   }
 
-}
-
-.Dark_Mode{
-
-  .Custumize_Sidebar{
-    background-color: $primary_color_dark;
-
-    header{
-      background-color: $blue_dark;
-
-      .Circle_N1,
-      .Circle_N2{
-        background-color: $blue_darker;
-      }
-    }
-
-    .Settings_Container{
-      background-color: $primary_color_dark;
-
-      .Type_Of_Navigations{
-
-        .Type_Of_Navigations_Info{
-
-          span:nth-child(1){
-            color: $white;
-           }
-   
-           span:nth-child(2){
-            color: $gray;
-          }
-        }
-
-        .Choose_The_Type{
-          border: $border_dark;
-
-          .Information{
-
-            span:nth-child(1){
-              color: $white;
-             }
-     
-             span:nth-child(2){
-              color: $yellow;
-            }
-          }
-        }
-
-        .Navigation_Options{
-          border: $border_dark;
-
-          div{
-
-            span{
-              color: $gray;
-            }
-          }
-        }
-      }
-
-      .Choose_Color{
-
-        .Choose_Color_Info{
-
-          span:nth-child(1){
-            color: $white;
-           }
-   
-           span:nth-child(2){
-            color: $gray;
-          }
-        }
-
-        .Color_Options{
-
-          .Option{
-
-            .Conteiner{
-              border: $border_dark;
-
-              div{
-                background-color: $gray;
-              }
-            }
-
-            .Checkbox{
-
-              span{
-                color: $gray;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Custumize_Sidebar{
-    background-color: $primary_color_light;
-
-    header{
-      background-color: $blue_light;
-
-      .Circle_N1,
-      .Circle_N2{
-        background-color: $blue;
-      }
-    }
-
-    .Settings_Container{
-      background-color: $primary_color_light;
-
-      .Type_Of_Navigations{
-
-        .Type_Of_Navigations_Info{
-
-          span:nth-child(1){
-            color: $black;
-           }
-   
-           span:nth-child(2){
-            color: $black;
-          }
-        }
-
-        .Choose_The_Type{
-          border: $border_light;
-
-          .Information{
-
-            span:nth-child(1){
-              color: $black;
-             }
-     
-             span:nth-child(2){
-              color: $yellow;
-            }
-          }
-        }
-
-        .Navigation_Options{
-          border: $border_light;
-
-          div{
-
-            span{
-              color: $black;
-            }
-          }
-        }
-      }
-
-      .Choose_Color{
-
-        .Choose_Color_Info{
-
-          span:nth-child(1){
-            color: $black;
-           }
-   
-           span:nth-child(2){
-            color: $black;
-          }
-        }
-
-        .Color_Options{
-
-          .Option{
-
-            .Conteiner{
-              border: $border_light;
-
-              div{
-                background-color: $gray;
-              }
-            }
-
-            .Checkbox{
-
-              span{
-                color: $black;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }

@@ -69,6 +69,8 @@
       align-items: center;
       gap: 10px; 
       border-radius: $border_radius;
+      background-color: $secundary_color_dark;
+      border: $border_dark;
 
       .Title{
         display: flex;
@@ -80,6 +82,7 @@
           font-size: 20px;
           letter-spacing: 3px;
           font-weight: 550;
+          color: $yellow;
         }
       }
 
@@ -107,69 +110,13 @@
         span,
         a{
           font-family: $font_family_open_sans;
+          color: $gray;
         }
   
         a{
           text-decoration: none;
           color: $blue;
         }
-      }
-    }
-  }
-}
-
-.Dark_Mode{
-
-  .Sign_In{
-
-    .Title{
-
-      span{
-        color: $yellow;
-      } 
-    }
-
-    form{
-      background-color: $secundary_color_dark;
-      border: $border_dark;
-
-      .Title{
-
-        span{
-          color: $yellow;
-        }
-      }
-    }
-
-    .Info{
-
-      span{
-        color: $gray;
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Sign_In{
-
-    .Title{
-
-      span{
-        color: $yellow;
-      } 
-    }
-
-    form{
-      background-color: $secundary_color_light;
-      border: $border_light
-    }
-
-    .Info{
-
-      span{
-        color: $black;
       }
     }
   }

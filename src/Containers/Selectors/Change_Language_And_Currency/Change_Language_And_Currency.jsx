@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './Change_Language_And_Currency.scss';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
-import { ThemeState } from '../../../Contexts/Theme_Context';
 import { cryptoCurrencies } from '../../../Constants/currencies/cryptoCurrencies';
 import Base_Input from '../../../Components/Inputs/Base_Input/Base_Input';
 import { fiduciaryCurrencies } from '../../../Constants/currencies/fiduciaryCurrencies';
@@ -10,8 +9,6 @@ import { useTranslation } from 'react-i18next';
 import { languages } from '../../../Constants/languages';
 
 const Change_Language_And_Currency = () => {
-
-  const { mode } = ThemeState();
 
   const { i18n, t } = useTranslation();
 
@@ -28,11 +25,8 @@ const Change_Language_And_Currency = () => {
   const [currencyOrCryptoSearch, setCurrencyOrCryptoSearch] = useState('');
 
   const getColor = useMemo(() => {
-    if (mode === 'dark' || mode === 'light') {
-      return isHovered ? Color.yellow : Color.gray_dark;
-    }
-    return isHovered ? Color.blue : Color.gray;
-  }, [mode, isHovered]);
+    return isHovered ? Color.yellow : Color.gray_dark;
+  }, [isHovered]);
 
   const handleChangeLanguage = (lang) => {
     i18n.changeLanguage(lang); // Altera o idioma com o i18n

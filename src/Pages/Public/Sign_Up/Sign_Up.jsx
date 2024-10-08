@@ -3,7 +3,6 @@ import './Sign_Up.scss';
 import { useTranslation } from 'react-i18next';
 import Global_Input from '../../../Components/Inputs/Global_Input/Global_Input';
 import * as Video from '../../../Imports/video';
-import Change_Theme from '../../../Containers/Selectors/Change_Theme/Change_Theme';
 import { Link } from 'react-router-dom';
 import Global_Button from  '../../../Components/Buttons/Global_Button/Global_Button';
 import Change_Language from '../../../Containers/Selectors/Change_Language/Change_Language';
@@ -45,9 +44,6 @@ const Sign_Up = () => {
       </div>
       <div className='Form_Container'>
         <header>
-          <div className='Button_Field'>
-            <Change_Theme />
-          </div>
           <div className='Button_Field'>
             <Change_Language />
           </div>

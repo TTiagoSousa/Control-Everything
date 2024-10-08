@@ -12,6 +12,7 @@
   justify-content: space-between;
   z-index: 2;
   box-sizing: border-box;
+  background-color: $primary_color_dark;
 
   .Left_Side{
     position: relative;
@@ -54,6 +55,7 @@
     span{
       font-family: $font_family_poppins;
       font-weight: 700;
+      color: #f0b90b;
     }
   }
 
@@ -87,34 +89,6 @@
       @keyframes spin {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
-      }
-    }
-  }
-}
-
-.Dark_Mode{
-
-  .Header_Home{
-    background-color: $primary_color_dark;
-
-    .Left_Side{
-
-      span{
-        color: #f0b90b;
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Header_Home{
-    background-color: $primary_color_light;
-
-    .Left_Side{
-
-      span{
-        color: #f0b90b;
       }
     }
   }

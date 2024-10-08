@@ -19,6 +19,7 @@
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   z-index: 44;
+  background-color: $primary_color_dark;
 
   &.active{
     left: 0;
@@ -151,19 +152,5 @@
         }
       }
     }
-  }
-}
-
-.Dark_Mode {
-    
-  .Mobile_Sidebar_Home{
-    background-color: $primary_color_dark;
-  }
-}
-    
-.Light_Mode{
-
-  .Mobile_Sidebar_Home{
-    background-color: $primary_color_light;
   }
 }

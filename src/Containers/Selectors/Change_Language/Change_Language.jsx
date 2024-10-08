@@ -9,8 +9,6 @@ import { languages } from '../../../Constants/languages';
 
 const Change_Language = () => {
 
-  const { mode } = ThemeState();
-
   const { i18n, t } = useTranslation();
 
   const [open, setOpen] = useState(false);
@@ -21,11 +19,8 @@ const Change_Language = () => {
   const [languageSearch, setLanguageSearch] = useState('');
 
   const getColor = useMemo(() => {
-    if (mode === 'dark' || mode === 'light') {
-      return isHovered ? Color.yellow : Color.gray_dark;
-    }
-    return isHovered ? Color.blue : Color.gray;
-  }, [mode, isHovered]);
+    return isHovered ? Color.yellow : Color.gray_dark;
+  }, [isHovered]);
 
   const handleChangeLanguage = (lang) => {
     i18n.changeLanguage(lang); // Altera o idioma com o i18n

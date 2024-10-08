@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header_Index.scss';
-import Change_Theme from '../../Selectors/Change_Theme/Change_Theme';
 import Change_Language_And_Currency from '../../Selectors/Change_Language_And_Currency/Change_Language_And_Currency';
 import { useTranslation } from 'react-i18next';
 import { DataBaseState } from '../../../Contexts/DataBase_Context';
@@ -48,9 +47,6 @@ const Header_Index = () => {
         }
         <div className="Selector_Field">
           <Change_Language_And_Currency />
-        </div>
-        <div className='Selector_Field'>
-          <Change_Theme />
         </div>
       </div>
     </div>

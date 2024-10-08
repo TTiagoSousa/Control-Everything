@@ -20,43 +20,15 @@
     align-items: center;
     text-align: center;
     font-size: 13px;
-  }
-}
+    border: $border_dark;
+    color: $gray;
 
-.Dark_Mode{
+    &.type1{
+      background-color: $primary_color_dark;
+    }
 
-  .Base_Input {
-
-    input{
-      border: $border_dark;
-      color: $gray;
-
-      &.type1{
-        background-color: $primary_color_dark;
-      }
-
-      &.type1{
-        background-color: $secundary_color_dark;
-      }
-    }    
-  }
-}
-
-.Light_Mode{
-
-  .Base_Input {
-    color: $black;
-
-    input{
-      border: $border_light;
-
-      &.type1{
-        background-color: $primary_color_light;
-      }
-
-      &.type2{
-        background-color: $secundary_color_light;
-      }
+    &.type1{
+      background-color: $secundary_color_dark;
     }
   }
 }

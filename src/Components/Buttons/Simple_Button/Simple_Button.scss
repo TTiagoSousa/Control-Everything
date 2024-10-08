@@ -24,54 +24,20 @@
       font-weight: 550;
       font-size: 13px;
     }
-  }
-}
 
-.Dark_Mode{
-
-  .Simple_Button{
-
-    button{
-
-      &.type1{
-        background-color: $secundary_color_dark;
-        
-        span{
-          color: $gray;
-        }
-      }
-
-      &.type2{
-        background-color: $yellow;
-
-        span{
-          color: $black;
-        }
+    &.type1{
+      background-color: $secundary_color_dark;
+      
+      span{
+        color: $gray;
       }
     }
-  }
-}
 
-.Light_Mode{
+    &.type2{
+      background-color: $yellow;
 
-  .Simple_Button{
-
-    button{
-
-      &.type1{
-        background-color: $secundary_color_light;
-
-        span{
-          color: $black;
-        }
-      }
-
-      &.type2{
-        background-color: $yellow;
-
-        span{
-          color: $black;
-        }
+      span{
+        color: $black;
       }
     }
   }

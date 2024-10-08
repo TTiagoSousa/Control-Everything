@@ -18,6 +18,7 @@
   .Authentication{
     width: 100%;
     border-radius: $border_radius;
+    border: $border_dark;
 
     .Header{
       width: 100%;
@@ -25,10 +26,12 @@
       align-items: center;
       justify-content: center;
       border-radius: 10px 10px 0px 0px;
+      background-color: $secundary_color_dark;
 
       h1{
         font-family: $font_family_poppins;
         font-size: 20px;
+        color: white;
       }
     }
 
@@ -57,11 +60,13 @@
 
             span:nth-child(1){
               font-family: $font_family_poppins;
+              color: $white;
             }
 
             span:nth-child(2){
               font-family: $font_family_open_sans;
               font-size: 14px;
+              color: $gray;
             }
           }
 
@@ -73,96 +78,7 @@
             span{
               font-family: $font_family_open_sans;
               font-size: 14px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.Dark_Mode{
-
-  .Security{
-
-    .Authentication{
-      border: $border_dark;
-
-      .Header{
-        background-color: $secundary_color_dark;
-
-        h1{
-          color: white;
-        }
-      }
-
-      .Body{
-
-        ul{
-
-          li{
-
-            div:nth-child(1){
-
-              span:nth-child(1){
-                color: $white;
-              }
-
-              span:nth-child(2){
-                color: $gray;
-              }
-            }
-
-            div:nth-child(2){
-  
-              span{
-                color: $gray;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.Light_Mode{
-
-  .Security{
-
-    .Authentication{
-      border: $border_light;
-
-      .Header{
-        background-color: $secundary_color_light;
-
-        h1{
-          color: $black;
-        }
-      }
-
-      .Body{
-
-        ul{
-
-          li{
-
-            div:nth-child(1){
-
-              span:nth-child(1){
-                color: $black;
-              }
-
-              span:nth-child(2){
-                color: $black;
-              }
-            }
-
-            div:nth-child(2){
-  
-              span{
-                color: $black;
-              }
+              color: $gray;
             }
           }
         }
