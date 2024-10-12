@@ -37,13 +37,13 @@ const Security = () => {
           <ul>
             <li>
               <div>
-                <span>{t('Login Password')}</span>
+                <span>{t('Change password')}</span>
                 <span>{t('Login password is used to log in to your account.')}</span>
               </div>
               <div>
                 <div>
                   <Simple_Button 
-                    text={isLoading ? t('Please wait...') : t('Manage')} 
+                    text={isLoading ? t('Please wait...') : t('Change')} 
                     buttonStyle="type1" 
                     onClick={handleClick} 
                   />

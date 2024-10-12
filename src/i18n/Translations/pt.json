@@ -38,7 +38,7 @@
     "Blue" : "Azul",
     "Dark" : "Escuro",
     "Back to dashboard" : "Voltar ao painel de controlo",
-    "Manage" : "Gerir",
+    "Change" : "Alterar",
     "Login Password" : "Palavra-passe de início de sessão",
     "Login password is used to log in to your account." : "É utilizada uma palavra-passe para iniciar a sessão na sua conta.",
     "Use your email to protect your account and transactions." : "Utiliza o teu e-mail para proteger a tua conta e transações.",
@@ -67,6 +67,7 @@
     "September": "Setembro",
     "October": "Outubro",
     "November": "Novembro",
-    "December": "Dezembro"
+    "December": "Dezembro",
+    "Validate the code sent to your email" : "Valide o código enviado para seu e-mail"
   }
 }

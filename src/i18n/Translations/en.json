@@ -38,7 +38,7 @@
     "Blue" : "Blue",
     "Dark" : "Dark",
     "Back to dashboard" : "Back to dashboard",
-    "Manage" : "Manage",
+    "Change" : "Change",
     "Login Password" : "Login Password",
     "Login password is used to log in to your account." : "Login password is used to log in to your account.",
     "Use your email to protect your account and transactions." : "Use your email to protect your account and transactions.",
@@ -67,6 +67,7 @@
     "September": "September",
     "October": "October",
     "November": "November",
-    "December": "December"
+    "December": "December",
+    "Validate the code sent to your email" : "Validate the code sent to your email"
   }
 }

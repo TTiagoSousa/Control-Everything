@@ -60,82 +60,86 @@ const Manage_Password = () => {
         <Mui_Alert />
       </div>
 
-      <div className="Container">
-        <form>
-          <div className='Title'>
-            <h1>{t('Change password')}</h1>
-          </div>
-          {step === 'verifyCode' && (
-            <>
-              <div className='Input_Field'>
-                <Global_Input 
-                  type="text"
-                  text={t("Code")}
-                  value={token}
-                  onChange={(e) => setToken(e.target.value)}
-                />
+      <div className='Container'>
+        {step === 'verifyCode' && (
+          <form>
+            <div className='Title'>
+              <span>{t('Change password')}</span>
+            </div>
+            <div className='Info'>
+              <span>{t('Validate the code sent to your email')}</span>
+            </div>
+            <div className='Input_Field'>
+              <Global_Input 
+                type="text"
+                text={t("Code")}
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
+              />
+            </div>
+            <div className='Button_Field'>
+              <Global_Button 
+                text={t('Validate code')}
+                onClick={fetchValidateResetPasswordToken}
+              />
+            </div>
+          </form>
+        )}
+        {step === 'resetPassword' && (
+          <form>
+            <div className='Title'>
+              <span>{t('Change password')}</span>
+            </div>
+            <div className='Input_Field'>
+              <Global_Input 
+                type="password"
+                text={t("Password")}
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+            </div>
+            <div className='Input_Field'>
+              <Global_Input 
+                type="password"
+                text={t("Confirm password")}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+              />
+            </div>
+            <div className='Button_Field'>
+              <Global_Button 
+                text={t('Confirm')}
+                onClick={updatePassword}
+              />
+            </div>
+            <div className='Password_Check'>
+            <div>
+                <div><Icon.Simple_Check Global_Color={passwordCriteria.minLength ? Color.green : Color.red_light} /></div>
+                <span style={{ color: passwordCriteria.minLength ? Color.green : Color.red_light }}>
+                  {t('The password must be at least 6 characters long')}
+                </span>
               </div>
-              <div className='Button_Field'>
-                <Global_Button 
-                  text={t('Validate code')}
-                  onClick={fetchValidateResetPasswordToken}
-                />
+              <div>
+                <div><Icon.Simple_Check Global_Color={passwordCriteria.hasUppercase ? Color.green : Color.red_light} /></div>
+                <span style={{ color: passwordCriteria.hasUppercase ? Color.green : Color.red_light }}>
+                  {t('The password must contain at least one uppercase letter')}
+                </span>
               </div>
-            </>
-          )}
-          {step === 'resetPassword' && (
-            <>
-              <div className='Input_Field'>
-                <Global_Input 
-                  type="password"
-                  text={t("Password")}
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                />
+              <div>
+                <div><Icon.Simple_Check Global_Color={passwordCriteria.hasNumber ? Color.green : Color.red_light} /></div>
+                <span style={{ color: passwordCriteria.hasNumber ? Color.green : Color.red_light }}>
+                  {t('The password must contain at least one numeric character')}
+                </span>
               </div>
-              <div className='Input_Field'>
-                <Global_Input 
-                  type="password"
-                  text={t("Confirm password")}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  value={confirmPassword}
-                />
+              <div>
+                <div><Icon.Simple_Check Global_Color={passwordCriteria.hasSpecialChar ? Color.green : Color.red_light} /></div>
+                <span style={{ color: passwordCriteria.hasSpecialChar ? Color.green : Color.red_light }}>
+                  {t('The password must contain at least one special character')}
+                </span>
               </div>
-              <div className='Button_Field'>
-                <Global_Button 
-                  text={t('Confirm')}
-                  onClick={updatePassword}
-                />
-              </div>
-              <div className='Password_Check'>
-                <div>
-                  <div><Icon.Simple_Check Global_Color={passwordCriteria.minLength ? Color.green : Color.red_light} /></div>
-                  <span style={{ color: passwordCriteria.minLength ? Color.green : Color.red_light }}>
-                    {t('The password must be at least 6 characters long')}
-                  </span>
-                </div>
-                <div>
-                  <div><Icon.Simple_Check Global_Color={passwordCriteria.hasUppercase ? Color.green : Color.red_light} /></div>
-                  <span style={{ color: passwordCriteria.hasUppercase ? Color.green : Color.red_light }}>
-                    {t('The password must contain at least one uppercase letter')}
-                  </span>
-                </div>
-                <div>
-                  <div><Icon.Simple_Check Global_Color={passwordCriteria.hasNumber ? Color.green : Color.red_light} /></div>
-                  <span style={{ color: passwordCriteria.hasNumber ? Color.green : Color.red_light }}>
-                    {t('The password must contain at least one numeric character')}
-                  </span>
-                </div>
-                <div>
-                  <div><Icon.Simple_Check Global_Color={passwordCriteria.hasSpecialChar ? Color.green : Color.red_light} /></div>
-                  <span style={{ color: passwordCriteria.hasSpecialChar ? Color.green : Color.red_light }}>
-                    {t('The password must contain at least one special character')}
-                  </span>
-                </div>
-              </div>
-            </>
-          )}
-        </form>
+            </div>
+          </form>
+        )}
       </div>
     </div>
   )
