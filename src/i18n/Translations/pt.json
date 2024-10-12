@@ -54,6 +54,19 @@
     "The password must contain at least one numeric character" : "Deve incluir pelo menos um caractere numérico",
     "The password must contain at least one special character" : "Deve incluir pelo menos um caractere especial",
     "An email has already been sent recently. Please check your inbox" : "Um email já foi enviado recentemente. Por favor, verifique a sua caixa de entrada",
-    "Total on savings" : "Total em poupanças"
+    "Total on savings" : "Total em poupanças",
+    "No transitions'" : "Nenhuma transição",
+    "January": "Janeiro",
+    "February": "Fevereiro",
+    "March": "Março",
+    "April": "Abril",
+    "May": "Maio",
+    "June": "Junho",
+    "July": "Julho",
+    "August": "Agosto",
+    "September": "Setembro",
+    "October": "Outubro",
+    "November": "Novembro",
+    "December": "Dezembro"
   }
 }
