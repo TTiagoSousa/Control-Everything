@@ -7,12 +7,13 @@ import Base_Input from '../../../Components/Inputs/Base_Input/Base_Input';
 import { fiduciaryCurrencies } from '../../../Constants/currencies/fiduciaryCurrencies';
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../../Constants/languages';
+import { GlobalState } from '../../../Contexts/Global_Context';
 
 const Change_Language_And_Currency = () => {
 
   const { i18n, t } = useTranslation();
 
-  const [selectCurrency, setSelectCurrency] = useState('USD')
+  const { setSelectCurrency } = GlobalState(); 
 
   const [open, setOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);

@@ -5,7 +5,6 @@
 .Savings_Dashboard{
   @include Pages_Configs;
   min-height: 95vh;
-  overflow-x: hidden;
 
   .Totals{
     width: 100%;
@@ -26,9 +25,13 @@
       align-items: center;
       justify-content: left;
 
+      .Loading{
+        margin-left: 0px !important;
+      }
+
       div{
         display: flex;
-        gap: 5px;
+        gap: 10px;
         margin-left: 50px;
 
         span{
