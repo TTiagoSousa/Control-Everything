@@ -17,6 +17,7 @@
     "@mui/material": "^5.15.20",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "axios": "^1.7.2",
+    "echarts": "^5.5.1",
     "echarts-for-react": "^3.0.2",
     "hamburger-react": "^2.5.1",
     "i18next": "^23.11.5",

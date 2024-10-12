@@ -53,6 +53,7 @@
     "The password must contain at least one uppercase letter" : "Deve incluir pelo menos uma letra maiúscula",
     "The password must contain at least one numeric character" : "Deve incluir pelo menos um caractere numérico",
     "The password must contain at least one special character" : "Deve incluir pelo menos um caractere especial",
-    "An email has already been sent recently. Please check your inbox" : "An email has already been sent recently. Please check your inbox"
+    "An email has already been sent recently. Please check your inbox" : "An email has already been sent recently. Please check your inbox",
+    "Total on savings" : "Total on savings"
   }
 }
