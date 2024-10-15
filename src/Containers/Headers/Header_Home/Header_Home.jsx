@@ -1,54 +1,28 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import './Header_Home.scss';
-import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_Theme';
-import Language_And_Currency_Selector from '../../../Components/Selectores/Language_And_Currency_Selector/Language_And_Currency_Selector ';
+import { ThemeState } from '../../../Contexts/Theme_Context';
+import Change_Language_And_Currency from '../../Selectors/Change_Language_And_Currency/Change_Language_And_Currency';
+import { NavsState } from '../../../Contexts/Navs_Context';
 import * as Color from '../../../Styles/Colors';
 import * as Icon from '../../../Imports/icons';
-import { ThemeState } from '../../../Contexts/Theme_Context';
-import { NavsState } from '../../../Contexts/Navs_Context';
-import { Sling as Hamburger } from 'hamburger-react';
+import Avatar_Menu from '../../Navs/Avatar_Menu/Avatar_Menu';
 
 const Header_Home = () => {
 
-  const { mode } = ThemeState();
-  const { typeOfNavifation, setSidebar_Home, sidebar_Home, show_Mobile_Sidebar_Home, showCustomize_Sidebar } = NavsState();
+  const { typeOfNavifation, show_Mobile_Sidebar_Home, showCustomize_Sidebar } = NavsState();
 
-  const [hovered, setHovered] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const getIcon = () => {
-    let color;
-
-    if (mode === 'dark') {
-      color = hovered ? Color.gray_light : Color.gray;
-    } else if (mode === 'light') {
-      color = hovered ? Color.gray_darker : Color.gray_dark;
-    } else {
-      color = hovered ? Color.blue : Color.gray; 
-    }
-
-    if (mode === 'dark') {
-      return <Icon.Settings_With_Two_Arrows GlobalColor={color} Color_1={Color.blue} Color_2={Color.blue}/>;
-    } else if (mode === 'light') {
-      return <Icon.Settings_With_Two_Arrows GlobalColor={color} Color_1={Color.blue} Color_2={Color.blue}/>;
-    }
-  };
+  const getColor = useMemo(() => {
+    return isHovered ? Color.yellow : Color.gray_dark;
+  }, [isHovered]);
 
   return (
     <header className='Header_Home'>
       <div className="Left_Side">
-        <div className='Menu'>
-          {
-            typeOfNavifation === 'Sidebar_Home' ? (
-              <div className="Hamburger">
-                <Hamburger 
-                  toggled={sidebar_Home}
-                  toggle={setSidebar_Home}
-                  size={20}
-                  color={Color.blue}
-                />
-              </div>
-            ) :
-            typeOfNavifation === 'Mobile_Menu' ?  (
+        {
+          typeOfNavifation === 'Mobile_Menu' ? (
+            <div className='Menu'>
               <button
                 onClick={show_Mobile_Sidebar_Home}
               >
@@ -56,31 +30,36 @@ const Header_Home = () => {
                 <div></div>
                 <div></div>
               </button>
-            ): <></>
-          }
-        </div>
+            </div>
+          ) : null
+        }
+        <span>Control Everything</span>
       </div>
       <div className="Right_Side">
         <div className='Button_Field'>
-          <Language_And_Currency_Selector  />
-        </div>
-        <div className='Button_Field'>
-          <Change_Theme />
+          <Change_Language_And_Currency />
         </div>
         <div
           className='Custumize_Sidebar_Button'
           onClick={showCustomize_Sidebar}
         >
           <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            {getIcon()}
+            <Icon.Settings_With_Two_Arrows 
+              Color_1={Color.yellow} 
+              Color_2={Color.yellow} 
+              GlobalColor={getColor}
+            />
           </div>
+        </div>
+        <div className='Button_Field'>
+          <Avatar_Menu />
         </div>
       </div>
     </header>
   )
 }
 
-export default Header_Home
+export default Header_Home;

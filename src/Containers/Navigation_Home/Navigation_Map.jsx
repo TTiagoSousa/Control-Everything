@@ -5,15 +5,18 @@ export const navItems = [
 
   {
     text: 'Assets',
-    icon: <Icon.Wallet />,
+    icon: <Icon.Dashboard_Cubes />,
     dropdownItems: [
-      { to: '/CE/Crypto_Dashboard', text: 'Crypto' },
       { to: '/CE/Savings_Dashboard', text: 'Savings' },
     ],
   },
-  
-  { to: '/CE/Academy', text: 'Academy', icon: <Icon.Academy_Cap /> },
 
-  { to: '/CE/Settings', text: 'Settings', icon: <Icon.Settings /> },
+  {
+    text: 'Settings',
+    icon: <Icon.Settings />,
+    dropdownItems: [
+      { to: '/CE/Settings/Security', text: 'Security' },
+    ],
+  },
 
 ];

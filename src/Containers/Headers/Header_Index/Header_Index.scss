@@ -11,109 +11,60 @@
   display: flex;
   justify-content: space-between;
   z-index: 3;
+  top: 0;
+  background-color: $primary_color_dark;
 
-  .Middle{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .Left_Side{
+    position: relative;
     display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
 
-    h1{
+    span{
       font-family: $font_family_poppins;
-      color: $blue;
-      font-size: 19px;
-      letter-spacing: 2px;
+      font-weight: 700;
+      color: #f0b90b;
     }
   }
-  
-  .Rigth_Side{
+
+  .Right_Side{
     position: relative;
+    width: auto;
     display: flex;
     gap: 10px;
     align-items: center;
 
     .Button_Field{
       position: relative;
-      width: 21px;
-      height: 21px;
+      width: auto;
+      height: auto;
     }
 
-    a{
-      text-decoration: none;
-      font-family: $font_family_poppins;
+    .Selector_Field{
+      position: relative;
+      width: 21px;
+      height: 21px;
     }
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 500px){
 
   .Header_Index{
-    justify-content: space-between;
-    padding: 10px;
-
-    .Middle{
-      position: relative;
-      left: auto;
-      top: auto;
-      transform: translate(0%, 0%);
-
-      h1{
-        font-size: 17px;
-      }
-    }
 
     .Left_Side{
       display: none;
     }
-  }
-}
 
-@media (max-width: 800px){
+    .Right_Side{
+      width: 100%;
+      display: flex;
+      align-items: center;
 
-  .Header_Index{
-    justify-content: center;
-    
-    .Middle{
-      display: none;
-    }
-  }
-}
-
-.Dark_Mode{
-
-  .Header_Index {
-    background-color: $primary_color_dark;
-
-    .Rigth_Side{
-
-      a{
-        color: $gray;
-
-        &:hover{
-          color: $gray_light;
-        }
+      > div:nth-child(2) {
+        margin-left: auto; // Empurra a terceira div para a direita
       }
     }
-  }
-}
-    
-.Light_Mode {
 
-  .Header_Index {
-    background-color: $primary_color_light;
-
-    .Rigth_Side{
-
-      a{
-        color: $gray_dark;
-
-        &:hover{
-          color: $gray_darker;
-        }
-      }
-    }
   }
 }

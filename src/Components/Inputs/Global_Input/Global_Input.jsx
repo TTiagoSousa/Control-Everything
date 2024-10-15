@@ -3,7 +3,7 @@ import './Global_Input.scss';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
 
-const Global_Input = ({ Type, Placeholder, Value, onChange, max, ref, Text, onclick }) => {
+const Global_Input = ({ type, placeholder, value, onChange, max, ref, text, onclick }) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => {
@@ -13,17 +13,17 @@ const Global_Input = ({ Type, Placeholder, Value, onChange, max, ref, Text, oncl
   return (
     <div className='Global_Input' onClick={onclick}>
       <div className='Text'>
-        <span>{Text}</span>
+        <span>{text}</span>
       </div>
       <input 
-        type={showPassword ? 'text' : Type} 
-        placeholder={Placeholder}
-        value={Value}
+        type={showPassword ? 'text' : type} 
+        placeholder={placeholder}
+        value={value}
         onChange={onChange}
         max={max}
         ref={ref}
       />
-      {Type === 'password' && (
+      {type === 'password' && (
         <div 
           className='Icon'
           onClick={toggleShowPassword}

@@ -10,16 +10,12 @@ const Private_Routes = () => {
         <Route path='Dashboard' element={ <Private_Page.Dashboard /> }/>
         <Route path='Savings_Dashboard'> 
           <Route index element={ <Private_Page.Savings_Dashboard /> } />
-          <Route path='Savings_Transitions_History' element={ <Private_Page.Savings_Transitions_History /> } />
-        </Route>
-        <Route path='Crypto_Dashboard'> 
-          <Route index element={ <Private_Page.Crypto_Dashboard /> } />
-        </Route>
-        <Route path='Academy'> 
-          <Route index element={ <Private_Page.Academy /> } />
         </Route>
         <Route path='Settings'> 
-          <Route index element={ <Private_Page.Settings /> } />
+          <Route path='Security'>
+            <Route index element={ <Private_Page.Security /> } />
+            <Route path='Manage_Password' element={ <Private_Page.Manage_Password /> } />
+          </Route>
         </Route>
       </Routes>
     </>

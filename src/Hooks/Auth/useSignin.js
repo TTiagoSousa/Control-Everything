@@ -18,14 +18,12 @@ export const useSignin = () => {
 
   const { setAlert } = NavsState();
 
-  const signin  = async (e) => {
-
-    e.preventDefault();
+  const signin = async () => {
 
     if (!email || !password) {
       setAlert({
         open: true,
-        message: t("All fields must be filled"),
+        message: t("All fields are required"),
         type: 'error'
       });
       
@@ -35,7 +33,7 @@ export const useSignin = () => {
     if (!validateEmail(email)) {
       setAlert({
         open: true,
-        message: t("Invalid email"),
+        message: t("Invalid email address"),
         type: 'error'
       });
       

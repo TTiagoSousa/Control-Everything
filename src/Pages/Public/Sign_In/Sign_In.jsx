@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sign_In.scss';
-import * as Video from '../../../Imports/video';
-import Global_Input from '../../../Components/Inputs/Global_Input/Global_Input';
 import { useTranslation } from 'react-i18next';
-import Global_Button from  '../../../Components/Buttons/Global_Button/Global_Button';
-import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_Theme';
-import Language_Selector from '../../../Components/Selectores/Language_Selector/Language_Selector';
+import Global_Input from '../../../Components/Inputs/Global_Input/Global_Input';
+import * as Video from '../../../Imports/video';
 import { Link } from 'react-router-dom';
-import { useSignin } from '../../../Hooks/Auth/useSignin';
+import Global_Button from  '../../../Components/Buttons/Global_Button/Global_Button';
+import Change_Language from '../../../Containers/Selectors/Change_Language/Change_Language';
 import Mui_Alert from '../../../Components/Alerts/Mui_Alert/Mui_Alerts';
+import { useSignin } from '../../../Hooks/Auth/useSignin';
 
 const Sign_In = () => {
 
@@ -20,72 +19,78 @@ const Sign_In = () => {
     password, setPassword 
   } = useSignin();
 
+  const [loading, setLoading] = useState(false);
+  const handleSignIn = async () => {
+    setLoading(true);
+    try {
+      await signin(); // Assumindo que `signup` retorna uma Promise
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className='Sign_In'>
 
       <div className='Alert'>
         <Mui_Alert />
       </div>
-      
-      <div className='Image_Container'>
-        <div>
-          <video autoPlay loop muted>
-            <source src={Video.Mounth} type='video/mp4'/>
-          </video>
-          <h1>Control Everything</h1>
-        </div>
-      </div>
 
+      <div className='Image_Container'>
+        <video autoPlay loop muted>
+          <source src={Video.Mounth} type='video/mp4'/>
+        </video>
+      </div>
       <div className='Form_Container'>
         <header>
           <div className='Button_Field'>
-            <Change_Theme />
-          </div>
-          <div className='Button_Field'>
-            <Language_Selector />
+            <Change_Language />
           </div>
         </header>
+
         <form>
           <div className="Title">
-            <h1>{t('Sign In')}</h1>
+            <span>{t('Sign in')}</span>
           </div>
           <div className="Input_Field">
             <Global_Input 
-              Text={t('Email')}
-              Type="email"
-              Value={email}
+              text={t('Email')}
+              type="email"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="Input_Field">
             <Global_Input 
-              Text={t('Password')}
-              Type="password"
-              Value={password}
+              text={t('password')}
+              type="password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className='Button_Field'>
+          <div className="Button_Field">
             <Global_Button 
-              Text={t('Login')}
-              onClick={signin}
+              text={loading ? t('Loading...') : t('Sign in')}
+              type="button"
+              onClick={handleSignIn}
+              disabled={loading}
             />
           </div>
         </form>
+
         <div className='Info'>
-          <div>
+          <div className='Reset'>
             <span>{t('Forgot your password ?')}</span>
-            <Link to="/Recover_Password">{t('Recover Password')}</Link>
+            <Link to="/Recover_Password">{t('Reset password')}</Link>
           </div>
           <div>
-            <span>{t('Do not have an account ?')}</span>
+            <span>{t("Don't have an account ?")}</span>
             <Link to="/Sign_Up">{t('Sign Up')}</Link>
           </div>
         </div>
       </div>
-
     </div>
   )
-};
+}
 
 export default Sign_In;

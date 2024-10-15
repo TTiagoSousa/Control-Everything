@@ -12,22 +12,6 @@ const NavsContext = ({ children }) => {
     })
   // Alert
 
-  // Open SideBarHome
-    const [ sidebar_Home, setSidebar_Home ] = useState(false);
-    const showSidebar_Home = () => setSidebar_Home(!sidebar_Home);
-  // Open SideBarHome
-
-  // Open SideBarHome
-    const [ mobile_Sidebar_Home, set_Mobile_Sidebar_Home ] = useState(false);
-    const show_Mobile_Sidebar_Home = () => set_Mobile_Sidebar_Home(!mobile_Sidebar_Home);
-  // Open SideBarHome
-
-  // Customize Sidebar
-    const [ customize_Sidebar, setCustomize_Sidebar ] = useState(false);
-    const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
-  // Customize Sidebar
-
-
   // Choose navigation type
     const [typeOfNavifation, setTypeOfNavifation] = useState(
       localStorage.getItem("sidebarPosition") || "Sidebar_Home"
@@ -41,7 +25,6 @@ const NavsContext = ({ children }) => {
       const position = e.target.value;
       switch (position) {
         case "Sidebar_Home":
-        case "Top_Nav_Navigation":
         case "Mobile_Menu":
           setTypeOfNavifation(position);
           break;
@@ -52,7 +35,7 @@ const NavsContext = ({ children }) => {
 
     useEffect(() => {
       function handleResize() {
-        const isMobile = window.innerWidth < 1000;
+        const isMobile = window.innerWidth < 1200;
         if (isMobile) {
           setTypeOfNavifation("Mobile_Menu");
         }
@@ -63,12 +46,21 @@ const NavsContext = ({ children }) => {
     }, []);
   // Choose navigation type
 
+  // Open SideBarHome
+    const [ mobile_Sidebar_Home, set_Mobile_Sidebar_Home ] = useState(false);
+    const show_Mobile_Sidebar_Home = () => set_Mobile_Sidebar_Home(!mobile_Sidebar_Home);
+  // Open SideBarHome
+
+  // Customize Sidebar
+    const [ customize_Sidebar, setCustomize_Sidebar ] = useState(false);
+    const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
+  // Customize Sidebar
+
   return (
     <Navs.Provider 
       value={{ 
         alert, setAlert,
-        sidebar_Home, setSidebar_Home, showSidebar_Home,
-        typeOfNavifation, setTypeOfNavifation, handleTypeofPositionChange,
+        typeOfNavifation, setTypeOfNavifation,
         mobile_Sidebar_Home, set_Mobile_Sidebar_Home, show_Mobile_Sidebar_Home,
         customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
       }}

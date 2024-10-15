@@ -1,7 +1,7 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next'
-import enJson from './Translations/en.json'
-import ptJson from './Translations/pt.json'
+import { initReactI18next } from 'react-i18next';
+import enJson from './Translations/en.json';
+import ptJson from './Translations/pt.json';
 
 const storedLanguage = localStorage.getItem('language');
 

@@ -1,73 +1,85 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavsState } from './Navs_Context';
 import * as jwt_decode from "jwt-decode";
 import Cookies from 'js-cookie';
+import { TOKEN_COOKIE_NAME, USER_ID_COOKIE_NAME } from '../config/cookies';
 
 const DataBase = createContext({});
 
 const DataBaseContext = ({ children }) => {
 
   const navigate = useNavigate();
-
   const { setAlert } = NavsState();
 
-  const [ authenticated, setAuthenticated ] = useState(false);
-  const [ userId, setUserID ] = useState(null);
-  
-  useEffect(() => {
-    const checkAuthentication = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [userId, setUserID] = useState(null);
 
-      const token = Cookies.get('rthtrh3445gv@@firnf1rgher');
-      const id = Cookies.get('agerg3234rrthrts322455')
+  const handleTokenExpiration = useCallback(() => {
+    Cookies.remove(TOKEN_COOKIE_NAME);
+    Cookies.remove(USER_ID_COOKIE_NAME);
 
-      if (token){
-        try{
+    setAuthenticated(false);
+    setUserID(null);
 
-          var decoded = jwt_decode.jwtDecode(token);
+    navigate('/');
 
-          const currentTime = Math.floor(Date.now() / 1000);
+    setAlert({
+      open: true,
+      message: 'Session expired. Please log in again.',
+      type: 'warning',
+    });
+  }, [navigate, setAlert]);
 
-          if (decoded.exp < currentTime) {
-            handleTokenExpiration();
-          } else {
-            setUserID(id);
-            setAuthenticated(true);
-            
-          }
-        } catch (error){
+  const checkAuthentication = useCallback(() => {
+    const token = Cookies.get(TOKEN_COOKIE_NAME);
+    const id = Cookies.get(USER_ID_COOKIE_NAME);
+
+    if (token) {
+      try {
+        const decoded = jwt_decode.jwtDecode(token);
+        const { exp } = decoded;
+        const currentTime = Math.floor(Date.now() / 1000);
+
+        if (exp < currentTime) {
           handleTokenExpiration();
+        } else {
+          setUserID(id);
+          setAuthenticated(true);
         }
-      }  else{
-        setAuthenticated(false);
+      } catch (error) {
+        handleTokenExpiration();
       }
-    }
-
-    const handleTokenExpiration = () =>{
-      Cookies.remove('rthtrh3445gv@@firnf1rgher');
-      Cookies.remove('agerg3234rrthrts322455'); 
-
+    } else {
       setAuthenticated(false);
-      setUserID(null);
-
-      navigate('/');
-
-      setAlert({
-        open: true,
-        message: 'Session expired. Please log in again.',
-        type: 'warning',
-      });
     }
+  }, [handleTokenExpiration]);
 
+  useEffect(() => {
     checkAuthentication();
-    
-  }, [navigate, setAlert])
+  }, [checkAuthentication]);
+
+  const logout = useCallback(() => {
+    Cookies.remove(TOKEN_COOKIE_NAME);
+    Cookies.remove(USER_ID_COOKIE_NAME);
+
+    setAuthenticated(false);
+    setUserID(null);
+
+    navigate('/');
+
+    setAlert({
+      open: true,
+      message: 'Logged out successfully.',
+      type: 'info',
+    });
+  }, [navigate, setAlert]);
 
   return (
-    <DataBase.Provider 
-      value={{ 
+    <DataBase.Provider
+      value={{
         authenticated, setAuthenticated,
-        userId,setUserID,
+        userId, setUserID,
       }}
     >
       {children}
@@ -77,6 +89,6 @@ const DataBaseContext = ({ children }) => {
 
 export default DataBaseContext;
 
-export const DataBaseState = () => { 
+export const DataBaseState = () => {
   return useContext(DataBase);
 };

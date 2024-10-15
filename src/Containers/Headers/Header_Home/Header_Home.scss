@@ -12,6 +12,7 @@
   justify-content: space-between;
   z-index: 2;
   box-sizing: border-box;
+  background-color: $primary_color_dark;
 
   .Left_Side{
     position: relative;
@@ -20,11 +21,12 @@
     align-items: center;
 
     .Menu{
-      width: 50px;
+      width: 10px;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-right: 10px;
 
       &.With_SideBar{
         display: none;
@@ -43,11 +45,17 @@
         cursor: pointer;
 
         div{
-          background-color: $blue;
+          background-color: $yellow;
           width: 20px;
           height: 2px;
         }
       }
+    }
+
+    span{
+      font-family: $font_family_poppins;
+      font-weight: 700;
+      color: #f0b90b;
     }
   }
 
@@ -58,8 +66,8 @@
 
     .Button_Field{
       position: relative;
-      width: 21px;
-      height: 21px;
+      width: 23px;
+      height: 23px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -83,19 +91,5 @@
         to { transform: rotate(360deg); }
       }
     }
-  }
-}
-
-.Dark_Mode{
-  
-  .Header_Home {
-    background-color: $primary_color_dark;
-  }
-}
-  
-.Light_Mode {
-
-  .Header_Home{
-    background-color: $primary_color_light;
   }
 }

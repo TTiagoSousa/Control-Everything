@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Sidebar_Home.scss';
-import { NavsState } from '../../../Contexts/Navs_Context';
-import { ThemeState } from '../../../Contexts/Theme_Context';
-import { NavLink, useLocation } from 'react-router-dom';
 import * as Color from '../../../Styles/Colors';
 import * as Icon from '../../../Imports/icons';
+import { NavLink, useLocation } from 'react-router-dom';
 import { navItems } from '../Navigation_Map';
+import { ThemeState } from '../../../Contexts/Theme_Context';
 
 const Sidebar_Home = () => {
-
-  const { sidebar_Home } = NavsState();
 
   const { sidebar_Color_Change } = ThemeState();
 
@@ -60,13 +57,8 @@ const Sidebar_Home = () => {
     return dropdownItems.some(dropdownItem => location.pathname === dropdownItem.to);
   };
 
-  useEffect(() => {
-    setOpenDropdownIndex(null);
-    setIsArrowActive(false);
-  }, [sidebar_Home]);
-
   return (
-    <nav className={`SideBar_Home ${sidebar_Home ? '' : 'close'}`} style={sidebarStyle}>
+    <nav className={`Sidebar_Home`} style={sidebarStyle}>
       <div className="Sidebar_Body">
         {navItems.map((item, index) => (
           <React.Fragment key={index}>
@@ -124,7 +116,7 @@ const Sidebar_Home = () => {
                       </Icon.GLobal_SVG>
                     </div>
                   </div>
-                  <div className={`Text ${sidebar_Home ? '' : 'Close_Sidebar'}`}  >
+                  <div className='Text'>
                     <span>{item.text}</span>
                   </div>
                 </NavLink>

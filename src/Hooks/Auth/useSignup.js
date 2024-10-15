@@ -4,7 +4,6 @@ import http from "../../Services/httpService";
 import { useTranslation } from 'react-i18next';
 import { validateEmail } from '../../Utils/email/is.valide.email';
 import { isPasswordStrong } from '../../Utils/password/is.password.strong';
-import { containsOnlyLetters } from '../../Utils/text/contains.only.letters';
 
 export const useSignup = () => {
 
@@ -12,58 +11,39 @@ export const useSignup = () => {
 
   const { setAlert } = NavsState();
   
-  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [gender, setGender] = useState('');
   const [password, setPassword] = useState('');
-  const [dateOfBirth, setDateOfBirth] = useState();
-  const [country, setCountry] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [creatingAccount, setCreatingAccount] = useState(false);
 
+  const signup = async () => {
 
-  const signup = async (e) => {
-    e.preventDefault();
-
-    setCreatingAccount(true);
-
-    if (!email || !password || !fullName || !gender || !dateOfBirth || !country || !confirmPassword) {
+    if (!email || !password || !confirmPassword) {
       setAlert({
         open: true,
-        message: t("All fields must be filled"),
+        message: t("All fields are required"),
         type: 'error'
       });
-      setCreatingAccount(false);
+
       return;
     }
 
     if (!validateEmail(email)) {
       setAlert({
         open: true,
-        message: t("Invalid email"),
+        message: t("Invalid email address"),
         type: 'error'
       });
-      setCreatingAccount(false);
-      return;
-    }
 
-    if (!containsOnlyLetters(fullName)) {
-      setAlert({
-        open: true,
-        message: t("The full name can only contain letters only"),
-        type: 'error'
-      });
-      setCreatingAccount(false);
       return;
     }
 
     if (!isPasswordStrong(password)) {
       setAlert({
         open: true,
-        message: t("Password weak"),
+        message: t("Password is too weak"),
         type: 'error'
       });
-      setCreatingAccount(false);
+
       return;
     }
 
@@ -73,7 +53,7 @@ export const useSignup = () => {
         message: t("Passwords do not match"),
         type: 'error'
       });
-      setCreatingAccount(false);
+
       return;
     }
 
@@ -81,16 +61,12 @@ export const useSignup = () => {
       const response = await http.post(`auth-user/sign-up`, {
         email,
         password,
-        fullName,
         confirmPassword,
-        dateOfBirth,
-        country,
-        gender
       });
 
       setAlert({
         open: true,
-        message: t("Email to activate account sent"),
+        message: t("Activation email sent"),
         type: 'success'
       });
 
@@ -108,21 +84,14 @@ export const useSignup = () => {
           type: 'error'
         });
       }
-    } finally {
-      setCreatingAccount(false);
     }
   };
 
 
   return {
-    fullName, setFullName,
+    signup,
     email, setEmail,
     password, setPassword,
-    dateOfBirth, setDateOfBirth,
-    country, setCountry,
-    confirmPassword, setConfirmPassword,
-    gender, setGender,
-    creatingAccount,
-    signup
+    confirmPassword, setConfirmPassword
   };
 };

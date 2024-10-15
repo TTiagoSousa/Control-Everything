@@ -1,8 +1,8 @@
 export const primary_color_dark = "#0b1727;"
-export const primary_color_light = "#dee4ee"
+export const primary_color_light = "#ffffff"
 
 export const secundary_color_dark = "#121e2d"
-export const secundary_color_light = "#ffffff"
+export const secundary_color_light = "#eaedf3"
 
 export const terciary_color_dark = "#162231"
 export const terciary_color_light = "#f9fafd"
@@ -29,3 +29,5 @@ export const red = "#eb4646"
 export const red_light = "rgb(240, 133, 133)"
 
 export const orange = '#f58344'
+
+export const yellow = '#f0b90b'

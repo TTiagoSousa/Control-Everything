@@ -12,39 +12,27 @@ const Mobile_Menu_Home = () => {
 
   const { mobile_Sidebar_Home, set_Mobile_Sidebar_Home } = NavsState();
 
-  const { sidebar_Color_Change, mode } = ThemeState();
-
   const location = useLocation();
 
   // Styles
     const sidebarStyle = {
-      backgroundColor: 
-        sidebar_Color_Change === 'Dark' ? Color.secundary_color_dark : 
-        sidebar_Color_Change === 'Blue' ? Color.blue : '',
+      backgroundColor: Color.secundary_color_dark,
     };
 
     const activeNavLinkStyle = {
-      color: 
-        sidebar_Color_Change === 'Dark' ? Color.blue :
-        sidebar_Color_Change === 'Blue' ? Color.blue : "",
+      color: Color.blue,
     };
 
     const TextStyle = {
-      color: 
-        mode === 'dark' ?   Color.gray : 
-        mode === 'light' ?  Color.gray_dark : "",
+      color: Color.gray,
     };
   
     const IconStyle = {
-      fill:
-        mode === 'dark' ?   Color.gray : 
-        mode === 'light' ?  Color.gray_dark : "",
+      fill: Color.gray,
     };
   
     const activeIconkStyle = {
-      fill: 
-        mode === 'dark' ? Color.blue :
-        mode === 'light' ? Color.blue : "",
+      fill: Color.blue,
     };
   // Styles
 
@@ -74,7 +62,7 @@ const Mobile_Menu_Home = () => {
         toggle={mobile_Sidebar_Home}
       />
 
-      <nav className={`Mobile_Sidebar_Home ${mobile_Sidebar_Home ? 'active' : ''}`} >
+      <nav className={`Mobile_Sidebar_Home ${mobile_Sidebar_Home ? 'active' : ''}`} style={sidebarStyle}>
         <div className="Mobile_Menu_Body">
           {navItems.map((item, index) => (
             <React.Fragment key={index}>
@@ -127,7 +115,7 @@ const Mobile_Menu_Home = () => {
                 >
                   <div className='Icon'>
                     <div>
-                    <Icon.GLobal_SVG Global_Color={location.pathname === item.to ? activeIconkStyle.fill : IconStyle.fill}>  
+                      <Icon.GLobal_SVG Global_Color={location.pathname === item.to ? activeIconkStyle.fill : IconStyle.fill}>  
                         {item.icon}
                       </Icon.GLobal_SVG>
                     </div>

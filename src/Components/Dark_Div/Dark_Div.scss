@@ -5,16 +5,7 @@
   cursor: pointer;
   inset: 0;
   z-index: 55;
-}
-
-.Dark_Mode .Darker_Activate{
   background-color: #3c475696;
-  z-index: 5;
-  cursor: pointer;
-}
-    
-.Light_Mode .Darker_Activate{
-  background-color: #0915248d;
   z-index: 5;
   cursor: pointer;
 }
