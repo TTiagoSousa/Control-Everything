@@ -12,3 +12,5 @@ export { default as Base_Avatar } from '../Assets/Icons/Avatar/Base_Avatar';
 export { default as Double_Dor } from '../Assets/Icons/Doors/Double_Dor';
 export { default as Settings } from '../Assets/Icons/Settings/Settings';
 export { default as Simple_Check } from '../Assets/Icons/Check/Simple_Check';
+export { default as Line_Chart_Positive } from '../Assets/Icons/Chart/Line_Chart_Positive';
+export { default as Line_Chart_Negative } from '../Assets/Icons/Chart/Line_Chart_Negative';

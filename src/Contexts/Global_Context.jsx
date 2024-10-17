@@ -13,7 +13,7 @@ const GlobalContext = ({ children }) => {
       localStorage.setItem('selectCurrency', selectCurrency);
     }, [selectCurrency]);
   // Currency 
-    console.log(selectCurrency)
+
   return (
     <Global.Provider 
       value={{ 
