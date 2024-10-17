@@ -25,11 +25,6 @@ const Savings_Dashboard = () => {
     }
   }, [chartData, currencies, setIsLoading]);
 
-  // Garantir que os dados estejam prontos antes de renderizar o gráfico
-  if (isLoading) {
-    return <div className="Loading"><Loading_Balls count={6} /></div>;
-  }
-
   return (
     <div className='Savings_Dashboard'>
 

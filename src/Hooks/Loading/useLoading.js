@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
 
-const useLoading = (initialLoadingState = true, delay = 1500) => {
-  const [isLoading, setIsLoading] = useState(initialLoadingState);
+const useLoading = () => {
+  const [isLoading, setIsLoadingState] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, [delay]);
+  // Função auxiliar para controlar o atraso
+  const setIsLoading = (loading) => {
+    if (!loading) {
+      // Se definirmos isLoading como false, aguarda 2 segundos
+      setTimeout(() => {
+        setIsLoadingState(false);
+      }, 1000);
+    } else {
+      // Se definirmos isLoading como true, atualiza imediatamente
+      setIsLoadingState(true);
+    }
+  };
 
   return { isLoading, setIsLoading };
 };
