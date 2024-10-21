@@ -17,6 +17,7 @@ export const navItems = [
     icon: <Icon.Settings />,
     dropdownItems: [
       { to: '/CE/Settings/Security', text: 'Security' },
+      { to: '/CE/Settings/APIs', text: 'APIs' },
     ],
   },
 
