@@ -73,6 +73,13 @@
     "Savings" : "Savings",
     "Master your money, master your future" : "Master your money, master your future",
     "Disposable emails are not allowed" : "Disposable emails are not allowed",
-    "Use of temporary emails is not permitted" : "Use of temporary emails is not permitted"
+    "Use of temporary emails is not permitted" : "Use of temporary emails is not permitted",
+    "Price" : "Price",
+    "Average price" : "Average price",
+    "Total spent" : "Total spent",
+    "Current investment" : "Current investment",
+    "Return" : "Return",
+    "Return %" : "Return %",
+    "Quantity purchased" : "Quantity purchased"
   }
 }

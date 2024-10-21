@@ -73,6 +73,13 @@
     "Savings" : "Poupanças",
     "Master your money, master your future" : "Domine o seu dinheiro, domine o seu futuro",
     "Disposable emails are not allowed" : "Emails temporários não são permitidos",
-    "Use of temporary emails is not permitted" : "O uso de emails temporários não são permitidos"
+    "Use of temporary emails is not permitted" : "O uso de emails temporários não são permitidos",
+    "Price" : "Preço",
+    "Average price" : "Preço médio",
+    "Total spent" : "Total gasto",
+    "Current investment" : "Investimento atual",
+    "Return" : "Retorno",
+    "Return %" : "Retorno %",
+    "Quantity purchased" : "Quantidade comprada"
   }
 }

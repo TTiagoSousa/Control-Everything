@@ -8,6 +8,7 @@ export const navItems = [
     icon: <Icon.Dashboard_Cubes />,
     dropdownItems: [
       { to: '/CE/Savings_Dashboard', text: 'Savings' },
+      { to: '/CE/Crypto_Dashboard', text: 'Crypto'}
     ],
   },
 

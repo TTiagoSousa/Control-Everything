@@ -1,0 +1,400 @@
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
+
+.Crypto_Dashboard{
+  @include Pages_Configs;
+  min-height: 95vh;
+
+  .Table_Wrapper{
+    width: 100%;
+    height: auto;
+    border-radius: $border_radius;
+
+    table{
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-collapse: collapse;
+      display: flex;
+      flex-direction: column;
+      border-radius: $border_radius;
+  
+      thead{
+        position: relative;
+        width: 100%;
+        height: auto;
+        height: auto;
+        border-radius: 10px 10px 0px 0px;
+        background-color: $terciary_color_dark;
+  
+        tr{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding: 3px 0px 3px 0px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+  
+          th{
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 5px 0px 5px 0px;
+  
+            span{
+              font-family: $font_family_poppins;
+              font-size: 10px;
+              color: $gray;
+            }
+          }
+  
+          .Crypto{
+            display: flex;
+            justify-content: left;
+            margin-left: 10px;
+          }
+
+          .Price_Average_Price{
+            display: none;
+          }
+        }
+      }
+
+      tbody{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 0px 10px 10px;
+        flex-direction: column;
+        background-color: $secundary_color_dark;
+
+        tr{
+          position: relative;
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 5px 0px 0px 0px;
+          border-bottom: 2px solid $gray_light;
+          flex-direction: column;
+
+          &:last-child {
+            border-radius: $border_radius;
+            border: none !important;
+          }
+
+          .Crypto_Info{
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            td{
+              position: relative;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 5px;
+              padding: 10px 0px 10px 0px;
+              color: $gray;
+  
+              span{
+                font-family: $font_family_poppins;
+                font-size: 10px;
+                font-weight: 600;
+              }
+            }
+  
+            .Crypto{
+              display: flex;
+              justify-content: left;
+              margin-left: 10px;
+              
+              img{
+                width: auto;
+                height: 20px;
+              }
+              
+              .Symbol{
+                font-size: 11px;
+              }
+            }
+  
+            .Price_Average_Price{
+              display: none;
+              justify-content: space-between;
+              align-items: center;
+              justify-content: center;
+  
+              div{
+                display: flex;
+                gap: 5px;
+              }
+            }
+  
+            .Price_And_Avage_Price{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              justify-content: center;
+  
+              div{
+                display: flex;
+                gap: 5px;
+              }
+            }
+          }
+
+          .Extra_Info{
+            width: 100%;
+            border-radius: 0px 0px 5px 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0px 5px 0px;
+            box-sizing: border-box;
+            display: none;
+
+            span{
+              font-size: 11px;
+              font-family: $font_family_poppins;
+              font-weight: 600;
+              color: $yellow;
+              cursor: pointer;
+            }
+          }
+
+          .Extra_Content{
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+            color: $gray;
+            font-family: $font_family_open_sans;
+            font-size: 11px;
+            font-weight: 600;
+
+            td{
+              width: 300px;
+              display: flex; 
+              align-items: center;
+              justify-content: space-between;
+  
+              div{
+                width: auto;
+              }
+            }
+
+            .Return,
+            .Average_Price,
+            .Price{
+              display: none;
+            }
+            
+          }
+        }
+      }
+
+      tfoot{
+        position: relative;
+        width: 99%;
+        display: flex;
+
+        tr{
+          width: 100%;
+          display: flex;
+
+          td{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px){
+  .Crypto_Dashboard{
+
+    .Table_Wrapper{
+
+      table{
+        
+        thead{
+          
+          .Quantity_Purchased{
+            display: none;
+          }
+        }
+
+        tbody{
+
+          tr{
+
+            .Crypto_Info{
+
+              td{
+                padding: 5px 0px 5px 0px;
+              }
+
+              .Quantity_Purchased{
+                display: none;
+              }
+            }
+
+            .Extra_Info{
+              display: flex;
+
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px){
+  .Crypto_Dashboard{
+
+    .Table_Wrapper{
+
+      table{
+        
+        thead{
+          
+          .Return{
+            display: none;
+          }
+        }
+
+        tbody{
+
+          tr{
+
+            .Crypto_Info{
+
+              .Return{
+                display: none;
+              }
+            }
+
+            .Extra_Content{
+              
+              .Return{
+                display: flex !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px){
+  .Crypto_Dashboard{
+
+    .Table_Wrapper{
+
+      table{
+        
+        thead{
+          
+          tr{
+
+            .Price,
+            .Average_Price{
+              display: none !important;
+            }
+
+            .Price_Average_Price{
+              display: flex;
+            }
+          }
+        }
+
+        tbody{
+
+          tr{
+
+            .Crypto_Info{
+
+              .Price,
+              .Average_Price{
+                display: none !important;
+              }
+
+              .Price_Average_Price{
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .Crypto_Dashboard{
+
+    .Table_Wrapper{
+
+      table{
+        
+        thead{
+          
+          tr{
+
+            .Average_Price,
+            .Price,
+            .Price_Average_Price{
+              display: none !important;
+            }
+
+            .Average_Price,
+            .Price{
+              display: flex;
+            }
+          }
+        }
+
+        tbody{
+
+          tr{
+
+            .Crypto_Info{
+
+              .Average_Price,
+              .Price,
+              .Price_Average_Price{
+                display: none !important;
+              }
+            }
+
+            .Extra_Content{
+
+              .Average_Price,
+              .Price{
+                display: flex !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
