@@ -5,3 +5,4 @@ export { default as Savings_Dashboard } from '../Pages/Private/Assets_Dashboards
 export { default as Manage_Password } from '../Pages/Private/Settings/Security/Manage_Password/Manage_Password';
 export { default as Crypto_Dashboard } from '../Pages/Private/Assets_Dashboards/Crypto/Crypto_Dashboard/Crypto_Dashboard';
 export { default as APIs } from '../Pages/Private/Settings/APIs/APIs/APIs'
+export { default as BrokerAPI } from '../Pages/Private/Settings/APIs/BrokerAPI/BrokerAPI';

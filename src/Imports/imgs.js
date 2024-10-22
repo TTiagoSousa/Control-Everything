@@ -1,0 +1,1 @@
+export { default as Trading212 } from '../Assets/IMGs/Brokers/Trading212.png';

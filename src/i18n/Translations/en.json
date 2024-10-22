@@ -80,6 +80,8 @@
     "Current investment" : "Current investment",
     "Return" : "Return",
     "Return %" : "Return %",
-    "Quantity purchased" : "Quantity purchased"
+    "Quantity purchased" : "Quantity purchased",
+    "Connect Your Broker"  : "Connect Your Broker",
+    "Connecting your broker's API to my website makes it easier to monitor your investments in real-time, with automatic data and personalized analyses, helping you make better financial decisions." : "Connecting your broker's API to my website makes it easier to monitor your investments in real-time, with automatic data and personalized analyses, helping you make better financial decisions."
   }
 }

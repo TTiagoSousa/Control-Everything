@@ -1,0 +1,45 @@
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
+
+.BrokerAPI{
+  @include Pages_Configs;
+  min-height: 95vh;
+  position: relative;
+
+  .Alert{
+    position: absolute;
+    width: auto;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    z-index: 22;
+  }
+
+  .Content{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .Title{
+      font-family: $font_family_open_sans;
+      font-size: 18px;
+      font-weight: 600;
+      color: $white;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .Button_Field{
+        height: 25px;
+      }
+    }
+  }
+}

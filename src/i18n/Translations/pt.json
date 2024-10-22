@@ -80,6 +80,8 @@
     "Current investment" : "Investimento atual",
     "Return" : "Retorno",
     "Return %" : "Retorno %",
-    "Quantity purchased" : "Quantidade comprada"
+    "Quantity purchased" : "Quantidade comprada",
+    "Connect Your Broker"  : "Ligue a sua corretora",
+    "Connecting your brokers API to my website makes it easier to monitor your investments in real-time, with automatic data and personalized analyses, helping you make better financial decisions." : "Conectar a API da corretora ao meu site facilita o monitoramento em tempo real de seus investimentos, com dados automáticos e análises personalizadas, ajudando você a tomar decisões financeiras melhores."
   }
 }

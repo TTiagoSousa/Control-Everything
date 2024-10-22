@@ -3,6 +3,8 @@ import './Base_Input.scss';
 
 const Base_Input = ({ type, inputTypeStyle, placeholder, value, onChange }) => {
 
+  console.log(inputTypeStyle)
+
   return (
     <div className={`Base_Input`}>
       <input 

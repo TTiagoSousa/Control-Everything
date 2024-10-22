@@ -22,12 +22,16 @@
     font-size: 13px;
     border: $border_dark;
     color: $gray;
+    
+    &::placeholder{
+      color: $gray;
+    }
 
     &.type1{
       background-color: $primary_color_dark;
     }
 
-    &.type1{
+    &.type2{
       background-color: $secundary_color_dark;
     }
   }

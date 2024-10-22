@@ -21,6 +21,7 @@ const Private_Routes = () => {
           </Route>
           <Route path='APIs'> 
             <Route index element={ <Private_Page.APIs /> } />
+            <Route path=':brokerName' element={ <Private_Page.BrokerAPI /> } />
           </Route>
         </Route>
       </Routes>
