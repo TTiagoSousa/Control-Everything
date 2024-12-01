@@ -9,6 +9,7 @@ function App() {
       <main>
         <Routes>
           <Route index element={<Public_Page.Index />} />
+          <Route path='Sign_Up' element={ <Public_Page.Sign_up /> } />
         </Routes>
       </main>
     </>

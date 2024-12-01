@@ -1,0 +1,22 @@
+{
+  "translation": {
+    "Register": "Registar",
+    "Email": "Email",
+    "Password": "Senha",
+    "Repeat password": "Repetir senha",
+    "Accept the terms": "Aceitar os termos",
+    "Loading...": "A carregar...",
+    "Sign up": "Inscrever-se",
+    "Already have a account ? -": "Já tem uma conta? -",
+    "Click here": "Clique aqui",
+    "Invalid email address": "Endereço de email inválido",
+    "Disposable emails are not allowed": "Emails descartáveis não são permitidos",
+    "Email already exists": "O email já existe",
+    "Passwords do not match": "As senhas não coincidem",
+    "Password is too weak": "A senha é demasiado fraca",
+    "Password cannot be similar to the email address": "A senha não pode ser semelhante ao endereço de email",
+    "All fields are required": "Todos os campos são obrigatórios",
+    "Language": "Idioma",
+    "Shearch": "Pesquisar"
+  }
+}

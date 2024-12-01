@@ -1,0 +1,22 @@
+{
+  "translation": {
+    "Register": "Register",
+    "Email": "Email",
+    "Password": "Password",
+    "Repeat password": "Repeat password",
+    "Accept the terms": "Accept the terms",
+    "Loading...": "Loading...",
+    "Sign up": "Sign up",
+    "Already have a account ? -": "Already have a account ? -",
+    "Click here": "Click here",
+    "Invalid email address": "Invalid email address",
+    "Disposable emails are not allowed": "Disposable emails are not allowed",
+    "Email already exists": "Email already exists",
+    "Passwords do not match": "Passwords do not match",
+    "Password is too weak": "Password is too weak",
+    "Password cannot be similar to the email address": "Password cannot be similar to the email address",
+    "All fields are required": "All fields are required",
+    "Language": "Language",
+    "Shearch": "Shearch"
+  }
+}
