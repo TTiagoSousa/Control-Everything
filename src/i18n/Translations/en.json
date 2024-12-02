@@ -17,6 +17,16 @@
     "Password cannot be similar to the email address": "Password cannot be similar to the email address",
     "All fields are required": "All fields are required",
     "Language": "Language",
-    "Shearch": "Shearch"
+    "Shearch": "Shearch",
+    "Account Login" : "Account Login",
+    "Remember me" : "Remember me",
+    "Forgot Password ?" : "Forgot Password ?",
+    "Sign in" : "Sign in",
+    "Dont have an account yet ? -" : "Dont have an account yet ? -",
+    "Use of temporary emails is not permitted" : "Use of temporary emails is not permitted",
+    "Something is wrong" : "Something is wrong",
+    "The account is not active" : "The account is not active",
+    "Your account is locked. Please contact support for assistance" : "Your account is locked. Please contact support for assistance",
+    "Something went wrong" : "Something went wrong"
   }
 }

@@ -1,0 +1,306 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Sign_In{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+
+  .Left_Side{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .Right_Side{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+
+    header{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .Button_Field{
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    form{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 400px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      border-radius: Format.$border_radius;
+
+      .Title{
+        width: 100%;
+
+        span{
+          font-family: Font.$font_family_poppins;
+          font-size: 25px;
+          font-weight: 600;
+        }
+      }
+
+      .Input_Field{
+        width: 100%;
+        height: 60px;
+      }
+
+      .Check_FIeld_Forgot_Password{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        div:nth-of-type(1){
+          width: auto;
+          display: flex;
+          gap: 10px;
+
+          span{
+            font-family: Font.$font_family_poppins;
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+
+        div:nth-of-type(2){
+            
+          a{
+            font-family: Font.$font_family_poppins;
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .Button_Field{
+        width: 100%;
+        height: 30px;
+      }
+    }
+
+    .Links{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      gap: 10px;
+
+      span, a{
+        font-family: Font.$font_family_poppins;
+        font-weight: 500;
+        font-size: 17px;
+      }
+
+      a{
+        color: Color.$blue;
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Sign_In{
+    background-color: Color.$primary_color_dark;
+
+    form{
+      background-color: Color.$secundary_color_dark;
+      border: Format.$border_dark;
+
+      .Title{
+
+        span{
+          color: Color.$white;
+        }
+      }
+
+      .Check_FIeld_Forgot_Password{
+
+        div:nth-of-type(1){
+          
+          span{
+            color: Color.$gray;
+          }
+        }
+
+        div:nth-of-type(2){
+          
+          a{
+            color: Color.$blue;
+          }
+        }
+      }
+    }
+
+    .Links{
+
+      span{
+        color: Color.$gray;
+      }
+
+      a{
+        
+        &:hover{
+          color: Color.$yellow;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Sign_In{
+    background-color: Color.$primary_color_light;
+
+    form{
+      background-color: Color.$secundary_color_light;
+      border: Format.$border_light;
+
+      .Title{
+
+        span{
+          color: Color.$black;
+        }
+      }
+
+      .Check_FIeld_Forgot_Password{
+
+        div:nth-of-type(1){
+          
+          span{
+            color: Color.$black;
+          }
+        }
+
+        div:nth-of-type(2){
+          
+          a{
+            color: Color.$blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px){
+
+  .Sign_In{
+
+    .Left_Side{
+      width: 50%;
+
+    }
+
+    .Right_Side{
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 1000px){
+
+  .Sign_In{
+
+    .Left_Side{
+      width: 40%;
+
+    }
+
+    .Right_Side{
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 1000px){
+
+  .Sign_In{
+    flex-direction: column;
+
+    .Left_Side{
+      width: 100%;
+      height: 30%;
+    }
+
+    .Right_Side{
+      width: 100%;
+      height: 70%;
+      align-items: center;
+      
+      header{
+        position: fixed;
+        top: 1%;
+        left: 0;
+      }
+
+      form{
+        top: 45%;
+      }
+
+      .Links{
+        width: 100%;
+        position: fixed;
+        bottom: 1%;
+        left: 0;
+
+        span, a{
+          font-family: Font.$font_family_poppins;
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px){
+
+  .Sign_In{
+
+    .Right_Side{
+
+      form{
+        width: 350px;
+        padding: 15px;
+      }
+    }
+  }
+}

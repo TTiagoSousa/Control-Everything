@@ -17,6 +17,16 @@
     "Password cannot be similar to the email address": "A senha não pode ser semelhante ao endereço de email",
     "All fields are required": "Todos os campos são obrigatórios",
     "Language": "Idioma",
-    "Shearch": "Pesquisar"
+    "Shearch": "Pesquisar",
+    "Account Login": "Início de sessão na conta",
+    "Remember me": "Lembrar-me",
+    "Forgot Password ?": "Esqueceste-te da passe ?",
+    "Sign in": "Iniciar sessão",
+    "Dont have an account yet ? -": "Ainda não tens conta ? -",
+    "Use of temporary emails is not permitted" : "O uso de email temporario não é permitido",
+    "Something is wrong" : "Algo está errado",
+    "The account is not active" : "A conta não está ativa",
+    "Your account is locked. Please contact support for assistance" : "A sua conta está bloqueada. Por favor, contacte o suporte para assistência",
+    "Something went wrong" : "Ocorreu um erro"
   }
 }
