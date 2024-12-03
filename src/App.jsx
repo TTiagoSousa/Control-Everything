@@ -2,6 +2,7 @@ import './App.scss';
 import { Route, Routes } from 'react-router-dom';
 import * as Public_Page from './Imports/public.pages';
 import Authentication_Check from './Authentication/Authentication_Check';
+import * as Private_Page from './Imports/private.pages';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
             path="/CE/*"
             element={
               <Authentication_Check>
-   
+                <Private_Page.CE />
               </Authentication_Check>
             }
           />

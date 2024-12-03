@@ -1,0 +1,8 @@
+@use '../../../Styles/Colors.scss' as COlor;
+@use '../../../Styles/Fonts.scss' as Fnt;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Dashboard{
+  @include Format.Pages_Configs;
+  min-height: 95vh;
+}
