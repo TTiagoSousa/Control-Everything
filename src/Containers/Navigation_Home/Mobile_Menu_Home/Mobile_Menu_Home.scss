@@ -1,0 +1,97 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+
+.Mobile_Sidebar_Home{
+  position: fixed;
+  width: 300px;
+  height: 100vh;      
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: -100%;
+  transition: 850ms; 
+  z-index: 4;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 44;
+  background-color: Color.$primary_color_dark;
+
+  &.active{
+    left: 0;
+    transition: 350ms;
+  }
+
+  .p-panelmenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .p-panelmenu-panel {
+      width: 100%;
+      padding: 5px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      .p-component {
+        width: 100%;
+
+        .p-panelmenu-header-content {
+          .p-panelmenu-header-link {
+            text-decoration: none;
+            color: Color.$gray;
+            font-family: Font.$font_family_open_sans;
+            font-weight: 600;
+            display: flex;
+            gap: 10px;
+
+            // Estilo para o link ativo
+            &.p-menuitem-active {
+              color: Color.$blue_dark; // Substitua pelo valor desejado
+              font-weight: bold;     // Destaque o link ativo com negrito
+            }
+          }
+        }
+      }
+
+      .p-toggleable-content {
+        width: 100%;
+
+        .p-panelmenu-content {
+          width: 100%;
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            margin-left: 25px;
+            margin-top: 15px;
+            gap: 15px;
+
+            li {
+              .p-menuitem-content {
+                a {
+                  text-decoration: none;
+                  color: Color.$gray;
+                  font-family: Font.$font_family_open_sans;
+                  font-weight: 600;
+                  display: flex;
+
+                  // Estilo para o link ativo
+                  &.p-menuitem-active {
+                    color: Color.$blue_dark; // Escolha a cor desejada
+                    font-weight: bold;     // Destaque para o link ativo
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

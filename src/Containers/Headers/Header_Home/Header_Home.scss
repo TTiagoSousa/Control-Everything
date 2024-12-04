@@ -1,0 +1,99 @@
+@use '../../../Styles/Colors.scss' as Color;
+@use '../../../Styles/Fonts.scss' as Font;
+@use '../../../Styles/Formats.scss' as Format;
+
+.Header_Home{
+  position: fixed;
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  box-sizing: border-box;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  box-sizing: border-box;
+
+  &.Sidebar{
+    width: calc(100% - 250px);
+    right: 0;
+  }
+
+  &.Full_Screen{
+    width: 100%;
+  }
+
+  .Left_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .Menu{
+      width: 10px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+
+      &.With_SideBar{
+        display: none;
+      }
+
+      button{
+        width: auto;
+        height: 100%;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        div{
+          background-color: Color.$blue;
+          width: 20px;
+          height: 2px;
+        }
+      }
+    }
+
+    span{
+      font-family: Font.$font_family_poppins;
+      font-weight: 700;
+      color: Color.$blue;
+    }
+  }
+
+  .Right_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+
+    .Button_Field{
+      position: relative;
+      width: 23px;
+      height: 23px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Header_Home{
+    background-color: Color.$primary_color_dark;
+  }
+}
+
+.Light_Mode{
+  
+  .Header_Home{
+    background-color: Color.$primary_color_light;
+  }
+}

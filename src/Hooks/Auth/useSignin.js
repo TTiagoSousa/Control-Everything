@@ -69,6 +69,7 @@ export const useSignin = () => {
       
     }catch (error) {
       if (error.response && error.response.status === 400) {
+        console.log(error)
         let errorMessage = error.response.data.message;
         errorMessage = t(errorMessage);
         setAlert({
